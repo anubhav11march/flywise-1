@@ -22,8 +22,8 @@ import {
   Text,
   VStack,
   Tooltip,
-} from "@chakra-ui/react";
-import { Select } from "@chakra-ui/react";
+} from '@chakra-ui/react'
+import { Select } from '@chakra-ui/react'
 import {
   Menu,
   MenuButton,
@@ -35,121 +35,128 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
-} from "@chakra-ui/react";
-import axios from "axios";
-import React, { useState } from "react";
-import Navbar from "../../component/common/navbar";
-import { Redirect } from "next";
-import { useRouter } from "next/router";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+} from '@chakra-ui/react'
+import axios from 'axios'
+import React, { useState } from 'react'
+import Navbar from '../../component/common/navbar'
+import { Redirect } from 'next'
+import { useRouter } from 'next/router'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
- import {
-   auth,
-   RecaptchaVerifier,
-   signInWithPhoneNumber,
- } from "../../content/firebase";
+import {
+  auth,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from '../../content/firebase'
 
 function One() {
- 
-  const router = useRouter();
+  const router = useRouter()
   const configureRecaptcha = () => {
     window.recaptchaVerifier = new RecaptchaVerifier(
-     'sign-in-button',
+      'sign-in-button',
       {
-        'size':"invisible",
+        size: 'invisible',
         callback: (response) => {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
-          onSignInSubmit();
+          onSignInSubmit()
         },
-      },auth
-    );
-  };
+      },
+      auth
+    )
+  }
   const onSignInSubmit = (e) => {
-    e.preventDefault();
-    configureRecaptcha();
-    const phoneNumber = countryCode + userPhone;
-    console.log(phoneNumber);
-    const appVerifier = window.recaptchaVerifier;
+    e.preventDefault()
+    configureRecaptcha()
+    const phoneNumber = countryCode + userPhone
+    console.log(phoneNumber)
+    const appVerifier = window.recaptchaVerifier
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
-        window.confirmationResult = confirmationResult;
-        console.log("send");
-        evaluateProfilePost();
+        window.confirmationResult = confirmationResult
+        console.log('send')
+        evaluateProfilePost()
 
         // ...
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
         // Error; SMS not sent
         // ...
-      });
-  };
+      })
+  }
 
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
-  const [redirect, setRedirect] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+  const [redirect, setRedirect] = useState(false)
 
-  const [country, setCountry] = useState("USA");
+  const [country, setCountry] = useState('USA')
   const [course, setCourse] = useState(
-    "MS Computer science / Software engineering (Intensive coding)"
-  );
-  const [pe, setPe] = useState(1);
-  const [greTraining, setGreTraining] = useState("yes");
-  const [session, setSession] = useState("Spring 2022");
-  const [countryCode, setCountryCode] = useState("+91");
-  const [greQuant, setGreQuant] = useState();
-  const [greVerbal, setGreVerbal] = useState();
-  const [ieltsToefl, setIeltsToefl] = useState();
-  const [workEx, setWorkEx] = useState("less than 2 years");
-  const [cgpa, setCgpa] = useState();
-  const [backlogs, setBacklogs] = useState("");
-  const [clgUni, setClgUni] = useState("");
-  const [budget, setBudget] = useState("Under 20 Lakhs");
-  const [fundMasters, setFundMasters] = useState("Secured Loan");
-  const [tnC, setTnC] = useState(false);
-  const [iscsit,setiscsit]=useState("No");
+    'MS Computer science / Software engineering (Intensive coding)'
+  )
+  const [pe, setPe] = useState(1)
+  const [greTraining, setGreTraining] = useState('yes')
+  const [session, setSession] = useState('Spring 2022')
+  const [countryCode, setCountryCode] = useState('+91')
+  const [greQuant, setGreQuant] = useState()
+  const [greVerbal, setGreVerbal] = useState()
+  const [ieltsToefl, setIeltsToefl] = useState()
+  const [workEx, setWorkEx] = useState('less than 2 years')
+  const [cgpa, setCgpa] = useState()
+  const [backlogs, setBacklogs] = useState('')
+  const [clgUni, setClgUni] = useState('')
+  const [budget, setBudget] = useState('Under 20 Lakhs')
+  const [fundMasters, setFundMasters] = useState('Secured Loan')
+  const [referral, setReferral] = useState('')
+  const [tnC, setTnC] = useState(false)
+  const [iscsit, setiscsit] = useState('No')
 
-  const [username, setUsername] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPhone, setUserPhone] = useState("");
+  const [discover, setDiscover] = useState('Search Engine(Google,Yahoo,etc.)')
+  const [other, setOther] = useState('')
+
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [userEmail, setUserEmail] = useState('')
+  const [userPhone, setUserPhone] = useState('')
   function isEmail(email) {
     let regexp =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regexp.test(String(email).toLowerCase());
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return regexp.test(String(email).toLowerCase())
   }
   function evaluateProfilePost() {
+    setLoading(true)
+    setSuccess('')
+    setError('')
+    let formData = new FormData()
 
-    setLoading(true);
-    setSuccess("");
-    setError("");
-    let formData = new FormData();
-
-    formData.append("whichCountry", country);
-    formData.append("courses", course);
-    formData.append("GreQuantScore", greQuant);
-    formData.append("GreVerbalScore", greVerbal);
-    formData.append("ielts_toefl", ieltsToefl);
-    formData.append("GreTraining", greTraining);
-    formData.append("workExperience", workEx);
-    formData.append("noofbacklogs", backlogs);
-    formData.append("cgpa", cgpa);
-    formData.append("college", clgUni);
-    formData.append("budget", budget);
-    formData.append("fund", fundMasters);
-    formData.append("name", username);
-    formData.append("email", userEmail);
-    formData.append("mobileNo", userPhone);
-    formData.append("session", session);
-    formData.append("iscsit",iscsit);
+    formData.append('whichCountry', country)
+    formData.append('courses', course)
+    formData.append('GreQuantScore', greQuant)
+    formData.append('GreVerbalScore', greVerbal)
+    formData.append('ielts_toefl', ieltsToefl)
+    formData.append('GreTraining', greTraining)
+    formData.append('workExperience', workEx)
+    formData.append('noofbacklogs', backlogs)
+    formData.append('cgpa', cgpa)
+    formData.append('college', clgUni)
+    formData.append('budget', budget)
+    formData.append('fund', fundMasters)
+    formData.append('firstName', firstName)
+    formData.append('lastName', lastName)
+    formData.append('email', userEmail)
+    formData.append('mobileNo', userPhone)
+    formData.append('session', session)
+    formData.append('iscsit', iscsit)
+    formData.append('referral', referral)
+    formData.append('discover', discover == 'Other' ? other : discover)
 
     axios({
-      url: "https://flywisebackend.herokuapp.com/api/user/add",
-      method: "POST",
+      url: 'https://flywisebackend.herokuapp.com/api/user/add',
+      method: 'POST',
       headers: {
-        contentType: "applications/json",
+        contentType: 'applications/json',
       },
       // body: formData
       data: {
@@ -165,39 +172,42 @@ function One() {
         college: clgUni,
         budget: budget,
         fund: fundMasters,
-        name: username,
+        firstName: firstName,
+        lastName: lastName,
         email: userEmail,
         mobileNo: userPhone,
         session: session,
-        iscsit:iscsit,
+        iscsit: iscsit,
+        referral: referral,
+        discover: discover == 'Other' ? other : discover,
       },
     })
       .then((res) => {
-        console.log(res.data);
-        if (res.data.error === "ALl fields required") {
-          setError("All fields are required please try again");
+        console.log(res.data)
+        if (res.data.error === 'ALl fields required') {
+          setError('All fields are required please try again')
         } else {
-          setSuccess("Profile Submitted");
-          console.log(" ot success");
-          
-          router.push("/otp");
+          setSuccess('Profile Submitted')
+          console.log(' ot success')
+
+          router.push('/otp')
         }
       })
       .catch((err) => {
         if (err) {
-          console.log(err);
-          console.log(err.response.data.error);
+          console.log(err)
+          console.log(err.response.data.error)
           if (
             err.response.data.error ==
-            "This user has already applied for profile evaluation"
+            'This user has already applied for profile evaluation'
           ) {
-            setError("You have already applied");
+            setError('You have already applied')
           } else {
-            setError("There was an error");
+            setError('There was an error')
           }
         }
       })
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false))
   }
 
   return (
@@ -217,7 +227,7 @@ function One() {
           />
 
           <Grid
-            px={["0", "0", "0", "0", "3rem"]}
+            px={['0', '0', '0', '0', '3rem']}
             overflow="hidden"
             maxW="100vw"
             templateRows="repeat(12, 1fr)"
@@ -225,9 +235,9 @@ function One() {
           >
             {pe === 1 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  py={["0.4rem", "1rem", "2rem", "3rem", "3rem"]}
+                  py={['0.4rem', '1rem', '2rem', '3rem', '3rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -236,13 +246,13 @@ function One() {
                     Which country are you planning to go?
                   </Heading>
                 </GridItem>
-                {["USA", "Australia", "Canada", "UK", "Other"].map((i, idx) => (
+                {['USA', 'Australia', 'Canada', 'UK', 'Other'].map((i, idx) => (
                   <GridItem
                     onClick={() => setCountry(i)}
                     mt="4"
-                    mb={i === "Other" ? "32" : "6"}
+                    mb={i === 'Other' ? '32' : '6'}
                     key={idx}
-                    px={["4rem", "3rem", "2rem", "0rem", "0rem"]}
+                    px={['4rem', '3rem', '2rem', '0rem', '0rem']}
                     rowSpan={15}
                     colSpan={[30, 30, 6, 3, 3]}
                     // bg={bg}
@@ -252,18 +262,18 @@ function One() {
                         transition="all 0.3s"
                         bg={
                           i === country
-                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
-                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
+                            ? 'linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)'
+                            : 'linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)'
                         }
                         rounded="lg"
                         p="4"
                         mx="3"
                         border={
                           i === country
-                            ? "4px solid rgba(13, 179, 251, 1)"
-                            : "4px solid white"
+                            ? '4px solid rgba(13, 179, 251, 1)'
+                            : '4px solid white'
                         }
-                        _hover={{ boxShadow: "base" }}
+                        _hover={{ boxShadow: 'base' }}
                         boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
                         key={idx}
                       >
@@ -276,7 +286,7 @@ function One() {
                         </Center>
                         <Text
                           transition="all 0.2s ease-out"
-                          color={i === country ? "white" : "black"}
+                          color={i === country ? 'white' : 'black'}
                           textAlign="center"
                           fontSize="2xl"
                           fontWeight="semibold"
@@ -296,7 +306,7 @@ function One() {
                       position="fixed"
                       bottom="0vh"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
@@ -318,8 +328,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(2)}
                         // ml="4"
                         // transformOrigin="100% 100%"
@@ -328,14 +338,14 @@ function One() {
                       </Button>
                     </Flex>
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 2 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  p={["0.4rem", "1rem", "2rem", "3rem", "2rem"]}
+                  p={['0.4rem', '1rem', '2rem', '3rem', '2rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -349,19 +359,19 @@ function One() {
 							</Text> */}
                 </GridItem>
                 {[
-                  "MS Computer science / Software engineering (Intensive coding)",
-                  "MS Data science (Coding + statistic skills)",
-                  "MS Business analytics (Minimal coding + analytic skills)",
-                  "MS Information systems (Minimal coding + communication skills)",
-                  "Other",
+                  'MS Computer science / Software engineering (Intensive coding)',
+                  'MS Data science (Coding + statistic skills)',
+                  'MS Business analytics (Minimal coding + analytic skills)',
+                  'MS Information systems (Minimal coding + communication skills)',
+                  'Other',
                 ].map((i, idx) => (
                   <GridItem
                     id="griditem"
                     onClick={() => setCourse(i)}
                     mt="4"
-                    mb={i === "Other" ? "32" : "6"}
+                    mb={i === 'Other' ? '32' : '6'}
                     key={idx}
-                    px={["4rem", "3rem", "2rem", "0rem", "0rem"]}
+                    px={['4rem', '3rem', '2rem', '0rem', '0rem']}
                     rowSpan={15}
                     colSpan={[15, 15, 7, 5, 3]}
                     // bg={bg}
@@ -373,19 +383,19 @@ function One() {
                         transition="all 0.3s"
                         bg={
                           i === course
-                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
-                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
+                            ? 'linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)'
+                            : 'linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)'
                         }
                         rounded="lg"
                         px="4"
                         pt="4"
-                        pb={{ base: "8", md: "4" }}
+                        pb={{ base: '8', md: '4' }}
                         border={
                           i === course
-                            ? "4px solid rgba(13, 179, 251, 1)"
-                            : "4px solid white"
+                            ? '4px solid rgba(13, 179, 251, 1)'
+                            : '4px solid white'
                         }
-                        _hover={{ boxShadow: "base" }}
+                        _hover={{ boxShadow: 'base' }}
                         boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
                         key={idx}
                       >
@@ -404,16 +414,16 @@ function One() {
                         <Text
                           minH="6rem"
                           transition="all 0.2s ease-out"
-                          color={i === course ? "white" : "black"}
+                          color={i === course ? 'white' : 'black'}
                           textAlign="center"
                           fontSize="lg"
                           fontWeight="normal"
                           mt="4"
                         >
-                          {i.split(" (")[0]}
-                          {i.split(" (")[1] && (
+                          {i.split(' (')[0]}
+                          {i.split(' (')[1] && (
                             <Text fontWeight="semibold">
-                              ({i.split(" (")[1]}
+                              ({i.split(' (')[1]}
                             </Text>
                           )}
                         </Text>
@@ -430,7 +440,7 @@ function One() {
                       justifyContent="center"
                       bottom="0vh"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
@@ -440,8 +450,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(1)}
                       >
                         Previous
@@ -452,8 +462,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(3)}
                         ml="4"
                       >
@@ -473,15 +483,15 @@ function One() {
                   >
 									Next
 								</Button> */}
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 3 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-                  py={["0.4rem", "1.5rem", "1rem", "1.5rem", "1.5rem"]}
+                  px={['0.4rem', '1rem', '2rem', '3rem', '4rem']}
+                  py={['0.4rem', '1.5rem', '1rem', '1.5rem', '1.5rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -497,18 +507,18 @@ function One() {
                 <GridItem
                   // id="griditem"
                   py={4}
-                  px={["2rem", "1.5rem", "1rem", "1.5rem", "2rem"]}
+                  px={['2rem', '1.5rem', '1rem', '1.5rem', '2rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
                   <Text
-                    fontSize={["xl", "xl", "2xl", "2xl", "3xl"]}
+                    fontSize={['xl', 'xl', '2xl', '2xl', '3xl']}
                     fontWeight="500"
                   >
                     GRE Quant score
                     <Link
-                      _hover={{ textDecoration: "none" }}
+                      _hover={{ textDecoration: 'none' }}
                       color="red"
                     ></Link>
                   </Text>
@@ -522,7 +532,7 @@ function One() {
                     onChange={(e) => setGreQuant(e)}
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     min={130}
                     max={170}
                     placeholder="Enter score"
@@ -537,18 +547,18 @@ function One() {
                 <GridItem
                   // id="griditem"
                   py={4}
-                  px={["2rem", "1.5rem", "1rem", "1.5rem", "2rem"]}
+                  px={['2rem', '1.5rem', '1rem', '1.5rem', '2rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
                   <Text
-                    fontSize={["xl", "xl", "2xl", "2xl", "3xl"]}
+                    fontSize={['xl', 'xl', '2xl', '2xl', '3xl']}
                     fontWeight="500"
                   >
                     GRE Verbal score
                     <Link
-                      _hover={{ textDecoration: "none" }}
+                      _hover={{ textDecoration: 'none' }}
                       color="red"
                     ></Link>
                   </Text>
@@ -564,7 +574,7 @@ function One() {
                     max={170}
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     placeholder="Enter score"
                   >
                     <NumberInputField />
@@ -577,18 +587,18 @@ function One() {
                 <GridItem
                   // id="griditem"
                   pt={4}
-                  px={["2rem", "1.5rem", "1rem", "1.5rem", "2rem"]}
+                  px={['2rem', '1.5rem', '1rem', '1.5rem', '2rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
                   <Text
-                    fontSize={["xl", "xl", "2xl", "2xl", "3xl"]}
+                    fontSize={['xl', 'xl', '2xl', '2xl', '3xl']}
                     fontWeight="500"
                   >
                     IELTS/TOEFL
                     <Link
-                      _hover={{ textDecoration: "none" }}
+                      _hover={{ textDecoration: 'none' }}
                       color="red"
                     ></Link>
                   </Text>
@@ -600,10 +610,9 @@ function One() {
                   <NumberInput
                     value={ieltsToefl}
                     onChange={(e) => setIeltsToefl(e)}
-                    
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     placeholder="Enter score"
                   >
                     <NumberInputField />
@@ -616,21 +625,21 @@ function One() {
                 <GridItem
                   // key={i}
                   // id="griditem"
-                  mb={{ base: "32", md: "8" }}
+                  mb={{ base: '32', md: '8' }}
                   pt={2}
                   // mb={{base:"16", md:"16"}}
-                  px={["2rem", "1.5rem", "1rem", "1.5rem", "2rem"]}
+                  px={['2rem', '1.5rem', '1rem', '1.5rem', '2rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
                   <Text
                     lineHeight="1.2"
-                    fontSize={["xl", "xl", "2xl", "2xl", "3xl"]}
+                    fontSize={['xl', 'xl', '2xl', '2xl', '3xl']}
                     fontWeight="500"
                   >
                     Do you need GRE/IELTS/TOEFL training?
-                    <Link _hover={{ textDecoration: "none" }} color="red">
+                    <Link _hover={{ textDecoration: 'none' }} color="red">
                       *
                     </Link>
                   </Text>
@@ -662,7 +671,7 @@ function One() {
                       bottom="0vh"
                       justifyContent="center"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
@@ -672,8 +681,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(2)}
                       >
                         Previous
@@ -684,8 +693,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(4)}
                         ml="4"
                       >
@@ -705,15 +714,15 @@ function One() {
 									Next
 								</Button> */}
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 4 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-                  py={["0.4rem", "1.5rem", "1rem", "1.5rem", "2rem"]}
+                  px={['0.4rem', '1rem', '2rem', '3rem', '4rem']}
+                  py={['0.4rem', '1.5rem', '1rem', '1.5rem', '2rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -729,15 +738,123 @@ function One() {
                 <GridItem
                   // id="griditem"
                   py={8}
-                  px={["4rem", "3rem", "2rem", "3rem", "4rem"]}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
 
                   // bg={bg}
                 >
-                  <Text pb="4" fontSize={{base:"2xl",md:"3xl"}} fontWeight="500">
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
+                    How did you discover Flywise?
+                  </Text>
+
+                  <RadioGroup
+                    mt="2"
+                    onChange={setDiscover}
+                    value={discover}
+                    defaultValue="Search Engine(Google,Yahoo,etc.)"
+                  >
+                    <Stack spacing={2}>
+                      <Radio
+                        size="lg"
+                        value="Search Engine(Google,Yahoo,etc.)"
+                        colorScheme="blue"
+                      >
+                        Search Engine (Google,Yahoo,etc.)
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Recommended by friend or colleague"
+                        colorScheme="blue"
+                      >
+                        Recommended by friend or colleague
+                      </Radio>
+                      <Radio size="lg" value="Social Media" colorScheme="blue">
+                        Social Media
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Blog or Publication"
+                        colorScheme="blue"
+                      >
+                        Blog or Publication
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="College Campaigns"
+                        colorScheme="blue"
+                      >
+                        College Campaigns
+                      </Radio>
+                      <div style={{ display: 'flex' }}>
+                        <Radio size="lg" value="Other" colorScheme="blue">
+                          Other :
+                        </Radio>
+                        <Input
+                          width="200px"
+                          height="30px"
+                          border="none"
+                          outline="none"
+                          focusBorderColor="none"
+                          required="false"
+                          borderBottom="1px solid lightgray"
+                          value={other}
+                          onChange={(e) => {
+                            setOther(e.target.value)
+                            setDiscover('Other')
+                          }}
+                        />
+                      </div>
+                    </Stack>
+                  </RadioGroup>
+                </GridItem>
+                <GridItem
+
+    
+                  // id="griditem"
+                  py={8}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
+                  rowSpan={7}
+                  colSpan={[15, 15, 7, 7, 7]}
+
+                  // bg={bg}
+                >
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
+                    Do you have any Referral Code?
+                  </Text>
+                  <Input
+                    focusBorderColor="#25BAFB"
+                    bg="rgba(240, 240, 240, 1)"
+                    maxW={{ base: '70%', md: '50%' }}
+                    placeholder="Enter Code"
+                    value={referral}
+                    onChange={(e) => setReferral(e.target.value)}
+                  />
+                </GridItem>
+                <GridItem
+                  // id="griditem"
+                  py={8}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
+                  rowSpan={7}
+                  colSpan={[15, 15, 7, 7, 7]}
+
+                  // bg={bg}
+                >
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
                     Any work experience?
-                    <Link _hover={{ textDecoration: "none" }} color="red">
+                    <Link _hover={{ textDecoration: 'none' }} color="red">
                       *
                     </Link>
                   </Text>
@@ -772,20 +889,26 @@ function One() {
                       </Radio>
                     </Stack>
                   </RadioGroup>
-                  </GridItem>
+                </GridItem>
                 <GridItem
                   // id="griditem"
                   py={8}
-                  px={["4rem", "3rem", "2rem", "3rem", "4rem"]}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
-                  <Text pb="0" mt="4" fontSize={{base:"2xl",md:"3xl"}} fontWeight="500">
+                  <Text
+                    pb="0"
+                    mt="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
                     Is your undergrad degree in CS/IT?
-                    <Link _hover={{ textDecoration: "none" }} color="red">
-                      
-                    </Link>
+                    <Link
+                      _hover={{ textDecoration: 'none' }}
+                      color="red"
+                    ></Link>
                   </Text>
 
                   {/* <Text
@@ -800,13 +923,9 @@ function One() {
                   >
                     <Stack spacing={2}>
                       <Radio size="lg" value="No" colorScheme="blue">
-                        No 
+                        No
                       </Radio>
-                      <Radio
-                        size="lg"
-                        value="Yes"
-                        colorScheme="blue"
-                      >
+                      <Radio size="lg" value="Yes" colorScheme="blue">
                         Yes
                       </Radio>
                     </Stack>
@@ -824,22 +943,26 @@ function One() {
                 <GridItem
                   // id="griditem"
                   py={8}
-                  px={["4rem", "3rem", "2rem", "3rem", "4rem"]}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
-                  <Text pb="4" fontSize={{base:"2xl",md:"3xl"}} fontWeight="500">
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
                     Undergrad (B.tech) College/University
                     <Link
                       textDecoration="none"
-                      _hover={{ textDecoration: "none" }}
+                      _hover={{ textDecoration: 'none' }}
                       fontSize="3xl"
                       fontWeight="500"
                       color="red"
                     >
                       *
-                    </Link>{" "}
+                    </Link>{' '}
                   </Text>
 
                   {/* <Text
@@ -852,21 +975,25 @@ function One() {
                     py="6"
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     placeholder="Enter Name"
                   />
                 </GridItem>
                 <GridItem
                   // id="griditem"
                   py={8}
-                  px={["4rem", "3rem", "2rem", "3rem", "4rem"]}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
-                  <Text pb="4" fontSize={{base:"2xl",md:"3xl"}} fontWeight="500">
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
                     Number of backlogs
-                    <Link _hover={{ textDecoration: "none" }} color="red">
+                    <Link _hover={{ textDecoration: 'none' }} color="red">
                       *
                     </Link>
                   </Text>
@@ -880,7 +1007,7 @@ function One() {
                     py="6"
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     placeholder="Enter"
                     type="number"
                   />
@@ -890,12 +1017,16 @@ function One() {
                   // id="griditem"
                   py={8}
                   mb="20"
-                  px={["4rem", "3rem", "2rem", "3rem", "4rem"]}
+                  px={['4rem', '3rem', '2rem', '3rem', '4rem']}
                   rowSpan={7}
                   colSpan={[15, 15, 7, 7, 7]}
                   // bg={bg}
                 >
-                  <Text pb="4" fontSize={{base:"2xl",md:"3xl"}} fontWeight="500">
+                  <Text
+                    pb="4"
+                    fontSize={{ base: '2xl', md: '3xl' }}
+                    fontWeight="500"
+                  >
                     C.G.P.A
                     <Link fontSize="3xl" fontWeight="500" color="red">
                       *
@@ -911,7 +1042,7 @@ function One() {
                     // py="6"
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
-                    maxW={{base:"70%",md:"50%"}}
+                    maxW={{ base: '70%', md: '50%' }}
                     placeholder="Enter CGPA"
                   >
                     <NumberInputField />
@@ -929,7 +1060,7 @@ function One() {
                       bottom="0vh"
                       justifyContent="center"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
@@ -939,8 +1070,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(3)}
                       >
                         Previous
@@ -952,8 +1083,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(5)}
                         ml="4"
                       >
@@ -973,14 +1104,14 @@ function One() {
 									Next
 								</Button> */}
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 5 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  pt={["0.4rem", "1rem", "2rem", "2rem", "2rem"]}
+                  pt={['0.4rem', '1rem', '2rem', '2rem', '2rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -993,13 +1124,13 @@ function One() {
                   <Flex
                     mx="8"
                     justifyContent="space-between"
-                    flexDirection={{ base: "column", md: "row" }}
+                    flexDirection={{ base: 'column', md: 'row' }}
                   >
                     {[
-                      "Under 25 Lakhs",
-                      "25 - 35 Lakhs",
-                      "Above 35 Lakhs",
-                      "Other",
+                      'Under 25 Lakhs',
+                      '25 - 35 Lakhs',
+                      'Above 35 Lakhs',
+                      'Other',
                     ].map((i, idx) => (
                       <Box
                         my="3"
@@ -1008,17 +1139,17 @@ function One() {
                         transition="all 0.3s"
                         bg={
                           i === budget
-                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
-                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
+                            ? 'linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)'
+                            : 'linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)'
                         }
                         rounded="lg"
                         p="3"
                         border={
                           i === budget
-                            ? "4px solid rgba(13, 179, 251, 1)"
-                            : "4px solid white"
+                            ? '4px solid rgba(13, 179, 251, 1)'
+                            : '4px solid white'
                         }
-                        _hover={{ boxShadow: "base" }}
+                        _hover={{ boxShadow: 'base' }}
                         boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
                         key={idx}
                       >
@@ -1035,7 +1166,7 @@ function One() {
                         </Center>
                         <Text
                           transition="all 0.2s ease-out"
-                          color={i === budget ? "white" : "black"}
+                          color={i === budget ? 'white' : 'black'}
                           textAlign="center"
                           fontSize="2xl"
                           fontWeight="semibold"
@@ -1044,24 +1175,24 @@ function One() {
                           {i}
                         </Text>
                       </Box>
-                    ))}{" "}
+                    ))}{' '}
                   </Flex>
                 </GridItem>
                 <GridItem
-                  mb={{ base: "28", md: "0" }}
+                  mb={{ base: '28', md: '0' }}
                   rowSpan={12}
                   colSpan={15}
                 >
                   <Text
                     textAlign="center"
-                    ml={{ base: "4", md: "4" }}
+                    ml={{ base: '4', md: '4' }}
                     pb=""
                     pt="4"
                     fontSize="2xl"
                     fontWeight="500"
                   >
                     How are you going to fund your Master’s?
-                    <Link _hover={{ textDecoration: "none" }} color="red">
+                    <Link _hover={{ textDecoration: 'none' }} color="red">
                       *
                     </Link>
                   </Text>
@@ -1108,7 +1239,7 @@ function One() {
 									placeholder="Education Loan, etc..."
 								/> */}
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
                 <GridItem rowSpan={15} colSpan={15}>
                   <Center>
                     <Flex
@@ -1117,7 +1248,7 @@ function One() {
                       bottom="0vh"
                       justifyContent="center"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       // background= "rgb(255,255,255)"
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
@@ -1129,8 +1260,8 @@ function One() {
                         // mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(4)}
                       >
                         Previous
@@ -1142,8 +1273,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(6)}
                         ml="4"
                       >
@@ -1151,20 +1282,20 @@ function One() {
                       </Button>
                     </Flex>
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 6 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  p={["0.4rem", "1rem", "2rem", "2rem", "2rem"]}
+                  p={['0.4rem', '1rem', '2rem', '2rem', '2rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
                 >
                   <Text
-                    ml={{ base: "4", md: "0" }}
+                    ml={{ base: '4', md: '0' }}
                     pb="4"
                     textAlign="center"
                     fontSize="3xl"
@@ -1177,19 +1308,20 @@ function One() {
                   </Text>
                 </GridItem>
                 {[
-                  
-                  "Fall 2022",
-                  "Spring 2023",
-                  "Fall 2023",
-                  "Spring 2024",
-                  "Other",
+
+                  'Fall 2022',
+                  'Spring 2023',
+                  'Fall 2023',
+                  'Spring 2024',
+                  'Other',
+
                 ].map((i, idx) => (
                   <GridItem
                     id="griditem"
                     onClick={() => setSession(i)}
                     my="8"
                     key={idx}
-                    px={["4rem", "3rem", "2rem", "0rem", "0rem"]}
+                    px={['4rem', '3rem', '2rem', '0rem', '0rem']}
                     rowSpan={15}
                     colSpan={[30, 30, 15, , 3]}
                     // bg={bg}
@@ -1199,18 +1331,18 @@ function One() {
                         transition="all 0.3s"
                         bg={
                           i === session
-                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
-                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
+                            ? 'linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)'
+                            : 'linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)'
                         }
                         rounded="lg"
                         p="4"
-                        mb={i === "Other" ? "16" : "0"}
+                        mb={i === 'Other' ? '16' : '0'}
                         border={
                           i === session
-                            ? "4px solid rgba(13, 179, 251, 1)"
-                            : "4px solid white"
+                            ? '4px solid rgba(13, 179, 251, 1)'
+                            : '4px solid white'
                         }
-                        _hover={{ boxShadow: "base" }}
+                        _hover={{ boxShadow: 'base' }}
                         boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
                         key={idx}
                       >
@@ -1227,7 +1359,7 @@ function One() {
                         </Center>
                         <Text
                           transition="all 0.2s ease-out"
-                          color={i === session ? "white" : "black"}
+                          color={i === session ? 'white' : 'black'}
                           textAlign="center"
                           fontSize="2xl"
                           fontWeight="semibold"
@@ -1247,7 +1379,7 @@ function One() {
                       bottom="0vh"
                       justifyContent="center"
                       width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
+                        ('fit-content', 'fit-content', 'fit-content', '100%')
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
@@ -1257,8 +1389,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(5)}
                       >
                         Previous
@@ -1269,8 +1401,8 @@ function One() {
                         mb="4"
                         mt="4"
                         bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        _hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+                        _active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
                         onClick={() => setPe(7)}
                         ml="4"
                       >
@@ -1290,14 +1422,14 @@ function One() {
 									Next
 								</Button> */}
                   </Center>
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
             {pe === 7 && (
               <React.Fragment>
-                {" "}
+                {' '}
                 <GridItem
-                  p={["1rem", "1rem", "2rem", "3rem", "3rem"]}
+                  p={['1rem', '1rem', '2rem', '3rem', '3rem']}
                   rowSpan={12}
                   colSpan={15}
                   // bg={bg}
@@ -1305,14 +1437,26 @@ function One() {
                   <VStack pt="4" spacing={8}>
                     <Input
                       // ml={{ base: '4', md: '4' }}
-                      value={username}
+                      value={firstName}
                       // type="text"
-                      onChange={(e) => setUsername(e.target.value)}
+                      onChange={(e) => setFirstName(e.target.value)}
                       py="3"
                       focusBorderColor="#25BAFB"
                       bg="rgba(240, 240, 240, 1)"
                       width="320px"
-                      placeholder="Name"
+                      placeholder="First Name"
+                      type="text"
+                    />
+                    <Input
+                      // ml={{ base: '4', md: '4' }}
+                      value={lastName}
+                      // type="text"
+                      onChange={(e) => setLastName(e.target.value)}
+                      py="3"
+                      focusBorderColor="#25BAFB"
+                      bg="rgba(240, 240, 240, 1)"
+                      width="320px"
+                      placeholder="Last Name"
                       type="text"
                     />
                     <Input
@@ -1323,9 +1467,9 @@ function One() {
                       type="email"
                       value={userEmail}
                       onChange={(e) => {
-                        setUserEmail(e.target.value);
-                        setSuccess("");
-                        setError("");
+                        setUserEmail(e.target.value)
+                        setSuccess('')
+                        setError('')
                       }}
                       py="3"
                       errorBorderColor="red.600"
@@ -1334,12 +1478,12 @@ function One() {
                       width="320px"
                       placeholder="Email"
                     />
-                    <div style={{ display: "flex",maxWidth:"20em"}}>
+                    <div style={{ display: 'flex', maxWidth: '20em' }}>
                       <Select
                         value={countryCode}
                         onChange={(e) => {
-                          console.log(e.target.value);
-                          setCountryCode(e.target.value);
+                          console.log(e.target.value)
+                          setCountryCode(e.target.value)
                         }}
                         width="88px"
                         height="40px"
@@ -1369,11 +1513,9 @@ function One() {
                       value={tnC}
                       color="#828282"
                     >
-                      I agree to all the{" "}
+                      I agree to all the{' '}
                       <Link color="#0DB3FB">Terms and Conditions</Link>
                     </Checkbox>
-
-                   
                   </VStack>
                 </GridItem>
                 <GridItem rowSpan={12} colSpan={15}>
@@ -1395,7 +1537,8 @@ function One() {
                           !tnC ||
                           !isEmail(userEmail) ||
                           !userPhone ||
-                          !username ||
+                          !firstName ||
+                          !lastName ||
                           success
                         }
                         mt="0"
@@ -1404,36 +1547,36 @@ function One() {
                         mb="4"
                         // size={{base:"sm", md:"md"}}
 
-                        colorScheme={error ? "red" : success ? "green" : ""}
+                        colorScheme={error ? 'red' : success ? 'green' : ''}
                         bg={
                           error
-                            ? "red"
+                            ? 'red'
                             : success
-                            ? "green"
-                            : "rgba(13, 179, 251, 1)"
+                            ? 'green'
+                            : 'rgba(13, 179, 251, 1)'
                         }
                         _hover={{
                           bg: error
-                            ? "red"
+                            ? 'red'
                             : success
-                            ? "green"
-                            : "rgba(13, 179, 251, 0.9)",
+                            ? 'green'
+                            : 'rgba(13, 179, 251, 0.9)',
                         }}
                         _active={{
                           bg: error
-                            ? "red"
+                            ? 'red'
                             : success
-                            ? "rgba(13, 179, 251, 0.7)"
-                            : "rgba(13, 179, 251, 0.7)",
+                            ? 'rgba(13, 179, 251, 0.7)'
+                            : 'rgba(13, 179, 251, 0.7)',
                         }}
                         id="sign-in-button"
                         onClick={onSignInSubmit}
                       >
                         {error
-                          ? "Try Again"
+                          ? 'Try Again'
                           : success
-                          ? "Verify your OTP"
-                          : "View Profile Evaluation Report"}
+                          ? 'Verify your OTP'
+                          : 'View Profile Evaluation Report'}
                       </Button>
                     </Tooltip>
                   </Center>
@@ -1447,14 +1590,14 @@ function One() {
 									Profile submitted, please wait for our response.
 								</Text>
 							)} */}
-                </GridItem>{" "}
+                </GridItem>{' '}
               </React.Fragment>
             )}
           </Grid>
         </Box>
       )}
     </div>
-  );
+  )
 }
 
-export default One;
+export default One

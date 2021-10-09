@@ -284,7 +284,7 @@ function Header() {
                   <ModalOverlay zIndex="3" />
                 </Modal>
                 <PopoverTrigger>
-                <p>Desitnations</p>
+                <p>Destinations</p>
                 
                 </PopoverTrigger>
                 <Portal zIndex="4">

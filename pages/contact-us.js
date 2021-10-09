@@ -9,6 +9,9 @@ import {
   Input,
   Link,
   Text,
+  RadioGroup,
+  Radio,
+  Stack,
   Textarea,
 } from '@chakra-ui/react'
 import { LocalConvenienceStoreOutlined } from '@material-ui/icons'
@@ -21,14 +24,21 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function ContactUS() {
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
-
+  const [referral, setReferral] = useState('')
+  const [discover, setDiscover] = useState('Search Engine(Google,Yahoo,etc.)')
+  const [other, setOther] = useState('')
   const onSubmit = (e) => {
+    if (discover == 'Other') {
+      setDiscover(other)
+    }
+
     e.preventDefault()
-    if (!name || !email || !phone || !message) {
+    if (!firstName || !lastName || !email || !phone || !message) {
       alert('All fields required')
       return
     }
@@ -39,10 +49,13 @@ function ContactUS() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         phone: phone,
         message: message,
+        referral: referral,
+        discover: discover == 'Other' ? other : discover,
       }),
     })
       .then((res) => {
@@ -50,11 +63,14 @@ function ContactUS() {
       })
       .then((result) => {
         console.log(result)
-        setName('')
+        setFirstName('')
+        setLastName('')
         setMessage('')
         setEmail('')
         setPhone('')
-        setName('')
+        setDiscover('')
+        setReferral('')
+        setOther('')
         toast.success("We've recieved your request, will get to you shortly.")
       })
       .catch((err) => {
@@ -166,16 +182,28 @@ function ContactUS() {
             <Center>
               <Box w={['18rem', '22rem', '36rem', '44rem', '50rem']}>
                 <Text mt="4" mb="2" color="rgba(110,110,110)">
-                  Your name
+                  First Name
                 </Text>
                 <Input
                   bg="whiteAlpha.900"
                   borderColor="blackAlpha.500"
                   _hover={{ borderColor: 'blackAlpha.800' }}
                   focusBorderColor="black"
-                  placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  placeholder=""
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <Text mt="4" mb="2" color="rgba(110,110,110)">
+                  Last Name
+                </Text>
+                <Input
+                  bg="whiteAlpha.900"
+                  borderColor="blackAlpha.500"
+                  _hover={{ borderColor: 'blackAlpha.800' }}
+                  focusBorderColor="black"
+                  placeholder=""
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
                 <Text mt="4" mb="2" color="rgba(110,110,110)">
                   Your Email
@@ -185,7 +213,7 @@ function ContactUS() {
                   borderColor="blackAlpha.500"
                   _hover={{ borderColor: 'blackAlpha.800' }}
                   focusBorderColor="black"
-                  placeholder="someone@email.com"
+                  placeholder=""
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -198,11 +226,89 @@ function ContactUS() {
                   borderColor="blackAlpha.500"
                   _hover={{ borderColor: 'blackAlpha.800' }}
                   focusBorderColor="black"
-                  placeholder="Your number"
+                  placeholder=""
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
+                <Text mt="4" mb="2" color="rgba(110,110,110)">
+                  Do you have any referral code?
+                </Text>
+                <Input
+                  bg="whiteAlpha.900"
+                  borderColor="blackAlpha.500"
+                  _hover={{ borderColor: 'blackAlpha.800' }}
+                  focusBorderColor="black"
+                  placeholder="Enter Code"
+                  value={referral}
+                  onChange={(e) => setReferral(e.target.value)}
+                />
+                <Text mt="4" mb="2" color="rgba(110,110,110)">
+                  How did you discover Flywise?
+                </Text>
+                <Center>
+                  <RadioGroup
+                    mt="2"
+                    onChange={setDiscover}
+                    value={discover}
+                    defaultValue="Search Engine(Google,Yahoo,etc.)"
+                    color="rgba(110,110,110)"
+                  >
+                    <Stack spacing={2}>
+                      <Radio
+                        size="md"
+                        value="Search Engine(Google,Yahoo,etc.)"
+                        colorScheme="blue"
+                      >
+                        Search Engine (Google,Yahoo,etc.)
+                      </Radio>
+                      <Radio
+                        size="md"
+                        value="Recommended by friend or colleague"
+                        colorScheme="blue"
+                      >
+                        Recommended by friend or colleague
+                      </Radio>
+                      <Radio size="md" value="Social Media" colorScheme="blue">
+                        Social Media
+                      </Radio>
+                      <Radio
+                        size="md"
+                        value="Blog or Publication"
+                        colorScheme="blue"
+                      >
+                        Blog or Publication
+                      </Radio>
+                      <Radio
+                        size="md"
+                        value="College Campaigns"
+                        colorScheme="blue"
+                      >
+                        College Campaigns
+                      </Radio>
+                      <div style={{ display: 'flex' }}>
+                        <Radio size="md" value="Other" colorScheme="blue">
+                          Other :
+                        </Radio>
+                        <Input
+                          width="200px"
+                          height="30px"
+                          border="none"
+                          outline="none"
+                          focusBorderColor="none"
+                          required="false"
+                          borderBottom="1px solid lightgray"
+                          value={other}
+                          onChange={(e) => {
+                            setOther(e.target.value)
+                            //setDiscover(other)
+                          }}
+                        />
+                      </div>
+                    </Stack>
+                  </RadioGroup>
+                </Center>
+
                 <Text mt="4" mb="2" color="rgba(110,110,110)">
                   Your message
                 </Text>

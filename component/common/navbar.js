@@ -27,12 +27,12 @@ import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
 import $ from "jquery";
 const Links = [
-  { link: "Test Prep", to: "/testprep" },
+  { link: "About Us", to: "/aboutus" },
   { link: "Profile Evaluation", to: "/profile-evaluation" },
   { link: "Services", to: "/#services" },
   { link: "Mentors", to: "/mentors" },
-  // { link: 'Destinations', to: '/destinations' },
-  // { link: 'Courses', to: '/' }
+  { link: 'Blog', to: '/blog' },
+  { link: 'Courses', to: '/courses' }
 ];
 import Ham from "../../public/images/icons/ham.png";
 const NavLink = ({ to, link, outline }) => (
@@ -62,79 +62,83 @@ const NavLink = ({ to, link, outline }) => (
 
 const AllNavLinks = ({ outline }) => {
   const initRef = React.useRef();
-    
+
+  //  This is the code of destination section
+  //
+  // <Popover placement="bottom" closeOnBlur={true} initialFocusRef={initRef}>
+  //       {({ isOpen, onClose }) => (
+  //         <React.Fragment>
+  //           <Modal isOpen={isOpen}>
+  //             <ModalOverlay zIndex="3" />
+  //           </Modal>
+  //           <PopoverTrigger>
+  //             <Link
+  //               // className={outline === 'Destinations' ? `bottom-outline` : ``}
+  //               px={2}
+  //               py={1}
+  //               borderBottom={
+  //                 "Destinations" === outline
+  //                   ? `1px solid rgba(41, 82, 134,0.8)`
+  //                   : `1px solid rgba(41, 82, 134,0)`
+  //               }
+  //               color={
+  //                 outline === "Destinations"
+  //                   ? `rgba(41, 82, 134,1)`
+  //                   : `blackAlpha.700`
+  //               }
+  //               roundedTop={"md"}
+  //               _hover={{
+  //                 textDecoration: "none",
+  //                 borderBottom: "1px solid rgba(0,0,0,0.8)",
+  //                 bg: "gray.200",
+  //               }}
+  //             >
+  //               Destination
+  //             </Link>
+  //           </PopoverTrigger>
+  //           <Portal zIndex="5">
+  //             <PopoverContent h="5rem" w="25rem" zIndex="5">
+  //               {/* <PopoverHeader>This is the header</PopoverHeader> */}
+  //               {/* <PopoverCloseButton /> */}
+  //               <PopoverBody>
+  //                 <HStack justifyContent="space-evenly">
+  //                   {["usa", "australia", "canada", "uk"].map((i, idx) => (
+  //                     <NextLink
+  //                       _hover={{ cursor: "pointer" }}
+  //                       key={idx}
+  //                       href={`/destinations/${i}`}
+  //                     >
+  //                       <Box>
+  //                         <Image
+  //                           maxH="3rem"
+  //                           src={`/images/${i}_flag.png`}
+  //                           alt="country"
+  //                         />
+  //                         <Text textAlign="center" fontSize="xs">
+  //                           {i.toLocaleUpperCase()}
+  //                         </Text>
+  //                       </Box>
+  //                     </NextLink>
+  //                   ))}
+  //                 </HStack>
+  //                 {/* <Button mt={4} colorScheme="blue" onClick={onClose} ref={initRef}>
+	// 												Close
+	// 											</Button> */}
+  //               </PopoverBody>
+  //               {/* <PopoverFooter>This is the footer</PopoverFooter> */}
+  //             </PopoverContent>
+  //           </Portal>
+  //         </React.Fragment>
+  //       )}
+  //     </Popover>
+
   return (
     <React.Fragment>
       {Links.map((link, idx) => (
         <NavLink outline={outline} to={link.to} link={link.link} key={idx} />
       ))}
-      <Popover placement="bottom" closeOnBlur={true} initialFocusRef={initRef}>
-        {({ isOpen, onClose }) => (
-          <React.Fragment>
-            <Modal isOpen={isOpen}>
-              <ModalOverlay zIndex="3" />
-            </Modal>
-            <PopoverTrigger>
-              <Link
-                // className={outline === 'Destinations' ? `bottom-outline` : ``}
-                px={2}
-                py={1}
-                borderBottom={
-                  "Destinations" === outline
-                    ? `1px solid rgba(41, 82, 134,0.8)`
-                    : `1px solid rgba(41, 82, 134,0)`
-                }
-                color={
-                  outline === "Destinations"
-                    ? `rgba(41, 82, 134,1)`
-                    : `blackAlpha.700`
-                }
-                roundedTop={"md"}
-                _hover={{
-                  textDecoration: "none",
-                  borderBottom: "1px solid rgba(0,0,0,0.8)",
-                  bg: "gray.200",
-                }}
-              >
-                Destination
-              </Link>
-            </PopoverTrigger>
-            <Portal zIndex="5">
-              <PopoverContent h="5rem" w="25rem" zIndex="5">
-                {/* <PopoverHeader>This is the header</PopoverHeader> */}
-                {/* <PopoverCloseButton /> */}
-                <PopoverBody>
-                  <HStack justifyContent="space-evenly">
-                    {["usa", "australia", "canada", "uk"].map((i, idx) => (
-                      <NextLink
-                        _hover={{ cursor: "pointer" }}
-                        key={idx}
-                        href={`/destinations/${i}`}
-                      >
-                        <Box>
-                          <Image
-                            maxH="3rem"
-                            src={`/images/${i}_flag.png`}
-                            alt="country"
-                          />
-                          <Text textAlign="center" fontSize="xs">
-                            {i.toLocaleUpperCase()}
-                          </Text>
-                        </Box>
-                      </NextLink>
-                    ))}
-                  </HStack>
-                  {/* <Button mt={4} colorScheme="blue" onClick={onClose} ref={initRef}>
-													Close
-												</Button> */}
-                </PopoverBody>
-                {/* <PopoverFooter>This is the footer</PopoverFooter> */}
-              </PopoverContent>
-            </Portal>
-          </React.Fragment>
-        )}
-      </Popover>
-      <NavLink outline={""} to={"/courses"} link={"Courses"} />
+      
+      {/* <NavLink outline={""} to={"/courses"} link={"Courses"} /> */}
       {/* <NLink href={}>
 				<Link
 					// className={props.link === props.outline ? `bottom-outline` : ``}
@@ -184,12 +188,14 @@ function Header() {
       <div className={classes.header}>
         <div className={classes.mainHeader}>
           <div className={classes.logo}>
-          <NextLink href="/"><Image
-              _hover={{ cursor: "pointer" }}
-              maxH="5rem"
-              alt="logo"
-              src="/images/logo.svg"
-            /></NextLink>
+            <NextLink href="/">
+              <Image
+                _hover={{ cursor: "pointer" }}
+                maxH="5rem"
+                alt="logo"
+                src="/images/logo.svg"
+              />
+            </NextLink>
           </div>
           <div className={classes.links}>
             <AllNavLinks />
@@ -272,27 +278,26 @@ function Header() {
             width="25px"
           />
         </div>
-        <div id="destinaiton" className={classes.sidelink} >
+        <div id="destinaiton" className={classes.sidelink}>
           <Popover
-            placement="bottom"            
+            placement="bottom"
             closeOnBlur={true}
             initialFocusRef={initRef}
           >
             {({ isOpen, onClose }) => (
-              <React.Fragment >
-                <Modal isOpen={isOpen} >
+              <React.Fragment>
+                <Modal isOpen={isOpen}>
                   <ModalOverlay zIndex="3" />
                 </Modal>
                 <PopoverTrigger>
-                <p>Destinations</p>
-                
+                  <p>Destinations</p>
                 </PopoverTrigger>
                 <Portal zIndex="4">
-                  <PopoverContent h="5rem" w="25rem"  zIndex="5"  >
+                  <PopoverContent h="5rem" w="25rem" zIndex="5">
                     {/* <PopoverHeader>This is the header</PopoverHeader> */}
                     {/* <PopoverCloseButton /> */}
-                    <PopoverBody zIndex="45" >
-                      <HStack  justifyContent="space-evenly">
+                    <PopoverBody zIndex="45">
+                      <HStack justifyContent="space-evenly">
                         {["usa", "australia", "canada", "uk"].map((i, idx) => (
                           <NextLink
                             _hover={{ cursor: "pointer" }}
@@ -301,7 +306,7 @@ function Header() {
                           >
                             <Box>
                               <Image
-                              zIndex="150"
+                                zIndex="150"
                                 maxH="3rem"
                                 src={`/images/${i}_flag.png`}
                                 alt="country"
@@ -323,7 +328,7 @@ function Header() {
               </React.Fragment>
             )}
           </Popover>
-          
+
           <Image
             src="/images/icons/Info Square.png"
             marginRight="20px"
@@ -333,7 +338,7 @@ function Header() {
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/courses"} >
+          <NextLink passHref href={"/courses"}>
             <p>Courses</p>
           </NextLink>
           <Image
@@ -345,7 +350,7 @@ function Header() {
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/contact-us"} >
+          <NextLink passHref href={"/contact-us"}>
             <p>Contact Us</p>
           </NextLink>
           <Image

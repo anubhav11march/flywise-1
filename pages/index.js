@@ -16,8 +16,8 @@ import FaqList from "../component/common/faqs";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
 import faqs from "./../content/homeFaqs";
-import { useEffect,useRef } from "react";
-import TestimonialCard from "../component/testimonialCard"
+import { useEffect, useRef } from "react";
+import TestimonialCard from "../component/testimonialCard";
 import classes from "../styles/whatsappbtn.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,10 +25,7 @@ import { TweenMax, Expo } from "gsap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-
 export default function Home() {
-
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -52,84 +49,77 @@ export default function Home() {
     },
   };
 
-
-
-
-  let one=useRef(null);
-  let two=useRef(null);
-  let three=useRef(null);
-  let four=useRef(null);
-  let five=useRef(null);
-  let six=useRef(null);
-  let seven=useRef(null);
-  let eight=useRef(null);
-  let nine=useRef(null);
-  let ten=useRef(null);
-  let eleven=useRef(null);
-
-
-
+  let one = useRef(null);
+  let two = useRef(null);
+  let three = useRef(null);
+  let four = useRef(null);
+  let five = useRef(null);
+  let six = useRef(null);
+  let seven = useRef(null);
+  let eight = useRef(null);
+  let nine = useRef(null);
+  let ten = useRef(null);
+  let eleven = useRef(null);
 
   useEffect(() => {
-   
-    TweenMax.to(one.current,1,{
-      delay:0.2,
-      opacity:1,
+    TweenMax.to(one.current, 1, {
+      delay: 0.2,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
-    TweenMax.to(two.current,1,{
-      delay:.4,
-      opacity:1,
+    TweenMax.to(two.current, 1, {
+      delay: 0.4,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
-    TweenMax.to(three.current,1,{
-      delay:0.6,
-      opacity:1,
+    TweenMax.to(three.current, 1, {
+      delay: 0.6,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
-    TweenMax.to(four.current,1,{
-      delay:0.8,
-      opacity:1,
-      ease: Expo.easeInOut,
-    });
-
-    TweenMax.to(five.current,1,{
-      delay:1,
-      opacity:1,
-
-      ease: Expo.easeInOut,
-    });
-    TweenMax.to(six.current,1,{
-      delay:1.2,
-      opacity:1,
-      ease: Expo.easeInOut,
-    });
-    TweenMax.to(seven.current,1,{
-      delay:1.4,
-      opacity:1,
-      ease: Expo.easeInOut,
-    });
-    TweenMax.to(eight.current,1,{
-      delay:1.6,
-      opacity:1,
+    TweenMax.to(four.current, 1, {
+      delay: 0.8,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
 
-    TweenMax.to(nine.current,1,{
-      delay:1.8,
-      opacity:1,
+    TweenMax.to(five.current, 1, {
+      delay: 1,
+      opacity: 1,
+
       ease: Expo.easeInOut,
     });
-    TweenMax.to(ten.current,1,{
-      delay:2,
-      opacity:1,
+    TweenMax.to(six.current, 1, {
+      delay: 1.2,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
-    TweenMax.to(eleven.current,1,{
-      opacity:1,
+    TweenMax.to(seven.current, 1, {
+      delay: 1.4,
+      opacity: 1,
       ease: Expo.easeInOut,
     });
-}, []);
+    TweenMax.to(eight.current, 1, {
+      delay: 1.6,
+      opacity: 1,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.to(nine.current, 1, {
+      delay: 1.8,
+      opacity: 1,
+      ease: Expo.easeInOut,
+    });
+    TweenMax.to(ten.current, 1, {
+      delay: 2,
+      opacity: 1,
+      ease: Expo.easeInOut,
+    });
+    TweenMax.to(eleven.current, 1, {
+      opacity: 1,
+      ease: Expo.easeInOut,
+    });
+  }, []);
   // let bg = 'red';
   let bg = "transparent";
 
@@ -148,94 +138,116 @@ export default function Home() {
           <Navbar outline="" />
         </GridItem>
         <GridItem rowSpan={12} colSpan={12}>
-          
-       
-        <div className={classes.home}>
-         
-          <div className={classes.textDiv}>
-          <Heading
-            mt={{base:"6",md:"4"}}
-            textAlign={{ base: "center", md: "left" }}
-            fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
-          >
-            India’s best overseas education platform
-            <Link
-              _hover={{ textDecoration: "none" }}
-              fontWeight="bold"
-              fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
-              color="#0DB3FB"
-            >
-              <span ref={eleven} className={classes.linkk1} >
-                {" "}
-                that
-              </span>{" "}
-              <span ref={one} className={classes.linkk2}>travels</span>{" "}
-              <span ref={two} className={classes.linkk3}>with</span>{" "}
-              <span ref={three} className={classes.linkk4}>you</span>{" "}
-              <span ref={four} className={classes.linkk5}>till</span>{" "}
-              <span  ref={five} className={classes.linkk6}>you</span>{" "}
-              <span ref={six} className={classes.linkk7}>land</span>{" "}
-              <span ref={seven} className={classes.linkk8}>your</span>{" "}
-              <span ref={eight} className={classes.linkk9}>dream</span>{" "}
-              <span ref={nine} className={classes.linkk10}>job</span>{" "}
-              <span ref={ten} className={classes.linkk11}>abroad</span>
-            </Link>
-          </Heading>
-
-          <Text
-            textAlign={{ base: "center", md: "left" }}
-            my="4"
-            fontSize={{ base: "16px", md: "16px" }}
-          >
-          Why do we go abroad? To pursue higher education, land a secure and stable job, earn a steady income and
-           further pursue our dreams. Most of us dream of achieving
-           this instantly as soon as we get an admission; however, the real journey starts when you land abroad.
-          </Text>
-          <Text
-            textAlign={{ base: "center", md: "left" }}
-            my="4"
-            fontSize={{ base: "16px", md: "16px" }}
-          >
-          Our team at Flywise can support you along this new journey and help land your dream job.
-          </Text>
-          <Flex my={{base:"10", md:"5"}} justifyContent={{ base: "center", md: "center",lg: "center", xl:"flex-start"}}>
-            <NLink href="/profile-evaluation" passHref>
-              <Button
-                variant={"solid"}
-                size={"md"}
-                color="white"
-                fontWeight="semibold"
-                px="6"
-                my={{base:"4", md:"2"}}
-                id="gradientt"
-                colorScheme="blue"
-                // bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-                // _hover={{
-                // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                // }}
-                // _focus={{
-                // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                // }}
-                // _active={{
-                // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                // }}
-                mt="6"
-                rounded="full"
+          <div className={classes.home}>
+            <div className={classes.textDiv}>
+              <Heading
+                mt={{ base: "6", md: "4" }}
+                textAlign={{ base: "center", md: "left" }}
+                fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
               >
-                Free Profile Evaluation
-              </Button>
-            </NLink>
-          </Flex>
+                An exclusive overseas education platform for
+                <Link
+                  _hover={{ textDecoration: "none" }}
+                  fontWeight="bold"
+                  fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
+                  color="#0DB3FB"
+                >
+                  <span ref={eleven} className={classes.linkk1}>
+                    {" "}
+                    master's
+                  </span>{" "}
+                  <span ref={one} className={classes.linkk2}>
+                    education
+                  </span>{" "}
+                  <span ref={two} className={classes.linkk3}>
+                    and
+                  </span>{" "}
+                  <span ref={three} className={classes.linkk4}>
+                    your
+                  </span>{" "}
+                  <span ref={four} className={classes.linkk5}>
+                    future
+                  </span>{" "}
+                  <span ref={five} className={classes.linkk6}>
+                    IT
+                  </span>{" "}
+                  <span ref={six} className={classes.linkk7}>
+                    career
+                  </span>{" "}
+                  <span ref={seven} className={classes.linkk8}>
+                    in
+                  </span>{" "}
+                  <span ref={eight} className={classes.linkk9}>
+                    the
+                  </span>{" "}
+                  <span ref={nine} className={classes.linkk10}>
+                    USA!
+                  </span>{" "}
+                </Link>
+              </Heading>
+
+              <Text
+                textAlign={{ base: "center", md: "left" }}
+                my="4"
+                fontSize={{ base: "16px", md: "16px" }}
+              >
+                Why do we go abroad? To pursue higher education, land a secure
+                and stable job, earn a steady income and further pursue our
+                dreams. Most of us dream of achieving this instantly as soon as
+                we get an admission; however, the real journey starts when you
+                land abroad.
+              </Text>
+              <Text
+                textAlign={{ base: "center", md: "left" }}
+                my="4"
+                fontSize={{ base: "16px", md: "16px" }}
+              >
+                Our team at Flywise can support you along this new journey and
+                help land your dream job.
+              </Text>
+              <Flex
+                my={{ base: "10", md: "5" }}
+                justifyContent={{
+                  base: "center",
+                  md: "center",
+                  lg: "center",
+                  xl: "flex-start",
+                }}
+              >
+                <NLink href="/profile-evaluation" passHref>
+                  <Button
+                    variant={"solid"}
+                    size={"md"}
+                    color="white"
+                    fontWeight="semibold"
+                    px="6"
+                    my={{ base: "4", md: "2" }}
+                    id="gradientt"
+                    colorScheme="blue"
+                    // bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
+                    // _hover={{
+                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+                    // }}
+                    // _focus={{
+                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+                    // }}
+                    // _active={{
+                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+                    // }}
+                    mt="6"
+                    rounded="full"
+                  >
+                    Free Profile Evaluation
+                  </Button>
+                </NLink>
+              </Flex>
+            </div>
+
+            <div className={classes.illuss}>
+              <Image objectFit="contain" src="/images/illus.svg" alt="main" />
+            </div>
           </div>
-        
-        
-        <div className={classes.illuss}>
-          <Image  objectFit="contain" src="/images/illus.svg" alt="main" />
-         
-         
-      </div>
-          </div>
-          </GridItem>
+        </GridItem>
         <GridItem
           px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
           rowSpan={12}
@@ -649,8 +661,7 @@ export default function Home() {
           colSpan={12}
           px={["2", "1", "4", "8", "16"]}
           // colSpan={{base: 12, md:6}}
-      
-            
+
           mt="16"
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
@@ -699,7 +710,7 @@ export default function Home() {
                   maxW={{ base: "75%", md: "70%" }}
                   textAlign={{ base: "justify", md: "left" }}
                   my="12"
-                  mx={{base:"auto",md:"0"}}
+                  mx={{ base: "auto", md: "0" }}
                   fontWeight="400"
                 >
                   Our founders and mentors have personally faced/seen all these
@@ -720,84 +731,73 @@ export default function Home() {
         <GridItem
           rowSpan={12}
           colSpan={12}
-          
           // colSpan={{base: 12, md:6}}
-      
-            
+
           mt="4"
-          
         >
-        <Carousel
-        
-        swipeable={true}
-        draggable={false}
-        showDots={false}
-        responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
-        infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={10000}
-        keyBoardControl={true}
-        customTransition=""
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={[, "mobile","smalie"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-        
-      >
-        {[
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={10000}
+            keyBoardControl={true}
+            customTransition=""
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={[, "mobile", "smalie"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            {[
+              {
+                name: "Akhil Daggubati",
+                uni: "University of South Florida",
+                logo: "/images/icons/floridalogo.png",
+                img: "/images/mentors/Akhil.png",
+                text: "“I always lived in a misconception that studying in the USA was ridiculously expensive. At flywise the empathetic crew surprised me by clearing all my myths about studying in the USA and guided me to find the most relevant course aligned to my interest in a great university which is within my financial reach. I heartily thank them for their continuous encouragement and guidance, which helps me crack my dream job abroad. I strongly insist flywise to any aspirants.”",
+                degree: "Business analytics and information systems",
+              },
 
-          
-{
-  name: "Akhil Daggubati",
-  uni: "University of South Florida",
-  logo: "/images/icons/floridalogo.png",
-  img: "/images/mentors/Akhil.png",
-  text: "“I always lived in a misconception that studying in the USA was ridiculously expensive. At flywise the empathetic crew surprised me by clearing all my myths about studying in the USA and guided me to find the most relevant course aligned to my interest in a great university which is within my financial reach. I heartily thank them for their continuous encouragement and guidance, which helps me crack my dream job abroad. I strongly insist flywise to any aspirants.”",
-  degree:"Business analytics and information systems"
-},
-
-{
-  name:"Dhanyasri Divi",
-  uni:"CSU East Bay",
-degree:"Masters in statistics",
-img:"/images/mentors/dhanyasri.png",
-logo: "/images/icons/csu.png",
-text:"I reached out to Pavan (founder) on Linkedin before Flywise was incorporated, in that call he understood my background, aspirations and suggested the best course taking all factors into consideration, that call cleared my questions and gave me a concrete understanding of the pros and cons of the course that was being suggested by Pavan. I've joined Flywise and definitely feel it's beneficial to stay up to date on the latest course offerings,  industry trends and tips to maximize my chances of getting my dream job!"
-
-},{
-  name:"Venkatesh Prasad",
-  uni:"Stevens institute of technology",
-  degree:"Business intelligence and analytics",
-  text:"I have my Bachelor's in Mechanical Engineering and was absolutely clueless on what to or how to pursue my Master's. My mentor Pavan, at flywise very patiently listened to all my questions, enlightened me about the IT industry and their pay structure and expertly guided me on what course and university to choose.I am really delighted and overwhelmed with the help and support Flywise provided.",
-  img: "/images/mentors/venkatesh.png",
-  logo:"/images/icons/steven.png",
-
-},
-{
-  name: "Preethi Rama",
-  uni: "Cleveland State University",
-  img: "/images/mentors/Preethi.png",
-  text: "“Flywise is a place where innovation and young energy meets real experience. I was managed in a unique manner and was given a customized approach. Going above and beyond to help achieve career goals is something Flywise strongly stands for.”",
-  logo:"/images/icons/clevelandlogo.png",
-degree:"Information systems"
-},
-        ].map((testimonial, idx) => (
-         
-            <TestimonialCard
-            name={testimonial.name}
-            degree={testimonial.degree}
-            img={testimonial.img}
-            logo={testimonial.logo}
-            text={testimonial.text}
-            uni={testimonial.uni}
-            key={idx}
-            />
-
-         
-        ))}
-        </Carousel>
+              {
+                name: "Dhanyasri Divi",
+                uni: "CSU East Bay",
+                degree: "Masters in statistics",
+                img: "/images/mentors/dhanyasri.png",
+                logo: "/images/icons/csu.png",
+                text: "I reached out to Pavan (founder) on Linkedin before Flywise was incorporated, in that call he understood my background, aspirations and suggested the best course taking all factors into consideration, that call cleared my questions and gave me a concrete understanding of the pros and cons of the course that was being suggested by Pavan. I've joined Flywise and definitely feel it's beneficial to stay up to date on the latest course offerings,  industry trends and tips to maximize my chances of getting my dream job!",
+              },
+              {
+                name: "Venkatesh Prasad",
+                uni: "Stevens institute of technology",
+                degree: "Business intelligence and analytics",
+                text: "I have my Bachelor's in Mechanical Engineering and was absolutely clueless on what to or how to pursue my Master's. My mentor Pavan, at flywise very patiently listened to all my questions, enlightened me about the IT industry and their pay structure and expertly guided me on what course and university to choose.I am really delighted and overwhelmed with the help and support Flywise provided.",
+                img: "/images/mentors/venkatesh.png",
+                logo: "/images/icons/steven.png",
+              },
+              {
+                name: "Preethi Rama",
+                uni: "Cleveland State University",
+                img: "/images/mentors/Preethi.png",
+                text: "“Flywise is a place where innovation and young energy meets real experience. I was managed in a unique manner and was given a customized approach. Going above and beyond to help achieve career goals is something Flywise strongly stands for.”",
+                logo: "/images/icons/clevelandlogo.png",
+                degree: "Information systems",
+              },
+            ].map((testimonial, idx) => (
+              <TestimonialCard
+                name={testimonial.name}
+                degree={testimonial.degree}
+                img={testimonial.img}
+                logo={testimonial.logo}
+                text={testimonial.text}
+                uni={testimonial.uni}
+                key={idx}
+              />
+            ))}
+          </Carousel>
         </GridItem>
         <GridItem
           rowSpan={12}
@@ -817,7 +817,6 @@ degree:"Information systems"
           </Heading>
           <FaqList faqs={faqs} />
         </GridItem>
-        
       </Grid>
       <Footer />
     </Box>

@@ -123,6 +123,8 @@ function One() {
   const [lastName, setLastName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
+
+  // console.log(majorBarrier);
   function isEmail(email) {
     let regexp =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -245,138 +247,6 @@ function One() {
               <React.Fragment>
                 {" "}
                 <GridItem
-                  py={["0.4rem", "1rem", "2rem", "3rem", "3rem"]}
-                  rowSpan={12}
-                  colSpan={15}
-                  // bg={bg}
-                >
-                  <Heading color="rgba(19, 43, 80, 1)" textAlign="center">
-                    What is the major barrier for your masters in USA?
-                  </Heading>
-                  <Select
-                    placeholder="Select option"
-                    focusBorderColor="#25BAFB"
-                    bg="rgba(240, 240, 240, 1)"
-                    maxW={{ base: "70%", md: "50%" }}
-                    onChange={(e) => setMajorBarrier(e)}
-                    // pt={8}
-                    mx="auto"
-                    my={8}
-                  >
-                    <option value="Backlogs">Backlogs</option>
-                    <option value="Low GRE Scores">Low GRE Scores</option>
-                    <option value="Non-IT to IT transition">
-                      Non-IT to IT transition
-                    </option>
-                    <option value="Financial concerns">
-                      Financial concerns
-                    </option>
-                    <option value="Post Study Employment">
-                      Post Study Employment
-                    </option>
-                    <option value="Immigration">Immigration</option>
-                  </Select>
-                </GridItem>
-                {/* Vikas Thakur done this */}
-                {/* {["USA", "Australia", "Canada", "UK", "Other"].map((i, idx) => (
-                  <GridItem
-                    onClick={() => setCountry(i)}
-                    mt="4"
-                    mb={i === "Other" ? "32" : "6"}
-                    key={idx}
-                    px={["4rem", "3rem", "2rem", "0rem", "0rem"]}
-                    rowSpan={15}
-                    colSpan={[30, 30, 6, 3, 3]}
-                    // bg={bg}
-                  >
-                    <Center>
-                      <Box
-                        transition="all 0.3s"
-                        bg={
-                          i === country
-                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
-                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
-                        }
-                        rounded="lg"
-                        p="4"
-                        mx="3"
-                        border={
-                          i === country
-                            ? "4px solid rgba(13, 179, 251, 1)"
-                            : "4px solid white"
-                        }
-                        _hover={{ boxShadow: "base" }}
-                        boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
-                        key={idx}
-                      >
-                        <Center>
-                          <Image
-                            maxH="135px"
-                            src={`images/${i.toLocaleLowerCase()}_flag.png`}
-                            alt="country"
-                          />
-                        </Center>
-                        <Text
-                          transition="all 0.2s ease-out"
-                          color={i === country ? "white" : "black"}
-                          textAlign="center"
-                          fontSize="2xl"
-                          fontWeight="semibold"
-                          mt="4"
-                        >
-                          {i}
-                        </Text>
-                      </Box>
-                    </Center>
-                  </GridItem>
-                ))} */}
-                <GridItem rowSpan={12} colSpan={15}>
-                  <Center>
-                    <Flex
-                      mt="16"
-                      justifyContent="center"
-                      position="fixed"
-                      bottom="0vh"
-                      width={
-                        ("fit-content", "fit-content", "fit-content", "100%")
-                      }
-                      background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
-                    >
-                      {/* <Button
-										mt="16"
-										color="white"
-										px="8"
-										mb="4"
-										bg="rgba(13, 179, 251, 1)"
-										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
-										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-										onClick={() => setPe(1)}
-									>
-										Previous
-									</Button> */}
-                      <Button
-                        color="white"
-                        px="8"
-                        mb="4"
-                        mt="4"
-                        bg="rgba(13, 179, 251, 1)"
-                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(2)}
-                        // ml="4"
-                        // transformOrigin="100% 100%"
-                      >
-                        Next
-                      </Button>
-                    </Flex>
-                  </Center>
-                </GridItem>{" "}
-              </React.Fragment>
-            )}
-            {pe === 2 && (
-              <React.Fragment>
-                {" "}
-                <GridItem
                   p={["0.4rem", "1rem", "2rem", "3rem", "2rem"]}
                   rowSpan={12}
                   colSpan={15}
@@ -476,7 +346,7 @@ function One() {
                       }
                       background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
                     >
-                      <Button
+                      {/* <Button
                         color="white"
                         px="8"
                         mb="4"
@@ -487,7 +357,7 @@ function One() {
                         onClick={() => setPe(1)}
                       >
                         Previous
-                      </Button>
+                      </Button> */}
                       <Button
                         color="white"
                         px="8"
@@ -496,7 +366,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(3)}
+                        onClick={() => setPe(2)}
                         ml="4"
                       >
                         Next
@@ -518,7 +388,7 @@ function One() {
                 </GridItem>{" "}
               </React.Fragment>
             )}
-            {pe === 3 && (
+            {pe === 2 && (
               <React.Fragment>
                 {" "}
                 <GridItem
@@ -628,7 +498,6 @@ function One() {
                   <Text
                     fontSize={["xl", "xl", "2xl", "2xl", "3xl"]}
                     fontWeight="500"
-                    pb={4}
                   >
                     English Test Type
                     <Link
@@ -642,7 +511,7 @@ function One() {
                     bg="rgba(240, 240, 240, 1)"
                     maxW={{ base: "70%", md: "50%" }}
                     onChange={(e) => setEnglishTestType(e)}
-                    pb={4}
+                    py="5"
                   >
                     <option value="IELTS">IELTS</option>
                     <option value="TOEFL">TOEFL</option>
@@ -742,7 +611,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(2)}
+                        onClick={() => setPe(1)}
                       >
                         Previous
                       </Button>
@@ -754,7 +623,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(4)}
+                        onClick={() => setPe(3)}
                         ml="4"
                       >
                         Next
@@ -776,7 +645,7 @@ function One() {
                 </GridItem>{" "}
               </React.Fragment>
             )}
-            {pe === 4 && (
+            {pe === 3 && (
               <React.Fragment>
                 {" "}
                 <GridItem
@@ -1129,7 +998,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(3)}
+                        onClick={() => setPe(2)}
                       >
                         Previous
                       </Button>
@@ -1142,7 +1011,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(5)}
+                        onClick={() => setPe(4)}
                         ml="4"
                       >
                         Next
@@ -1164,7 +1033,7 @@ function One() {
                 </GridItem>{" "}
               </React.Fragment>
             )}
-            {pe === 5 && (
+            {pe === 4 && (
               <React.Fragment>
                 {" "}
                 <GridItem
@@ -1319,7 +1188,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(4)}
+                        onClick={() => setPe(3)}
                       >
                         Previous
                       </Button>
@@ -1332,7 +1201,7 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-                        onClick={() => setPe(6)}
+                        onClick={() => setPe(5)}
                         ml="4"
                       >
                         Next
@@ -1342,7 +1211,7 @@ function One() {
                 </GridItem>{" "}
               </React.Fragment>
             )}
-            {pe === 6 && (
+            {pe === 5 && (
               <React.Fragment>
                 {" "}
                 <GridItem
@@ -1446,6 +1315,200 @@ function One() {
                         bg="rgba(13, 179, 251, 1)"
                         _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
                         _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        onClick={() => setPe(4)}
+                      >
+                        Previous
+                      </Button>
+                      <Button
+                        color="white"
+                        px="8"
+                        mb="4"
+                        mt="4"
+                        bg="rgba(13, 179, 251, 1)"
+                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
+                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                        onClick={() => setPe(6)}
+                        ml="4"
+                      >
+                        Next
+                      </Button>
+                    </Flex>
+                    {/* <Button
+									mt="16"
+									color="white"
+									px="8"
+									mb="4"
+									bg="rgba(13, 179, 251, 1)"
+									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+									onClick={() => setPe(7)}
+								>
+									Next
+								</Button> */}
+                  </Center>
+                </GridItem>{" "}
+              </React.Fragment>
+            )}
+            {pe === 6 && (
+              <React.Fragment>
+                {" "}
+                <GridItem
+                  py={["0.4rem", "1rem", "2rem", "3rem", "3rem"]}
+                  rowSpan={12}
+                  colSpan={15}
+                  // bg={bg}
+                >
+                  <Heading color="rgba(19, 43, 80, 1)" textAlign="center">
+                    What is the major barrier for your masters in USA?
+                  </Heading>
+                  <RadioGroup
+                    mt="2"
+                    onChange={setMajorBarrier}
+                    value={majorBarrier}
+                    defaultValue="yes"
+                  >
+                    <Stack
+                      style={{
+                        paddingTop: "3%",
+                        width: "90%",
+                        maxWidth: "800px",
+                        margin: "0 auto",
+                      }}
+                      spacing={2}
+                    >
+                      <Radio size="lg" value="Backlogs" colorScheme="blue">
+                        Backlogs
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Low GRE Scores"
+                        colorScheme="blue"
+                      >
+                        Low GRE Scores
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Non-IT to IT transition"
+                        colorScheme="blue"
+                      >
+                        Non-IT to IT transition
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Financial concerns"
+                        colorScheme="blue"
+                      >
+                        Financial concerns
+                      </Radio>
+                      <Radio
+                        size="lg"
+                        value="Post Study Employment"
+                        colorScheme="blue"
+                      >
+                        Post Study Employment
+                      </Radio>
+                      <Radio size="lg" value="Immigration" colorScheme="blue">
+                        Immigration
+                      </Radio>
+                    </Stack>
+                  </RadioGroup>
+                  {/* <Select
+                    placeholder="Select option"
+                    focusBorderColor="#25BAFB"
+                    bg="rgba(240, 240, 240, 1)"
+                    maxW={{ base: "70%", md: "50%" }}
+                    onChange={(e) => setMajorBarrier(e)}
+                    // pt={8}
+                    mx="auto"
+                    my={8}
+                  >
+                    <option value="Backlogs">Backlogs</option>
+                    <option value="Low GRE Scores">Low GRE Scores</option>
+                    <option value="Non-IT to IT transition">
+                      Non-IT to IT transition
+                    </option>
+                    <option value="Financial concerns">
+                      Financial concerns
+                    </option>
+                    <option value="Post Study Employment">
+                      Post Study Employment
+                    </option>
+                    <option value="Immigration">Immigration</option>
+                  </Select> */}
+                </GridItem>
+                {/* Vikas Thakur done this */}
+                {/* {["USA", "Australia", "Canada", "UK", "Other"].map((i, idx) => (
+                  <GridItem
+                    onClick={() => setCountry(i)}
+                    mt="4"
+                    mb={i === "Other" ? "32" : "6"}
+                    key={idx}
+                    px={["4rem", "3rem", "2rem", "0rem", "0rem"]}
+                    rowSpan={15}
+                    colSpan={[30, 30, 6, 3, 3]}
+                    // bg={bg}
+                  >
+                    <Center>
+                      <Box
+                        transition="all 0.3s"
+                        bg={
+                          i === country
+                            ? "linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)"
+                            : "linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)"
+                        }
+                        rounded="lg"
+                        p="4"
+                        mx="3"
+                        border={
+                          i === country
+                            ? "4px solid rgba(13, 179, 251, 1)"
+                            : "4px solid white"
+                        }
+                        _hover={{ boxShadow: "base" }}
+                        boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
+                        key={idx}
+                      >
+                        <Center>
+                          <Image
+                            maxH="135px"
+                            src={`images/${i.toLocaleLowerCase()}_flag.png`}
+                            alt="country"
+                          />
+                        </Center>
+                        <Text
+                          transition="all 0.2s ease-out"
+                          color={i === country ? "white" : "black"}
+                          textAlign="center"
+                          fontSize="2xl"
+                          fontWeight="semibold"
+                          mt="4"
+                        >
+                          {i}
+                        </Text>
+                      </Box>
+                    </Center>
+                  </GridItem>
+                ))} */}
+                <GridItem rowSpan={12} colSpan={15}>
+                  <Center>
+                    <Flex
+                      mt="16"
+                      position="fixed"
+                      bottom="0vh"
+                      justifyContent="center"
+                      width={
+                        ("fit-content", "fit-content", "fit-content", "100%")
+                      }
+                      background="linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
+                    >
+                      <Button
+                        color="white"
+                        px="8"
+                        mb="4"
+                        mt="4"
+                        bg="rgba(13, 179, 251, 1)"
+                        _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
+                        _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
                         onClick={() => setPe(5)}
                       >
                         Previous
@@ -1464,18 +1527,6 @@ function One() {
                         Next
                       </Button>
                     </Flex>
-                    {/* <Button
-									mt="16"
-									color="white"
-									px="8"
-									mb="4"
-									bg="rgba(13, 179, 251, 1)"
-									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
-									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-									onClick={() => setPe(7)}
-								>
-									Next
-								</Button> */}
                   </Center>
                 </GridItem>{" "}
               </React.Fragment>

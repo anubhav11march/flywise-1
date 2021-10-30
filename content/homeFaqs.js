@@ -16,7 +16,7 @@ let faqs = [
       "			A. Saves travelling time and money",
       "			B. Dedicated support available just in a whatsapp message distance 24/7",
       "			C. It’s convenient because you can track everything just on your mobile phone.",
-      "We are also opening our offices in India soon!",
+      "Opened our branch office in Guntur, Andhra Pradesh!.",
     ],
   },
   {

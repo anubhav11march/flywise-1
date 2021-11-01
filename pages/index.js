@@ -248,108 +248,74 @@ export default function Home() {
             </div>
           </div>
         </GridItem>
+        {/* Vikas Thakur done this */}
         <GridItem
-          px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
           rowSpan={12}
           colSpan={12}
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+
+          mt="16"
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
         >
-          <Heading
-            id="services"
-            pt="3rem"
-            fontSize={["3xl", "3xl", "4xl", "4xl", "5xl"]}
-            // textShadow="0px 2px 5px rgba(0,0,0,0.4)"
-            textAlign="center"
-          >
-            What we offer
-          </Heading>
-          <Text textAlign="center" color="gray.500">
-            Learn more about the services we offer{" "}
-          </Text>
           <Center>
-            <Stack
-              pt="8"
-              direction={{ base: "column", md: "row" }}
-              spacing={{ base: "4", md: "8" }}
-            >
-              {[
-                {
-                  title: "Pre-Admission support",
-                  image: "/images/landing_card1.svg",
-                  texts: [
-                    "Free profile evaluation",
-                    "Test Preparation",
-                    "Course selection",
-                    "University selection",
-                    "SOP & LOR",
-                    "Application assistance",
-                  ],
-                },
-                {
-                  title: "Post-Admission support",
-                  image: "/images/landing_card2.svg",
-                  texts: [
-                    "VISA assistance",
-                    "Loan assistance",
-                    "Forex",
-                    "Roommate matching",
-                    "Pre departure guidance",
-                  ],
-                },
-                {
-                  title: "Abroad career support",
-                  image: "/images/landing_card3.svg",
-                  texts: [
-                    "Profile building",
-                    "Career roadmap",
-                    "Professional networking",
-                    "Interview training",
-                    "Job referrals at top tech companies",
-                  ],
-                },
-              ].map((service, idx) => (
-                <Center key={idx}>
-                  <Box
-                    rounded="md"
-                    h="100%"
-                    w={{ base: "80%", md: "24rem" }}
-                    my="4"
-                    maxH="558px"
-                    maxW="425.03px"
-                    p={["2", "4", "8", "16", "16"]}
-                    bg="white"
-                    transition="all 0.3s"
-                    _hover={{
-                      boxShadow: "0px 0px 10px 10px rgba(220, 220, 220, 0.25)",
-                    }}
-                    boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
+            <Flex flexDirection={{ md: "row", base: "column" }}>
+              <Image
+                maxW="25rem"
+                maxH="70vh"
+                p="16"
+                ml={["2", "4", "8", "16", "44"]}
+                alt="desk"
+                src="/images/person_board.png"
+              />
+              <Box
+                mt={["2", "4", "8", "16", "16"]}
+                ml={["2", "4", "8", "16", "12"]}
+              >
+                <Heading
+                  mt={{ base: "4", md: "0" }}
+                  textAlign={{ base: "center", md: "left" }}
+                  mb="4"
+                >
+                  Do you worry about
+                </Heading>
+                {[
+                  "backlogs and low B.tech CGPA?",
+                  "low GRE and IELTS scores?",
+                  "switching from non-CS to CS branch?",
+                  "not getting a job after masters?",
+                ].map((i, idx) => (
+                  <Text
+                    textAlign={{ base: "center", md: "left" }}
+                    fontSize={{ base: "md", md: "xl" }}
+                    key={idx}
+                    color={"#17A2FB"}
+                    my="2"
+                    fontWeight="700"
                   >
-                    <Center>
-                      <Image mb="4" maxH="40%" src={service.image} alt="main" />
-                    </Center>
-                    <Heading my="4" fontSize="xl">
-                      {service.title}
-                    </Heading>
-                    {service.texts.map((i, idx) => (
-                      <Flex alignItems="flex-start" key={idx}>
-                        <Image
-                          mr="2"
-                          mt="1"
-                          h="4"
-                          src="/images/icons/tick2.png"
-                          alt="tick"
-                        />
-                        <Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-                          {i}
-                        </Text>
-                      </Flex>
-                    ))}
-                  </Box>
-                </Center>
-              ))}
-            </Stack>
+                    {i}{" "}
+                  </Text>
+                ))}
+
+                <Text
+                  maxW={{ base: "75%", md: "70%" }}
+                  textAlign={{ base: "justify", md: "left" }}
+                  my="12"
+                  mx={{ base: "auto", md: "0" }}
+                  fontWeight="400"
+                >
+                  Our founders and mentors have personally faced/seen all these
+                  issues, navigated through them and are currently working at
+                  top product based companies in the US. Our mentors will work
+                  with you to build a vision, mission and identify objectives
+                  which will help in planning to get the best job abroad
+                  irrespective of your backgrounds (which is why you are going
+                  abroad).
+                </Text>
+              </Box>
+            </Flex>
           </Center>
         </GridItem>
         <GridItem
@@ -656,73 +622,110 @@ export default function Home() {
             </Box>
           </Flex>
         </GridItem>
+        {/* Vikas Thakur done this */}
         <GridItem
+          px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
           rowSpan={12}
           colSpan={12}
-          px={["2", "1", "4", "8", "16"]}
-          // colSpan={{base: 12, md:6}}
-
-          mt="16"
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
+          py={10}
         >
+          <Heading
+            id="services"
+            pt="3rem"
+            fontSize={["3xl", "3xl", "4xl", "4xl", "5xl"]}
+            // textShadow="0px 2px 5px rgba(0,0,0,0.4)"
+            textAlign="center"
+          >
+            What we offer
+          </Heading>
+          <Text textAlign="center" color="gray.500">
+            Learn more about the services we offer{" "}
+          </Text>
           <Center>
-            <Flex flexDirection={{ md: "row", base: "column" }}>
-              <Image
-                maxW="25rem"
-                maxH="70vh"
-                p="16"
-                ml={["2", "4", "8", "16", "44"]}
-                alt="desk"
-                src="/images/person_board.png"
-              />
-              <Box
-                mt={["2", "4", "8", "16", "16"]}
-                ml={["2", "4", "8", "16", "12"]}
-              >
-                <Heading
-                  mt={{ base: "4", md: "0" }}
-                  textAlign={{ base: "center", md: "left" }}
-                  mb="4"
-                >
-                  Do you worry about
-                </Heading>
-                {[
-                  "backlogs and low B.tech CGPA?",
-                  "low GRE and IELTS scores?",
-                  "switching from non-CS to CS branch?",
-                  "not getting a job after masters?",
-                ].map((i, idx) => (
-                  <Text
-                    textAlign={{ base: "center", md: "left" }}
-                    fontSize={{ base: "md", md: "xl" }}
-                    key={idx}
-                    color={"#17A2FB"}
-                    my="2"
-                    fontWeight="700"
+            <Stack
+              pt="8"
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: "4", md: "8" }}
+            >
+              {[
+                {
+                  title: "Pre-Admission support",
+                  image: "/images/landing_card1.svg",
+                  texts: [
+                    "Free profile evaluation",
+                    "Test Preparation",
+                    "Course selection",
+                    "University selection",
+                    "SOP & LOR",
+                    "Application assistance",
+                  ],
+                },
+                {
+                  title: "Post-Admission support",
+                  image: "/images/landing_card2.svg",
+                  texts: [
+                    "VISA assistance",
+                    "Loan assistance",
+                    "Forex",
+                    "Roommate matching",
+                    "Pre departure guidance",
+                  ],
+                },
+                {
+                  title: "Abroad career support",
+                  image: "/images/landing_card3.svg",
+                  texts: [
+                    "Profile building",
+                    "Career roadmap",
+                    "Professional networking",
+                    "Interview training",
+                    "Job referrals at top tech companies",
+                  ],
+                },
+              ].map((service, idx) => (
+                <Center key={idx}>
+                  <Box
+                    rounded="md"
+                    h="100%"
+                    w={{ base: "80%", md: "24rem" }}
+                    my="4"
+                    maxH="558px"
+                    maxW="425.03px"
+                    p={["2", "4", "8", "16", "16"]}
+                    bg="white"
+                    transition="all 0.3s"
+                    _hover={{
+                      boxShadow: "0px 0px 10px 10px rgba(220, 220, 220, 0.25)",
+                    }}
+                    boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
                   >
-                    {i}{" "}
-                  </Text>
-                ))}
-
-                <Text
-                  maxW={{ base: "75%", md: "70%" }}
-                  textAlign={{ base: "justify", md: "left" }}
-                  my="12"
-                  mx={{ base: "auto", md: "0" }}
-                  fontWeight="400"
-                >
-                  Our founders and mentors have personally faced/seen all these
-                  issues, navigated through them and are currently working at
-                  top product based companies in the US. Our mentors will work
-                  with you to build a vision, mission and identify objectives
-                  which will help in planning to get the best job abroad
-                  irrespective of your backgrounds (which is why you are going
-                  abroad).
-                </Text>
-              </Box>
-            </Flex>
+                    <Center>
+                      <Image mb="4" maxH="40%" src={service.image} alt="main" />
+                    </Center>
+                    <Heading my="4" fontSize="xl">
+                      {service.title}
+                    </Heading>
+                    {service.texts.map((i, idx) => (
+                      <Flex alignItems="flex-start" key={idx}>
+                        <Image
+                          mr="2"
+                          mt="1"
+                          h="4"
+                          src="/images/icons/tick2.png"
+                          alt="tick"
+                        />
+                        <Text color="rgba(13, 179, 251, 1)" fontWeight="600">
+                          {i}
+                        </Text>
+                      </Flex>
+                    ))}
+                  </Box>
+                </Center>
+              ))}
+            </Stack>
           </Center>
         </GridItem>
         <GridItem py="8" colSpan="12" bg="white" rowSpan="12">

@@ -158,7 +158,7 @@ function One() {
     // formData.append("iscsit", iscsit);
     // formData.append("referral", referral);
     // formData.append("discover", discover == "Other" ? other : discover);
-
+    console.log(majorBarrier, englishTestType, englishTestScore);
     axios({
       url: "https://flywisebackend.herokuapp.com/api/user/add",
       method: "POST",
@@ -510,7 +510,7 @@ function One() {
                     focusBorderColor="#25BAFB"
                     bg="rgba(240, 240, 240, 1)"
                     maxW={{ base: "70%", md: "50%" }}
-                    onChange={(e) => setEnglishTestType(e)}
+                    onChange={(e) => setEnglishTestType(e.target.value)} 
                     py="5"
                   >
                     <option value="IELTS">IELTS</option>

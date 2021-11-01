@@ -50,6 +50,7 @@ function ContactUS() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        majorBarrier: majorBarrier,
         firstName: firstName,
         lastName: lastName,
         email: email,

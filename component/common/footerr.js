@@ -106,6 +106,22 @@ function footerr() {
         <span style={{ color: "#6ADBDB", fontWeight: "600" }}>
           &nbsp;Flywise
         </span>
+        |
+        <Link
+          style={{ color: "white", textDecoration: "none" }}
+          href="/privacy-policy"
+        >
+          {" "}
+          Privacy Policy{" "}
+        </Link>{" "}
+        |
+        <Link
+          style={{ color: "white", textDecoration: "none" }}
+          href="/terms-and-conditions"
+        >
+          {" "}
+          Terms and Conditions{" "}
+        </Link>
       </div>
     </div>
   );

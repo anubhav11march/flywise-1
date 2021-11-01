@@ -43,8 +43,8 @@ function privacyPolicy() {
         <Text textAlign="justify" mb="5">
           www.flywise.in is a property of Bi-Right Technology Solutions Private
           Limited, an Indian Company registered under the Companies Act, 2013
-          having its registered office at D.no 4-4-27/A, 1/5 th lane , 2nd
-          floor, Ramanna peta, koritepadu, Guntur,A.P -522007.
+          having its registered office at Flat no 402, samanya residency,
+          yellareddyguda, Hyderabad, Telangana, India, 500073.
         </Text>
         <OrderedList textAlign="justify">
           <strong>
@@ -249,11 +249,11 @@ function privacyPolicy() {
           </strong>
           <Text>
             <strong>You can opt out of receiving our marketing emails:</strong>{" "}
-            To stop receiving our promotional emails, please email [unsubscribe
-            email]. It may take about ten days to process your request. Even if
-            you opt out of getting marketing messages, we will still be sending
-            you transactional messages through email and SMS about your
-            purchases.
+            To stop receiving our promotional emails, please click on
+            unsubscribe button. It may take about ten days to process your
+            request. Even if you opt out of getting marketing messages, we will
+            still be sending you transactional messages through email and SMS
+            about your purchases.
           </Text>
           <strong>
             <ListItem mb="3" mt="3">
@@ -277,10 +277,9 @@ function privacyPolicy() {
             there under, the name and contact details of the Grievance Officer
             are provided below:
             <br />
-            Mr./Ms. [] <br />
-            [Address] <br />
-            Phone: [] <br />
-            Email: [] <br />
+            Mr. Satyanarayana reddy Kanjula
+            <br />
+            Email: team@flywise.in <br />
             If you have any questions about this Policy or other privacy
             concerns, you can also email us at team@flywise.in
           </Text>
@@ -305,7 +304,7 @@ function privacyPolicy() {
             If you choose to visit the website, your visit and any dispute over
             privacy is subject to this Policy and the website's terms of use. In
             addition to the foregoing, any disputes arising under this Policy
-            shall be governed by the laws of India and the Courts at [City]
+            shall be governed by the laws of India and the Courts at Hyderabad
             shall have exclusive jurisdiction.
           </Text>
         </OrderedList>

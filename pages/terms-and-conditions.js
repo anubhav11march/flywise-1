@@ -79,8 +79,8 @@ function privacyPolicy() {
                 that you may receive.{" "}
               </li>
               <li>
-                You may also choose to opt out, via sending your email address
-                to: [opt-out email].{" "}
+                You may also choose to opt out, by clicking on unsubscribe
+                button in the email.{" "}
               </li>
               <li>
                 You may send a written remove request to the Registered Address

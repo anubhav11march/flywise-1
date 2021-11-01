@@ -68,7 +68,7 @@ function One() {
     e.preventDefault();
     configureRecaptcha();
     const phoneNumber = countryCode + userPhone;
-    console.log(phoneNumber);
+    // console.log(phoneNumber);
     const appVerifier = window.recaptchaVerifier;
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
@@ -158,7 +158,7 @@ function One() {
     // formData.append("iscsit", iscsit);
     // formData.append("referral", referral);
     // formData.append("discover", discover == "Other" ? other : discover);
-    console.log(majorBarrier, englishTestType, englishTestScore);
+    // console.log(majorBarrier, englishTestType, englishTestScore);
     axios({
       url: "https://flywisebackend.herokuapp.com/api/user/add",
       method: "POST",

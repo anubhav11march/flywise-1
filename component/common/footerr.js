@@ -104,7 +104,7 @@ function footerr() {
       <div className={classes.copyright}>
         Copyright © {new Date().getFullYear()}
         <span style={{ color: "#6ADBDB", fontWeight: "600" }}>
-          &nbsp;Flywise
+          &nbsp;Flywise{" "}
         </span>
         |
         <Link

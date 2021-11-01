@@ -333,14 +333,14 @@ function privacyPolicy() {
             </ListItem>
             <ListItem>
               <strong>Governing Law and Jurisdiction: </strong>
-              This Website originates from the [City, State]. This Agreement
+              This Website originates from the Hyderabad, Telangana. This Agreement
               will be governed by the laws of India without regard to its
               conflict of law principles to the contrary. Neither you nor the
               Company will commence or prosecute any suit, proceeding or claim
               to enforce the provisions of this Agreement, to recover damages
               for breach of or default of this Agreement, or otherwise arising
               under or by reason of this Agreement, other than in courts located
-              in [City]. By using this Website or Services, you consent to the
+              in Hyderabad. By using this Website or Services, you consent to the
               jurisdiction and venue of such courts in connection with any
               action, suit, proceeding or claim arising under or by reason of
               this Agreement. You hereby waive any right to trial by jury
@@ -355,7 +355,7 @@ function privacyPolicy() {
               ASSERTED INDIVIDUALLY.
             </ListItem>
             <ListItem>
-              <strong>Termination:</strong>
+              <strong>Termination: </strong>
               The Company reserves the right to terminate your access to the
               Website if it reasonably believes, in its sole discretion, that
               you have breached any of the terms and conditions of this
@@ -377,7 +377,7 @@ function privacyPolicy() {
               compliance with any applicable local laws.
             </ListItem>
             <ListItem>
-              <strong>Assignment:</strong>
+              <strong>Assignment: </strong>
               You may not assign your rights and obligations under this
               Agreement to anyone. The Company may assign its rights and
               obligations under this Agreement in its sole discretion and

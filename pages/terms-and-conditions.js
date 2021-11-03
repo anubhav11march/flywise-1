@@ -23,11 +23,19 @@ function privacyPolicy() {
           AGREEMENT.
         </Text>
         <Text textAlign="justify" mb="5">
-          These Terms & Conditions (the "<strong>Agreement</strong>") governs
-          your use of this website, <strong>www.flywise.in</strong> (the "
-          <strong>Website</strong>"), and{" "}
-          <strong>Bi- Right Technology Solutions Private Limited</strong> ("
-          <strong>the Company</strong>") offer of services on this Website.
+          These Terms & Conditions (the {`"`}
+          <strong>Agreement</strong>
+          {`"`}) governs your use of this website,{" "}
+          <strong>www.flywise.in</strong> (the
+          {`"`}
+          <strong>Website</strong>
+          {`"`}
+          ), and <strong>
+            Bi- Right Technology Solutions Private Limited
+          </strong>{" "}
+          ({`"`}
+          <strong>the Company</strong>
+          {`"`}) offer of services on this Website.
         </Text>
         <Text textAlign="justify" mb="5">
           This Agreement includes, and incorporates by this reference, the
@@ -57,9 +65,10 @@ function privacyPolicy() {
           <ul>
             <ListItem>
               <strong>Terms of Offer: </strong> This Website offers for certain
-              services (the "<strong>Services</strong>"). By placing a request
-              for a service through this Website, you agree to the terms set
-              forth in this Agreement.
+              services (the {`"`}
+              <strong>Services</strong>
+              {`"`}). By placing a request for a service through this Website,
+              you agree to the terms set forth in this Agreement.
             </ListItem>
             <ListItem>
               <strong>Customer Solicitation: </strong> Unless you notify our
@@ -140,9 +149,9 @@ function privacyPolicy() {
               regarding intellectual property), (2) not interfere with or
               disrupt the use and enjoyment of the Website by other users, (3)
               not resell material on the Website, (4) not engage, directly or
-              indirectly, in transmission of "spam", chain letters, junk mail or
-              any other type of unsolicited communication, and (5) not defame,
-              harass, abuse, or disrupt other users of the Website.
+              indirectly, in transmission of {`"spam"`}, chain letters, junk
+              mail or any other type of unsolicited communication, and (5) not
+              defame, harass, abuse, or disrupt other users of the Website.
             </ListItem>
             <ListItem>
               <strong>Licence: </strong>
@@ -169,7 +178,7 @@ function privacyPolicy() {
               or harm resulting from any posts by or interactions between users.
               The Company reserves the right, but has no obligation, to monitor
               interactions between and among users of the Website and to remove
-              any content the Company deems objectionable, in the Company 's
+              any content the Company deems objectionable, in the {`Company 's`}
               sole discretion.
             </ListItem>
           </ul>
@@ -180,13 +189,14 @@ function privacyPolicy() {
           </strong>
           <Text mb="3">
             YOUR USE OF THIS WEBSITE AND/OR SERVICES ARE AT YOUR SOLE RISK. THE
-            WEBSITE AND SERVIES ARE OFFERED ON AN "AS IS" AND "AS AVAILABLE"
+            WEBSITE AND SERVIES ARE OFFERED ON AN {`"AS IS"`} AND{" "}
+            {`"AS AVAILABLE"`}
             BASIS. THE COMPANY EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND,
             WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED
             WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
             NON-INFRINGEMENT WITH RESPECT TO THE SERVICES OR WEBSITE CONTENT, OR
-            ANY RELIANCE UPON OR USE OF THE WEBSITE CONTENT OR SERVICES.
-            ("SERVICES" INCLUDE TRIAL SERVICES.)
+            ANY RELIANCE UPON OR USE OF THE WEBSITE CONTENT OR SERVICES. (
+            {`"SERVICES"`} INCLUDE TRIAL SERVICES.)
           </Text>
           <Text mb="3">
             WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, THE COMPANY MAKES
@@ -251,28 +261,28 @@ function privacyPolicy() {
             You will release, indemnify, defend and hold harmless the Company,
             and any of its contractors, agents, employees, officers, directors,
             shareholders, affiliates and assigns from all liabilities, claims,
-            damages, costs and expenses, including reasonable attorneys' fees
-            and expenses, of third parties relating to or arising out of (1)
-            this Agreement or the breach of your warranties, representations and
-            obligations under this Agreement; (2) the Website content or your
-            use of the Website content; (3) the Services; (4) any intellectual
-            property or other proprietary right of any person or entity; (5)
-            your violation of any provision of this Agreement; or (6) any
-            information or data you supplied to the Company. When the Company is
-            threatened with suit or sued by a third party, the Company may seek
-            written assurances from you concerning your promise to indemnify the
-            Company; your failure to provide such assurances may be considered
-            by the Company to be a material breach of this Agreement. The
-            Company will have the right to participate in any defense by you of
-            a third-party claim related to your use of any of the Website
-            content or Services, with counsel of the Company choice at its
-            expense. The Company will reasonably cooperate in any defense by you
-            of a third-party claim at your request and expense. You will have
-            sole responsibility to defend the Company against any claim, but you
-            must receive the Company prior written consent regarding any related
-            settlement. The terms of this provision will survive any termination
-            or cancellation of this Agreement or your use of the Website or
-            Services.
+            damages, costs and expenses, including reasonable {`attorneys'`}{" "}
+            fees and expenses, of third parties relating to or arising out of
+            (1) this Agreement or the breach of your warranties, representations
+            and obligations under this Agreement; (2) the Website content or
+            your use of the Website content; (3) the Services; (4) any
+            intellectual property or other proprietary right of any person or
+            entity; (5) your violation of any provision of this Agreement; or
+            (6) any information or data you supplied to the Company. When the
+            Company is threatened with suit or sued by a third party, the
+            Company may seek written assurances from you concerning your promise
+            to indemnify the Company; your failure to provide such assurances
+            may be considered by the Company to be a material breach of this
+            Agreement. The Company will have the right to participate in any
+            defense by you of a third-party claim related to your use of any of
+            the Website content or Services, with counsel of the Company choice
+            at its expense. The Company will reasonably cooperate in any defense
+            by you of a third-party claim at your request and expense. You will
+            have sole responsibility to defend the Company against any claim,
+            but you must receive the Company prior written consent regarding any
+            related settlement. The terms of this provision will survive any
+            termination or cancellation of this Agreement or your use of the
+            Website or Services.
           </Text>
           <Text mb="3"></Text>
           <strong>
@@ -282,9 +292,9 @@ function privacyPolicy() {
           </strong>
           <Text mb="3">
             The Company believes strongly in protecting user privacy and
-            providing you with notice of Company's use of data. Please refer to
-            the Company privacy policy, incorporated by reference herein, which
-            is posted on the Website.
+            providing you with notice of {`Company's`} use of data. Please refer
+            to the Company privacy policy, incorporated by reference herein,
+            which is posted on the Website.
           </Text>
           <strong>
             <ListItem mb="3" mt="3">
@@ -327,24 +337,24 @@ function privacyPolicy() {
               not constitute a waiver of such right or provision. If any
               provision of this Agreement is found by a court of competent
               jurisdiction to be invalid, the parties nevertheless agree that
-              the court should endeavor to give effect to the parties'
+              the court should endeavor to give effect to the {`parties'`}
               intentions as reflected in the provision, and the other provisions
               of this Agreement remain in full force and effect.
             </ListItem>
             <ListItem>
               <strong>Governing Law and Jurisdiction: </strong>
-              This Website originates from the Hyderabad, Telangana. This Agreement
-              will be governed by the laws of India without regard to its
-              conflict of law principles to the contrary. Neither you nor the
-              Company will commence or prosecute any suit, proceeding or claim
-              to enforce the provisions of this Agreement, to recover damages
-              for breach of or default of this Agreement, or otherwise arising
-              under or by reason of this Agreement, other than in courts located
-              in Hyderabad. By using this Website or Services, you consent to the
-              jurisdiction and venue of such courts in connection with any
-              action, suit, proceeding or claim arising under or by reason of
-              this Agreement. You hereby waive any right to trial by jury
-              arising out of this Agreement and any related documents.
+              This Website originates from the Hyderabad, Telangana. This
+              Agreement will be governed by the laws of India without regard to
+              its conflict of law principles to the contrary. Neither you nor
+              the Company will commence or prosecute any suit, proceeding or
+              claim to enforce the provisions of this Agreement, to recover
+              damages for breach of or default of this Agreement, or otherwise
+              arising under or by reason of this Agreement, other than in courts
+              located in Hyderabad. By using this Website or Services, you
+              consent to the jurisdiction and venue of such courts in connection
+              with any action, suit, proceeding or claim arising under or by
+              reason of this Agreement. You hereby waive any right to trial by
+              jury arising out of this Agreement and any related documents.
             </ListItem>
             <ListItem>
               <strong>Waiver of Class Action Rights: </strong>

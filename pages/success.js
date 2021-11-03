@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../component/common/footerr";
 import Image from "next/image";
 import Navbar from "../component/common/navbar";
-import NLink from 'next/link';
+import NLink from "next/link";
 //import pngg from "../public/images/icons/pana.png";
 import classes from "../styles/whatsappbtn.module.css";
 //import ComingSoon from "../public/images/icons/profile.png";
@@ -19,8 +19,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 function courses() {
-    return (
-        <Box
+  return (
+    <Box
       // w={{base:"100vw", md:''}}
       maxW={"100vw"}
     >
@@ -41,33 +41,42 @@ function courses() {
           pr={["0.4rem", "1rem", "1rem", "2rem", "14rem"]}
         >
           <div className={classes.pnggg}>
-            <Image objectFit="contain" src="/images/icons/pana.png" height="320px"  width="320px" />
-            <br/>
-            <Image src="/images/icons/profile.png" height="50px" width="320px" />
+            <Image
+              objectFit="contain"
+              src="/images/icons/pana.png"
+              alt="pana"
+              height="320px"
+              width="320px"
+            />
+            <br />
+            <Image
+              src="/images/icons/profile.png"
+              alt="profile"
+              height="50px"
+              width="320px"
+            />
             <NLink href="/" passHref>
-            <Button
-              color="white"
-              px="8"
-              py="5"
-              mb="4"
-              mt="8"
-              bg="rgba(13, 179, 251, 1)"
-              _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
-              _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
-              ml="auto"
-              mr="auto"
-            >
-              Take me to home
-            </Button>
+              <Button
+                color="white"
+                px="8"
+                py="5"
+                mb="4"
+                mt="8"
+                bg="rgba(13, 179, 251, 1)"
+                _hover={{ bg: "rgba(13, 179, 251, 0.9)" }}
+                _active={{ bg: "rgba(13, 179, 251, 0.7)" }}
+                ml="auto"
+                mr="auto"
+              >
+                Take me to home
+              </Button>
             </NLink>
           </div>
         </GridItem>
-
-        
       </Grid>
       <Footer />
     </Box>
-    )
+  );
 }
 
-export default courses
+export default courses;

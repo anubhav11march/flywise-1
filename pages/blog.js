@@ -41,9 +41,9 @@ function blog() {
           pr={["0.4rem", "1rem", "1rem", "2rem", "12rem"]}
         >
           <div className={classes.pnggg}>
-            <Image objectFit="contain"  src= "/images/icons/rafiki.png" height="320px"  width="320px"/>
+            <Image objectFit="contain"  src= "/images/icons/rafiki.png" alt="rafiki" height="320px"  width="320px"/>
             <br/>
-            <Image src="/images/icons/coming.png" height="50px" width="320px" />
+            <Image src="/images/icons/coming.png" alt="coming" height="50px" width="320px" />
             <NLink href="/" passHref>
             <Button
               color="white"

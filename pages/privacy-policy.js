@@ -18,13 +18,17 @@ function privacyPolicy() {
           PRIVACY POLICY
         </Heading>
         <Text textAlign="justify" mb="5">
-          This <strong>PRIVACY POLICY</strong> ("<strong>policy</strong>") will
-          help you understand how{" "}
-          <strong>BI-RIGHT TEHNOLOGY SOLUTIONS PRIVATE LIMITED </strong>("
-          <strong>us</strong>", "<strong>we</strong>", "<strong>our</strong>")
-          uses and protects the data you provide to us when you visit, use or
-          register yourself to <strong>www.flywise.in</strong> ("
-          <strong>website</strong>", "<strong>service</strong>").
+          This <strong>PRIVACY POLICY</strong> ({`"`}<strong>policy</strong>{`"`})
+          will help you understand how{" "}
+          <strong>BI-RIGHT TEHNOLOGY SOLUTIONS PRIVATE LIMITED </strong>(
+          {`"`}
+          <strong>us</strong>{`"`}
+          , {`"`}<strong>we</strong>{`"`}, {`"`}<strong>our</strong>{`"`}) uses and
+          protects the data you provide to us when you visit, use or register
+          yourself to <strong>www.flywise.in</strong> (
+          {`"`}
+          <strong>website</strong>{`"`}
+          , {`"`}<strong>service</strong>{`"`}).
         </Text>
         <Text textAlign="justify" mb="5">
           We reserve the right to change this policy at any given time, of which
@@ -70,11 +74,11 @@ function privacyPolicy() {
             <ListItem>
               <strong>Other information: </strong> If you use our website, we
               may collect information about your IP address and the browser
-              you're using. We might look at what site you came from, duration
-              of time spent on our website, pages accessed or what site you
-              visit when you leave us. We might also collect the type of mobile
-              device you are using, or the version of the operating system your
-              computer or device is running.
+              {`you're`} using. We might look at what site you came from,
+              duration of time spent on our website, pages accessed or what site
+              you visit when you leave us. We might also collect the type of
+              mobile device you are using, or the version of the operating
+              system your computer or device is running.
             </ListItem>
           </ul>
           <strong>
@@ -302,10 +306,10 @@ function privacyPolicy() {
           </strong>
           <Text>
             If you choose to visit the website, your visit and any dispute over
-            privacy is subject to this Policy and the website's terms of use. In
-            addition to the foregoing, any disputes arising under this Policy
-            shall be governed by the laws of India and the Courts at Hyderabad
-            shall have exclusive jurisdiction.
+            privacy is subject to this Policy and the {`website's`} terms of
+            use. In addition to the foregoing, any disputes arising under this
+            Policy shall be governed by the laws of India and the Courts at
+            Hyderabad shall have exclusive jurisdiction.
           </Text>
         </OrderedList>
       </Container>

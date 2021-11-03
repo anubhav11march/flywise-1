@@ -113,9 +113,9 @@ const router=useRouter();
             pr={["0.4rem", "1rem", "1rem", "2rem", "12rem"]}
           >
             <div className={classes.pnggg}>
-              <Image objectFit="cotain" src={pngg} />
+              <Image objectFit="contain" alt="pngg" src={pngg} />
               <br/>
-              <Image src={ComingSoon} h="40px" w="100px" />
+              <Image src={ComingSoon} alt="comingSoon" h="40px" w="100px" />
               <div>
               <PinInput size={"xs","sm","md","lg"} variant="outline" type="number"  onComplete={(value)=>setOtp(value)} autofocus  >
                 <PinInputField marginRight="10px" marginTop="20px" borderColor="grey" />

@@ -154,7 +154,7 @@ export default function Home() {
                 >
                   <span ref={eleven} className={classes.linkk1}>
                     {" "}
-                    master's
+                    {`master's`}
                   </span>{" "}
                   <span ref={one} className={classes.linkk2}>
                     education

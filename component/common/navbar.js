@@ -1,5 +1,5 @@
-import classes from "../../styles/header.module.css";
-import Logo from "../../public/images/logo.svg";
+import classes from '../../styles/header.module.css';
+import Logo from '../../public/images/logo.svg';
 import {
   Box,
   Flex,
@@ -21,27 +21,27 @@ import {
   Text,
   GridItem,
   useMediaQuery,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
-import React, { useState, useEffect } from "react";
-import $ from "jquery";
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
+import React, { useState, useEffect } from 'react';
+import $ from 'jquery';
 const Links = [
-  { link: "About Us", to: "/aboutus" },
-  { link: "Profile Evaluation", to: "/profile-evaluation" },
-  { link: "Services", to: "/#services" },
-  { link: "Mentors", to: "/mentors" },
+  { link: 'About Us', to: '/aboutus' },
+  { link: 'Profile Evaluation', to: '/profile-evaluation' },
+  { link: 'Services', to: '/#services' },
+  { link: 'Mentors', to: '/mentors' },
   { link: 'Blog', to: '/blog' },
-  { link: 'Courses', to: '/courses' }
+  { link: 'Courses', to: '/courses' },
 ];
-import Ham from "../../public/images/icons/ham.png";
+import Ham from '../../public/images/icons/ham.png';
 const NavLink = ({ to, link, outline }) => (
   <NextLink passHref href={to}>
     <Link
       // className={props.link === props.outline ? `bottom-outline` : ``}
       px={4}
       py={1}
-      roundedTop={"md"}
+      roundedTop={'md'}
       color={link === outline ? `rgba(41, 82, 134,1)` : `blackAlpha.700`}
       borderBottom={
         link === outline
@@ -49,10 +49,10 @@ const NavLink = ({ to, link, outline }) => (
           : `1px solid rgba(41, 82, 134,0)`
       }
       _hover={{
-        textDecoration: "none",
-        bg: "gray.100",
-        color: "rgba(41, 82, 134,1)",
-        borderBottom: "1px solid rgba(41, 82, 134,0.8)",
+        textDecoration: 'none',
+        bg: 'gray.100',
+        color: 'rgba(41, 82, 134,1)',
+        borderBottom: '1px solid rgba(41, 82, 134,0.8)',
       }}
     >
       {link}
@@ -122,8 +122,8 @@ const AllNavLinks = ({ outline }) => {
   //                   ))}
   //                 </HStack>
   //                 {/* <Button mt={4} colorScheme="blue" onClick={onClose} ref={initRef}>
-	// 												Close
-	// 											</Button> */}
+  // 												Close
+  // 											</Button> */}
   //               </PopoverBody>
   //               {/* <PopoverFooter>This is the footer</PopoverFooter> */}
   //             </PopoverContent>
@@ -137,7 +137,7 @@ const AllNavLinks = ({ outline }) => {
       {Links.map((link, idx) => (
         <NavLink outline={outline} to={link.to} link={link.link} key={idx} />
       ))}
-      
+
       {/* <NavLink outline={""} to={"/courses"} link={"Courses"} /> */}
       {/* <NLink href={}>
 				<Link
@@ -176,11 +176,11 @@ function Header() {
 
   function showw() {
     setShow(true);
-    $("#sidedrawer").addClass(`${classes.show}`);
+    $('#sidedrawer').addClass(`${classes.show}`);
   }
   function hidee() {
     setShow(false);
-    $("#sidedrawer").removeClass(`${classes.show}`);
+    $('#sidedrawer').removeClass(`${classes.show}`);
   }
 
   return (
@@ -188,12 +188,12 @@ function Header() {
       <div className={classes.header}>
         <div className={classes.mainHeader}>
           <div className={classes.logo}>
-            <NextLink href="/">
+            <NextLink href='/'>
               <Image
-                _hover={{ cursor: "pointer" }}
-                maxH="5rem"
-                alt="logo"
-                src="/images/logo.svg"
+                _hover={{ cursor: 'pointer' }}
+                maxH='5rem'
+                alt='logo'
+                src='/images/logo.svg'
               />
             </NextLink>
           </div>
@@ -201,36 +201,36 @@ function Header() {
             <AllNavLinks />
           </div>
           <div className={classes.contact}>
-            <Flex alignItems={"center"}>
-              <NextLink href="/contact-us">
+            <Flex alignItems={'center'}>
+              <NextLink href='/contact-us'>
                 <Button
-                  variant={"solid"}
+                  variant={'solid'}
                   // colorScheme={'teal'}
-                  size={{ base: "sm", md: "md" }}
-                  py={["2", "2", "2", "2", "2"]}
-                  color="white"
-                  fontWeight="semibold"
-                  px={["2", "6", "6", "6", "6"]}
-                  colorScheme="blue"
+                  size={{ base: 'sm', md: 'md' }}
+                  py={['2', '2', '2', '2', '2']}
+                  color='white'
+                  fontWeight='semibold'
+                  px={['2', '6', '6', '6', '6']}
+                  colorScheme='blue'
                   mr={4}
-                  rounded="full"
+                  rounded='full'
                 >
                   Contact Us
                 </Button>
               </NextLink>
             </Flex>
           </div>
-          <div id="ham" className={classes.ham} onClick={showw}>
-            <Image src="/images/icons/ham.png" />
+          <div id='ham' className={classes.ham} onClick={showw}>
+            <Image src='/images/icons/ham.png' />
           </div>
         </div>
         {show && <div className={classes.backdrop} onClick={hidee}></div>}
       </div>
-      <div id="sidedrawer" className={classes.sidedrawer}>
-        <div id="closeham" className={classes.ham} onClick={hidee}>
-          <Image src="/images/icons/ham.png" />
+      <div id='sidedrawer' className={classes.sidedrawer}>
+        <div id='closeham' className={classes.ham} onClick={hidee}>
+          <Image src='/images/icons/ham.png' />
         </div>
-        <div className={classes.firstsidelink} onClick={hidee}>
+        {/**<div className={classes.firstsidelink} onClick={hidee}>
           <NextLink passHref href={"/testprep"}>
             <p>Test Prep</p>
           </NextLink>
@@ -241,88 +241,85 @@ function Header() {
             height="25px"
             width="25px"
           />
-        </div>
-        <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/profile-evaluation"}>
+        </div> */}
+        <div className={classes.firstsidelink} onClick={hidee}>
+          <NextLink passHref href={'/profile-evaluation'}>
             <p>Profile Evaluation</p>
           </NextLink>
           <Image
-            src="/images/icons/Activity.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/Activity.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/#services"}>
+          <NextLink passHref href={'/#services'}>
             <p>Services</p>
           </NextLink>
           <Image
-            src="/images/icons/Graph.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/Graph.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/mentors"}>
+          <NextLink passHref href={'/mentors'}>
             <p>Mentors</p>
           </NextLink>
           <Image
-            src="/images/icons/3 User.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/3 User.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
         </div>
-        <div id="destinaiton" className={classes.sidelink}>
+        {/**<div id='destinaiton' className={classes.sidelink}>
           <Popover
-            placement="bottom"
+            placement='bottom'
             closeOnBlur={true}
             initialFocusRef={initRef}
           >
             {({ isOpen, onClose }) => (
               <React.Fragment>
                 <Modal isOpen={isOpen}>
-                  <ModalOverlay zIndex="3" />
+                  <ModalOverlay zIndex='3' />
                 </Modal>
                 <PopoverTrigger>
                   <p>Destinations</p>
                 </PopoverTrigger>
-                <Portal zIndex="4">
-                  <PopoverContent h="5rem" w="25rem" zIndex="5">
-                    {/* <PopoverHeader>This is the header</PopoverHeader> */}
-                    {/* <PopoverCloseButton /> */}
-                    <PopoverBody zIndex="45">
-                      <HStack justifyContent="space-evenly">
-                        {["usa", "australia", "canada", "uk"].map((i, idx) => (
+                <Portal zIndex='4'>
+                  <PopoverContent h='5rem' w='25rem' zIndex='5'>
+                  
+                    <PopoverBody zIndex='45'>
+                      <HStack justifyContent='space-evenly'>
+                        {['usa', 'australia', 'canada', 'uk'].map((i, idx) => (
                           <NextLink
-                            _hover={{ cursor: "pointer" }}
+                            _hover={{ cursor: 'pointer' }}
                             key={idx}
                             href={`/destinations/${i}`}
                           >
                             <Box>
                               <Image
-                                zIndex="150"
-                                maxH="3rem"
+                                zIndex='150'
+                                maxH='3rem'
                                 src={`/images/${i}_flag.png`}
-                                alt="country"
+                                alt='country'
                               />
-                              <Text textAlign="center" fontSize="xs">
+                              <Text textAlign='center' fontSize='xs'>
                                 {i.toLocaleUpperCase()}
                               </Text>
                             </Box>
                           </NextLink>
                         ))}
                       </HStack>
-                      {/* <Button mt={4} colorScheme="blue" onClick={onClose} ref={initRef}>
-                                        Close
-                                    </Button> */}
+                      
                     </PopoverBody>
-                    {/* <PopoverFooter>This is the footer</PopoverFooter> */}
+                    
                   </PopoverContent>
                 </Portal>
               </React.Fragment>
@@ -330,35 +327,35 @@ function Header() {
           </Popover>
 
           <Image
-            src="/images/icons/Info Square.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/Info Square.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
-        </div>
+        </div> */}
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/courses"}>
+          <NextLink passHref href={'/courses'}>
             <p>Courses</p>
           </NextLink>
           <Image
-            src="/images/icons/Category.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/Category.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={"/contact-us"}>
+          <NextLink passHref href={'/contact-us'}>
             <p>Contact Us</p>
           </NextLink>
           <Image
-            src="/images/icons/Send.png"
-            marginRight="20px"
-            marginLeft="20px"
-            height="25px"
-            width="25px"
+            src='/images/icons/Send.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
           />
         </div>
       </div>

@@ -87,25 +87,29 @@ function courses() {
           Meet Our TEAM
         </Heading>
         <SimpleGrid minChildWidth="300px" spacing="20px" mb="5">
-          <Box>
+          <Box style={{ margin: "auto" }}>
             <Image
-              src="/images/CEO.png"
+              src="/images/CEO-cropped.png"
               alt="CEO"
               width="300px"
-              style={{ margin: "auto" }}
             ></Image>
+            <Text fontSize="xl" style={{ paddingLeft: "8%" }} fontWeight="600">
+              Pavan, Founder
+            </Text>
           </Box>
-          <Box>
+          <Box style={{ margin: "auto" }}>
             <Image
-              src="/images/Co-founder.png"
-              alt="CO-founder"
+              src="/images/Co-founder-cropped.png"
+              alt="Co-founder"
               width="300px"
-              style={{ margin: "auto" }}
             ></Image>
+            <Text fontSize="xl" style={{ paddingLeft: "8%" }} fontWeight="600">
+              Puneetha, Co-founder
+            </Text>
           </Box>
         </SimpleGrid>
-        <Text fontSize="xl" mb="2">
-          Pavan Kanjula, CEO/Founder
+        <Text fontSize="xl" mb="2" fontWeight="700">
+          Pavan Kumar Kanjula, CEO/Founder
         </Text>
         <Text mb="5">
           Pavan Kanjula, our CEO is the brain behind the futuristic overseas
@@ -122,10 +126,11 @@ function courses() {
           his first job at AMAZON even before graduating. He paid off his study
           load with his first salary and bonus. Now, he is helping to nurture
           aspiring students with dreams of getting settled abroad. He is making
-          full use of his own experience at FLYWISE by making another {`Pavan's`}
+          full use of his own experience at FLYWISE by making another{" "}
+          {`Pavan's`}
           dream real.
         </Text>
-        <Text fontSize="xl" mb="2">
+        <Text fontSize="xl" mb="2" fontWeight="700">
           Puneetha Kanjula, Co-founder
         </Text>
         <Text mb="5">

@@ -1,120 +1,116 @@
-.footerDiv{
-    width:100%;
-    height:100%;
-    background-color:  #E6F6FF;
-    
-    
+.footerDiv {
+  width: 100%;
+  height: 100%;
+  background-color: #e6f6ff;
 }
-.secDiv{
-    display: flex;
-    width: 1150px;
-    height: 100%; 
-    padding-left: 25px;
-    padding-right: 25px; 
-    margin-left: auto;
-    margin-right: auto;
-    
+.secDiv {
+  display: flex;
+  width: 1150px;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.number{
-    display: flex;
-    
+.number {
+  display: flex;
 }
-.phone{
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
+.phone {
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
 }
-.address{
-  flex:0.53;
-  color: #234A61;
+.address {
+  flex: 0.53;
+  color: #234a61;
   padding-top: 30px;
   padding-bottom: 10px;
 }
-.address h1{
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 10px;
+.address h1 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.address p{
-    color: #234A61B2;
-    margin-bottom: 10px;
+.address p {
+  color: #234a61b2;
+  margin-bottom: 10px;
 }
-.iconsDiv{
-    flex:0.47;
-    display:flex;
-    align-items: center;
+.iconsDiv {
+  flex: 0.47;
+  display: flex;
+  align-items: center;
 }
-.logodiv{
-    height: 55px;
-    width: 55px;
-   margin-right: 50px;
+.logodiv {
+  height: 55px;
+  width: 55px;
+  margin-right: 50px;
 }
-.copyright{
-text-align: center;
-height: 50px;
-padding-top: 10px;
-background: #234A61;
-color: white;
+.copyright {
+  text-align: center;
+  padding: 10px;
+  background: #234a61;
+  color: white;
 }
-.arrowdiv{
-    height: 50px;
-    width: 50px;
-    background: #234A61;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius:25px ;
-    margin-left: 50px;
-    box-shadow: 0px 4.93333px 4.93333px rgba(0, 0, 0, 0.25);
+.arrowdiv {
+  height: 50px;
+  width: 50px;
+  background: #234a61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  margin-left: 50px;
+  box-shadow: 0px 4.93333px 4.93333px rgba(0, 0, 0, 0.25);
 }
-@media(max-width:1200px){
-    .secDiv{
-        width:100%;
-    }
+@media (max-width: 1200px) {
+  .secDiv {
+    width: 100%;
+  }
 }
 
-@media(max-width:780px){
-    .logodiv{
-        height:40px;
-        width:40px;
-        margin-right: 20px;
-    }
-    .arrowdiv{
-        height:40px;
-        width:40px;
-        margin-right: 30px;
-    }
+@media (max-width: 780px) {
+  .logodiv {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+  }
+  .arrowdiv {
+    height: 40px;
+    width: 40px;
+    margin-right: 30px;
+  }
 }
-@media(max-width:500px){
-    .footerDiv{
-        height: 100%;
-    }
-    .secDiv{
-        flex-direction: column;
-        padding-bottom: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .address{
-        flex:1;
-    }
-    .address p{
-        margin-bottom: 15px;
-    }
-    .iconsDiv{
-        flex: 1;
-    }
-    .logodiv{
-        margin-right: 10px;
-    }
-    .arrowdiv{margin-left: 70px;}
+@media (max-width: 500px) {
+  .footerDiv {
+    height: 100%;
+  }
+  .secDiv {
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .address {
+    flex: 1;
+  }
+  .address p {
+    margin-bottom: 15px;
+  }
+  .iconsDiv {
+    flex: 1;
+  }
+  .logodiv {
+    margin-right: 10px;
+  }
+  .arrowdiv {
+    margin-left: 70px;
+  }
 }
-@media(max-width:400px){
-    .arrowdiv{
-        margin-left: 40px;
-        margin-right: -50px;
-        height: 40px;
-        width: 40px;
-        
-    }
+@media (max-width: 400px) {
+  .arrowdiv {
+    margin-left: 40px;
+    margin-right: -50px;
+    height: 40px;
+    width: 40px;
+  }
 }

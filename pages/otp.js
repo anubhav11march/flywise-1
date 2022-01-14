@@ -153,6 +153,7 @@ const router=useRouter();
         }
       })
       .catch((err) => {
+        localStorage.removeItem("profile")
         if (err) {
           console.log(err);
           // console.log(err.response.data.error);

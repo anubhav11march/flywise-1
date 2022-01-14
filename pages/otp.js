@@ -13,6 +13,7 @@ import NLink from "next/link";
 import pngg from "../public/images/icons/Group.png";
 import classes from "../styles/whatsappbtn.module.css";
 import ComingSoon from "../public/images/icons/confirm.png";
+import axios from "axios";
 import {
   Box,
   Center,
@@ -29,8 +30,10 @@ import {
 } from "@chakra-ui/react";
 import OtpInput from "react-otp-input";
 
+
 const Otp = (props) => {
   const [otp, setOtp] = useState(0);
+  const [error, setError] = useState("");
 const router=useRouter();
   const handleChange = (e) => {
     setOtp(e.target.value);
@@ -51,23 +54,23 @@ const router=useRouter();
   };
   const onSignInSubmit = (userPhone) => {
     e.preventDefault();
-    configureRecaptcha();
-    const phoneNumber = "+91" + userPhone;
-    console.log(phoneNumber);
-    const appVerifier = window.recaptchaVerifier;
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
-        window.confirmationResult = confirmationResult;
-        console.log("send");
-        // ...
-      })
-      .catch((error) => {
-        console.log(error);
-        // Error; SMS not sent
-        // ...
-      });
+    // configureRecaptcha();
+    // const phoneNumber = "+91" + userPhone;
+    // console.log(phoneNumber);
+    // const appVerifier = window.recaptchaVerifier;
+    // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+    //   .then((confirmationResult) => {
+    //     // SMS sent. Prompt user to type the code from the message, then sign the
+    //     // user in with confirmationResult.confirm(code).
+    //     window.confirmationResult = confirmationResult;
+    //     console.log("send");
+    //     // ...
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     // Error; SMS not sent
+    //     // ...
+    //   });
   };
   const onSubmitOtp = (e) => {
     e.preventDefault();
@@ -79,17 +82,92 @@ const router=useRouter();
         // User signed in successfully.
         const user = result.user;
         console.log(user);
-        alert("User verified");
-        router.push('/success');
+        evaluateProfilePost()
+        console.log("User verified");
+        
+       
         // ...
       })
       .catch((error) => {
         console.log(error);
-       alert("Wrong OTP");
+      //  alert("Wrong OTP");
+      setError("Wrong Otp Entered")
         // ...
       });
   };
 
+  function evaluateProfilePost() {
+    // setLoading(true);
+    // setSuccess("");
+    setError("");
+    
+ 
+    axios({
+      url: "https://flywisebackend.herokuapp.com/api/user/add",
+      method: "POST",
+      headers: {
+        contentType: "applications/json",
+      },
+      // body: formData
+      // data: {
+      //   whichCountry: country,
+      //   majorBarrier: majorBarrier,
+      //   courses: course,
+      //   GreQuantScore: greQuant,
+      //   GreVerbalScore: greVerbal,
+      //   // ielts_toefl: ieltsToefl,
+      //   englishTestType: englishTestType,
+      //   englishTestScore: englishTestScore,
+      //   GreTraining: greTraining,
+      //   workExperience: workEx,
+      //   noofbacklogs: backlogs,
+      //   cgpa: cgpa,
+      //   college: clgUni,
+      //   budget: budget,
+      //   fund: fundMasters,
+      //   firstName: firstName,
+      //   lastName: lastName,
+      //   email: userEmail,
+      //   mobileNo: userPhone,
+      //   session: session,
+      //   iscsit: iscsit,
+      //   referral: referral,
+      //   discover: discover == "Other" ? other : discover,
+      // },
+      data:JSON.parse(localStorage.getItem("profile"))
+      
+    })
+      .then((res) => {
+        console.log(res.data);
+           
+       
+        localStorage.removeItem("profile")
+        if (res.data.error === "ALl fields required") {
+          setError("All fields are required please try again");
+        } else {
+          router.push('/success');
+       
+          console.log(" ot success");
+           
+          
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+          // console.log(err.response.data.error);
+          if (
+            err.response.data.error ==
+            "This user has already applied for profile evaluation"
+          ) {
+            setError("You have already applied");
+          } else {
+            setError("There was an error");
+          }
+        }
+      })
+      // .finally(() => setLoading(false));
+  }
   return (
     <div>
       <Box
@@ -141,6 +219,8 @@ const router=useRouter();
               >
                 Enter OTP
               </Button>
+              {error
+                }
             </div>
           </GridItem>
 

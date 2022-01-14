@@ -71,13 +71,15 @@ function One() {
     // console.log(phoneNumber);
     const appVerifier = window.recaptchaVerifier;
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
+      .then(async(confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
-        console.log("send");
-        evaluateProfilePost();
-
+        console.log("send1");
+        // evaluateProfilePost();
+       await StoreIntoLocalStorage()
+       console.log("done")
+         router.push("/otp")
         // ...
       })
       .catch((error) => {
@@ -130,10 +132,11 @@ function One() {
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regexp.test(String(email).toLowerCase());
   }
-  function evaluateProfilePost() {
-    setLoading(true);
+   const  StoreIntoLocalStorage=async()=> {
+     setLoading(true);
     setSuccess("");
     setError("");
+    console.log("done11")
     // let formData = new FormData();
 
     // formData.append("whichCountry", country);
@@ -159,14 +162,14 @@ function One() {
     // formData.append("referral", referral);
     // formData.append("discover", discover == "Other" ? other : discover);
     // console.log(majorBarrier, englishTestType, englishTestScore);
-    axios({
-      url: "https://flywisebackend.herokuapp.com/api/user/add",
-      method: "POST",
-      headers: {
-        contentType: "applications/json",
-      },
+    // axios({
+    //   url: "https://flywisebackend.herokuapp.com/api/user/add",
+    //   method: "POST",
+    //   headers: {
+    //     contentType: "applications/json",
+    //   },
       // body: formData
-      data: {
+     const data =JSON.stringify({
         whichCountry: country,
         majorBarrier: majorBarrier,
         courses: course,
@@ -190,36 +193,10 @@ function One() {
         iscsit: iscsit,
         referral: referral,
         discover: discover == "Other" ? other : discover,
-      },
-    })
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.error === "ALl fields required") {
-          setError("All fields are required please try again");
-        } else {
-          setSuccess("Profile Submitted");
-          console.log(" ot success");
-
-          router.push("/otp");
-        }
       })
-      .catch((err) => {
-        if (err) {
-          console.log(err);
-          console.log(err.response.data.error);
-          if (
-            err.response.data.error ==
-            "This user has already applied for profile evaluation"
-          ) {
-            setError("You have already applied");
-          } else {
-            setError("There was an error");
-          }
-        }
-      })
-      .finally(() => setLoading(false));
-  }
-
+   localStorage.setItem("profile",data)
+  //    
+    }
   return (
     <div>
       {redirect ? (

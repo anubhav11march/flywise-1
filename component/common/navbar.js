@@ -31,6 +31,7 @@ const Links = [
   { link: 'Profile Evaluation', to: '/profile-evaluation' },
   { link: 'Services', to: '/#services' },
   { link: 'Mentors', to: '/mentors' },
+  { link: 'universities', to: '/universities' },
   { link: 'Blog', to: '/blog' },
   { link: 'Courses', to: '/courses' },
 ];
@@ -256,7 +257,7 @@ function Header() {
         </div>
         <div className={classes.sidelink} onClick={hidee}>
           <NextLink passHref href={'/#services'}>
-            <p>Services</p>
+            <p>Service</p>
           </NextLink>
           <Image
             src='/images/icons/Graph.png'
@@ -278,6 +279,20 @@ function Header() {
             width='25px'
           />
         </div>
+
+        <div className={classes.sidelink} onClick={hidee}>
+          <NextLink passHref href={'/universities'}>
+            <p>Universities</p>
+          </NextLink>
+          <Image
+            src='/images/icons/3 User.png'
+            marginRight='20px'
+            marginLeft='20px'
+            height='25px'
+            width='25px'
+          />
+        </div>
+
         {/**<div id='destinaiton' className={classes.sidelink}>
           <Popover
             placement='bottom'

@@ -1,13 +1,678 @@
-.universitysearch{
-    border: 1px solid red;
-    height: 20vh;
-}
+
 .universitymain{
     display: flex;
+    position: relative;
 }
+
+
+
+/* side filter */
+
 .universitysidefilter{
-    width: 32vw;
-    border-right: 15px solid rgba(64, 128, 211,0.5);
+    width: 25vw;
+    border-right: 2px solid rgba(0,0,0,0.2);
     border-radius: 4px 4px 0px 0px;
+    min-height: 80vh;
+    margin-top: 150px;
+    bottom: 0;
+}
+
+.universityFeeSlider{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    min-height: 20vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.universityFeeHead{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+.universityFeeHead h3{
+    font-weight: 600;
+    padding: 0 0.8rem;
+}
+.universityFeeBracket{
+    padding:1.2rem 0.9rem;
+}
+
+.universityGREBracket{
+    display: flex;
+    flex-direction: column;
+    padding:1.2rem 0.9rem;
+}
+.universityGREBracket{
+
+}
+
+
+
+
+
+/* Content */
+
+.universitycontent{
+    width: 75vw;
+    position: relative;
+    padding: 40px 8%;
+}
+
+.universitySearchBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.universitySearchBar input{
+    background: #FFFFFF;
+    border: 2px solid #4080D3;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 100%;
+    padding: 20px 25px;
+    height: 5vh;
+}
+.universitySearchBar h3{
+    font-weight: 500;
+    margin-top: 20px ;
+    margin-bottom: 40px;
+}
+
+
+
+/* content */
+.universityCardContainer {
+    min-height: 65vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.SingleCardProgramBtn{
+    width: 15vw;
+    display: flex;
+    justify-content: end;
+    padding: 10px 0;
+}
+.SingleCard{
+    min-height: 40vh;
+    width: 28vw;
+    margin-bottom: 30px ;
+}
+.SingleCard a{
+    height: 20px;
+    width: 20px;
+}
+.SingleCard img{
+    height: 30vh;
+    border-radius: 15px  15px 0 0;
+}
+.SingleCardcontent{
+    padding: 1rem;
+    border: 2px solid #4080D3;
+    border-radius: 0 0 15px 15px;
+}
+.SingleCardcontent h2{
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 31px;
+    color: black;
+}
+.SingleCardlocation{
+    display: flex;
+    margin: 8px 0;
+}
+.SingleCardlocation p{
+    font-size: 15px ;
+    font-weight: 500;   
+    color: rgba(0, 0, 0,0.5); 
+    line-height: 20px;
+}
+.SingleCardlocation img{
+    height: 21px ;
+    width: 23px;
+    margin-right: 10px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: #4080D3;
+} 
+.SingleCardFeatures{
+    padding: 20px 0;
+}
+.SingleCardSingleFeature {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid rgba(0, 0, 0,0.1);
+    padding: 5px 0;
+}
+.SingleCardSingleFeature h5{
+    color: rgba(0, 0, 0,0.5);
+    font-size: 1rem;
+}
+.SingleCardSingleFeature h6{
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.SingleCardprogram{
+    display: flex;
+}
+
+/* //sidebar */
+
+.checkboxDropdown {
+    width: 200px;
+    border: 1px solid #aaa;
+    padding: 10px;
+    position: relative;
+    margin: 0 auto;
+    
+    user-select: none;
+}
+
+/* Display CSS arrow to the right of the dropdown text */
+.checkboxDropdown:after {
+    content:'';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 6px solid transparent;
+    border-top-color: #000;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+}
+
+/* Reverse the CSS arrow when the dropdown is active */
+.checkboxDropdown.is-active:after {
+    border-bottom-color: #000;
+    border-top-color: #fff;
+    margin-top: -9px;
+}
+
+.checkboxDropdownList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; /* align the dropdown right below the dropdown text */
+    border: inherit;
+    border-top: none;
+    left: -1px; /* align the dropdown to the left */
+    right: -1px; /* align the dropdown to the right */
+    opacity: 0; /* hide the dropdown */
+   
+    transition: opacity 0.4s ease-in-out;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    pointer-events: none; /* avoid mouse click events inside the dropdown */
+}
+.is-active .checkboxDropdownList {
+    opacity: 1; /* display the dropdown */
+    pointer-events: auto; /* make sure that the user still can select checkboxes */
+}
+
+.checkboxDropdownList li label {
+    display: block;
+    border-bottom: 1px solid silver;
+    padding: 10px;
+   
+    transition: all 0.2s ease-out;
+}
+
+.checkboxDropdownList li label:hover {
+    background-color: #555;
+    color: white;
+}
+
+
+
+
+/* Single university page */
+.universityPage{
+    min-height: 100vh;
+}
+
+.universityBanner{
+    height: 75vh;
+    width: 100vw;
+}
+.universityBannerimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../public/images/canada_bg.png);
+    background-size: cover;
+    background-position: center;
+
+}
+.universityBannerContent{
+    width: 35vw;
+    height: 20vh;
+    position: absolute ;
+    top: 17rem;
+    left: 5rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.universityBannerContent img{
+    width: 3rem;
+}
+.universityBannerContent h3{
+    font-weight: 500;
+    color: white;
+    font-size: 2rem;
+    margin-left: 20px;
+}
+.universityBannerContent h4{
+    font-weight: 500;
+    color: white;
+    font-size: 1.6rem;
+    position: absolute ;
+    top: 8rem;
+    width: 40vw;
+}
+
+
+
+
+
+/* univeristy bar */
+
+
+.universitybar{
+    background-color:#4080D3 ;
+    padding: 20px;
+    
+}
+.universitybar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.universitybar ul li {
+    color: white;
+    list-style: none;
+}
+.universitybar ul li a{
+    text-decoration: none;
+}
+
+
+/* University about section  */
+.universityAboutSection{
+    height: 60vh;
+    display: flex;
+    padding: 5rem 8rem;
+    justify-content: space-evenly;
+    background: linear-gradient(180deg, rgba(230, 246, 255, 0.6) 41.47%, rgba(255, 255, 255, 0) 100%);
+}
+.universityAboutContent{
+    width: 40vw;
+}
+.universityAboutContent h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 70px;
+    color: #4080D3;
+}
+.universityAboutContent p{
+    color: rgba(0, 0, 0,0.4);
+}
+.universityAboutSection img{
+    height: 100%;
+    width: 30%;
+    background-position: center;
+    border-radius: 20px;
+}
+
+
+
+/* Admission section */
+
+
+.universityAdmission{
+    min-height: 90vh;
+    background: rgba(218, 218, 218,0.1);
+    padding: 3rem 0;
+
+}
+.universityAdmission h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 80px;
+    color: #4080D3;
+    text-align: center;
+}
+
+.universityAdmission h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+.universityAcceptanceRate{
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   
+}
+.universityTable{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+   flex-wrap: wrap;
+
+}
+.universityGraduate{
+    
+    background-color: white;
+    border-radius: 30px;
+    min-width: 35vw;
+    padding: 2rem 0;
+}
+.universityGraduate h4{
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+
+/* Ranking system */
+
+.UniversitySpace{
+    height: 5vh;
+    background-color: white;
+}
+.universityRankingSection h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4080D3;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.universityRankingSection{
     height: 80vh;
+    padding: 5rem 6rem;
+    background: rgba(218, 218, 218,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.universityRankingContainer{
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 40vh;
+}
+.universityRankingContainer img{
+    width: 35vw;
+    height: 100%;
+    background-position: center;
+    border-radius: 20px;
+}
+.universityRankingContent{
+    width: 35vw;
+}
+.universityRankingContent h3{
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: left;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.universityRankingContent ol li {
+    font-size: 1.2rem;
+    color: rgba(10, 10, 10,0.4);
+}
+
+   
+
+
+/* Courses */
+.universityCoursesSection h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4080D3;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.universityCoursesSection{
+    height: 80vh;
+    padding: 5rem 6rem;
+    background: linear-gradient(180deg, rgba(230, 246, 255, 0.6) 41.47%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* Fees */
+.universityFeesSection{
+    min-height: 80vh;
+    padding: 4rem 6rem;
+    background: rgba(218, 218, 218,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.universityFeesSection h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4080D3;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.universityFeesSection h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 30px;
+    color: rgba(0, 0, 0,0.4);
+    text-align: center;
+    width: 60vw;
+    margin-bottom: 40px;
+}
+
+
+/* Student life  */
+
+.universityStudentLife{
+    height: 55vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../public/images/student_life.png);
+    background-position:center;
+    background-size: cover;
+    object-fit: cover;
+}
+.universityStudentLifeContent{
+    width: 50vw;
+    position: relative;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+
+.universityStudentLifeContentHead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.universityStudentLifeContentHead h3{
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+.universityStudentLifeContentHead img{
+    height:7%;
+    width:13%;
+}
+
+.universityStudentLifeContent p{
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.universityStudentLifeContent ul li {
+    color: white;
+    line-height: 30px;
+}
+/* singlepage media queries */
+
+@media (max-width: 1080px) {
+    .universityBannerContent{
+        width: 50vw;
+    }
+    .universityBannerContent h4{
+        width: 60vw;
+    }
+}
+@media (max-width: 730px) {
+    .universityBannerContent{
+        width: 100vw;
+        top: 8rem;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    .universityBannerContent h3 {
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .universityBannerContent h4 {
+        color: rgba(0, 0, 0,0.4);
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 600;
+        top: 6rem;
+        width: 90vw;
+    }
+    .universityBannerimg{
+        position: relative;
+        top: 11rem;
+        height: 40vh;
+    }
+    .universityBanner{
+        height: 65vh;
+    }
+    .universitybar ul li {
+        text-decoration: none;
+        font-size: 0.6rem;
+    }
+    .universityAboutSection{
+        padding: 3rem 1rem ;
+        height: 45vh;
+    }
+    .universityAboutSection h3{
+        line-height: 10px;
+        font-size: 1rem;
+        margin-bottom: 19px;
+    }
+    .universityAboutContent{
+        width: 60vw;
+    }
+    .universityAboutContent p{
+        font-size: 0.9rem;
+    }
+    .universityAboutSection img{
+        height: 50%;
+    }
+    .universityAdmission h3{
+        line-height: 10px;
+        font-size: 1.4rem;
+    }
+    .universityAdmission h2{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .universityGraduate{
+        margin-bottom: 50px;
+    }
+    .universityGraduate h4{
+        font-size: 1.2rem;
+    }
+    .universityRankingSection{
+        padding: 2rem 0;
+        justify-content: start;
+        height: 60vh;
+    }
+    .UniversitySpace{
+    height: 2vh;
+    }
+    .universityRankingContent h3{
+        font-size: 1.1rem;
+    }
+    .universityRankingContent ol li {
+    font-size: 0.8rem;
+    }
+    .universityRankingContainer img{
+        height: 60%;
+    }
+
+.universityCoursesTablestyle{
+    width: 50vw;
+}
+.universityCoursesTable{
+    width: 50vw;
+}
+    .universityCoursesSection{
+        padding: 6rem 0;
+        height: 90vh;
+    }
+    .universityCoursesSection h3{
+        margin-bottom: 20px;
+    }
+    .universityCoursesTable{
+        width: 70vw;
+    }
+    .universityStudentLife{
+        height: 60vh;
+    }
+
+    .universityStudentLifeContent{
+        top:50%;
+        width: 90vw;
+    }
+    .universityStudentLifeContent p{
+        font-size: 0.9rem;
+        text-align: start;
+    }
+    .universityStudentLifeContent ul li{
+        font-size: 0.8rem;
+    }
+    .universityGraduate{
+        min-width: 60vw;
+    }
 }

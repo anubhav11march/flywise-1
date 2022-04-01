@@ -31,7 +31,7 @@ const Links = [
   { link: 'Profile Evaluation', to: '/profile-evaluation' },
   { link: 'Services', to: '/#services' },
   { link: 'Mentors', to: '/mentors' },
-  { link: 'universities', to: '/universities' },
+  { link: 'Universities', to: '/university' },
   { link: 'Blog', to: '/blog' },
   { link: 'Courses', to: '/courses' },
 ];
@@ -281,7 +281,7 @@ function Header() {
         </div>
 
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={'/universities'}>
+          <NextLink passHref href={'/university'}>
             <p>Universities</p>
           </NextLink>
           <Image

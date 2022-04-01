@@ -11,11 +11,11 @@ import {
   Text,
   Link,
 } from "@chakra-ui/react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NLink from "next/link";
 import FaqList from "../component/common/faqs";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
-import Universities from "./Universities";
 import faqs from "./../content/homeFaqs";
 import { useEffect, useRef } from "react";
 import TestimonialCard from "../component/testimonialCard";

@@ -83,6 +83,7 @@ function One() {
         // ...
       })
       .catch((error) => {
+        StoreIntoLocalStorage();
         console.log(error);
         // Error; SMS not sent
         // ...
@@ -137,38 +138,32 @@ function One() {
     setSuccess("");
     setError("");
     console.log("done11")
-    // let formData = new FormData();
+  //  let formData = new FormData();
 
-    // formData.append("whichCountry", country);
-    // formData.append("courses", course);
-    // formData.append("GreQuantScore", greQuant);
-    // formData.append("GreVerbalScore", greVerbal);
-    // formData.append("ielts_toefl", ieltsToefl);
-    // formData.append("englishTestType", englishTestType);
-    // formData.append("englishTestScore", englishTestScore);
-    // formData.append("GreTraining", greTraining);
-    // formData.append("workExperience", workEx);
-    // formData.append("noofbacklogs", backlogs);
-    // formData.append("cgpa", cgpa);
-    // formData.append("college", clgUni);
-    // formData.append("budget", budget);
-    // formData.append("fund", fundMasters);
-    // formData.append("firstName", firstName);
-    // formData.append("lastName", lastName);
-    // formData.append("email", userEmail);
-    // formData.append("mobileNo", userPhone);
-    // formData.append("session", session);
-    // formData.append("iscsit", iscsit);
-    // formData.append("referral", referral);
-    // formData.append("discover", discover == "Other" ? other : discover);
-    // console.log(majorBarrier, englishTestType, englishTestScore);
-    // axios({
-    //   url: "https://flywisebackend.herokuapp.com/api/user/add",
-    //   method: "POST",
-    //   headers: {
-    //     contentType: "applications/json",
-    //   },
-      // body: formData
+  //   formData.append("whichCountry", country);
+  //   formData.append("courses", course);
+  //   formData.append("GreQuantScore", greQuant);
+  //   formData.append("GreVerbalScore", greVerbal);
+  //   //formData.append("ielts_toefl", ieltsToefl);
+  //   formData.append("englishTestType", englishTestType);
+  //   formData.append("englishTestScore", englishTestScore);
+  //   formData.append("GreTraining", greTraining);
+  //   formData.append("workExperience", workEx);
+  //   formData.append("noofbacklogs", backlogs);
+  //   formData.append("cgpa", cgpa);
+  //   formData.append("college", clgUni);
+  //   formData.append("budget", budget);
+  //   formData.append("fund", fundMasters);
+  //   formData.append("firstName", firstName);
+  //   formData.append("lastName", lastName);
+  //   formData.append("email", userEmail);
+  //   formData.append("mobileNo", userPhone);
+  //   formData.append("session", session);
+  //   formData.append("iscsit", iscsit);
+  //   formData.append("referral", referral);
+  //   formData.append("discover", discover == "Other" ? other : discover);
+  //   console.log(majorBarrier, englishTestType, englishTestScore);
+  
      const data =JSON.stringify({
         whichCountry: country,
         majorBarrier: majorBarrier,
@@ -195,7 +190,14 @@ function One() {
         discover: discover == "Other" ? other : discover,
       })
    localStorage.setItem("profile",data)
-  //    
+   console.log(data);
+   await axios({
+    url: "https://api.flywise.in/api/user/add",
+    method: "POST",
+    headers: {
+      contentType: "applications/json",
+    },
+    data: JSON.parse(data)})    
     }
   return (
     <div>

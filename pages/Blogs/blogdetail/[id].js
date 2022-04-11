@@ -6,7 +6,7 @@ import axios from 'axios'
 import univeristyimg from '../../../public/images/university.png' 
 import { useRouter } from 'next/router'
 
-function singlelblog() {
+function Singleblog() {
   const [blogData, setblogData] = useState({})
   const router = useRouter()  
   let id = router?.query?.id
@@ -53,4 +53,4 @@ const getdata = async()=>{
   )
 }
 
-export default singlelblog
+export default Singleblog

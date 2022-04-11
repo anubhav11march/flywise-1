@@ -23,13 +23,13 @@ function SliderThumbWithTooltip(prop) {
         onMouseLeave={() => setShowTooltip(false)}
       >
         <SliderMark value={prop.start} mt='3' ml='-2.5' fontSize='0.8rem'>
-          {prop.start}K
+          {prop.start}
         </SliderMark>
         <SliderMark value={prop.mid} mt='3' ml='-2.5' fontSize='0.8rem'>
-        {prop.mid}K
+        {prop.mid}
         </SliderMark>
         <SliderMark value={prop.end} mt='3' ml='-2.5' fontSize='0.7rem'>
-        {prop.end}K
+        {prop.end}
         </SliderMark>
         <SliderTrack>
           <SliderFilledTrack />

@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import Navbar from "../../component/common/navbar";
 import Footer from "../../component/common/footer";
 import Classes from "../../styles/university.module.css";
@@ -14,6 +14,12 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from '@chakra-ui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
+import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons/faCircleXmark'
+import axios from "axios";
+
 
 function Universities() {
   const [GREValue, setGREValue] = React.useState(null)
@@ -22,21 +28,44 @@ function Universities() {
   const [ApplicationDeadline, setApplicationDeadline] = React.useState(null)
   const [usStates, setusStates] = React.useState([]);
   const [ukStates, setukStates] = React.useState([]);
-
+  const [sidefilter, setsidefilter] = useState(Classes.hideSidebar)
+  const [ModalBG, setModalBG] = useState("")
+  const [universityDate, setuniversityDate] = useState([])
   useEffect(() => {
     let USAstates = State.getStatesOfCountry('US')
     let UKstates = State.getStatesOfCountry('GB');
     setusStates(USAstates)
     setukStates(UKstates)
-
+    callUniversityData();
   }, [])
   
+  const HandleSidebar=()=>{
+    if(sidefilter==Classes.hideSidebar){
+      setModalBG(Classes.contentBlur);
+      setsidefilter(Classes.showSidebar)
+    }else{
+      setModalBG("");
+      setsidefilter(Classes.hideSidebar)
+
+    }
+  }
+
+  const callUniversityData =async()=>{
+    try {
+      const call1 = await axios.get("https://flywise-admin.herokuapp.com/api/allUni");
+      console.log(call1);
+      setuniversityDate(call1.data.allUni)
+    } catch (error) {
+      console.log(error);
+    } 
+  }
 
   return (
     <>
       <Navbar />
       <section className={Classes.universitymain}>
-        <div className={Classes.universitysidefilter}>
+        <div id={sidefilter} className={Classes.universitysidefilter}>
+        
         <Accordion  allowMultiple>
           <AccordionItem >
             <h2>
@@ -126,10 +155,10 @@ function Universities() {
         <div className={Classes.universityFeeBracket}>
             <SliderThumbWithTooltip
               min={1}
-              max={100}
-              mid={50}
+              max={100000}
               start={0}
-              end={100}
+              mid={50000}
+              end={100000}
             />
         </div>
       </div>
@@ -255,26 +284,35 @@ function Universities() {
       </div>
 
 
-
-
-
-
         </div>
 
 
         {/* /content start */}
-        <div className={Classes.universitycontent}>
+        <div className={Classes.universitycontent} id={ModalBG}>
           <div className={Classes.universitySearchBar}>
-            <input type="text" placeholder="Search For An Institute" />
+            <div className={Classes.universitySearch}>
+            <input type="search" placeholder="Search For An Institute"/>
+
+            <button className={Classes.universitySearchIcon} ><FontAwesomeIcon style={{color:"grey",fontSize:"1.2rem"}} icon={faMagnifyingGlass} /></button>
+            <button className={Classes.universityFilterIcon} onClick={HandleSidebar} ><FontAwesomeIcon style={{color:"grey",fontSize:"1.2rem"}} icon={faFilter} /></button>
+            
+            </div>
             <h3>You Found 150 Institute and 2000 Courses</h3>
           </div>
           <div className={Classes.universityCardContainer}>
-          <Universitycard />
-          <Universitycard />
-          <Universitycard />
-          <Universitycard />
-          <Universitycard />
-          <Universitycard />
+          {
+            universityDate?.map((university,index)=>{
+              return <Universitycard 
+                    name={university.name}
+                    photo={university.photo}
+                    country={university.country}
+                    state={university.state}
+                    id={university._id}
+              />
+            })
+          }
+
+          
           </div>
         </div>
       </section>

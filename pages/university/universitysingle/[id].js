@@ -1,24 +1,38 @@
-import React from 'react'
-import img1 from '../public/images/canada_bg.png'
-import img2 from '../public/images/student_cap_icon.png'
-import logo from '../public/images/course_icon1.png'
-import Classes from '../styles/university.module.css'
-import Navbar from '../component/common/navbar'
+import React,{useEffect,useState} from 'react'
+import img1 from '../../../public/images/canada_bg.png'
+import img2 from '../../../public/images/student_cap_icon.png'
+import logo from '../../../public/images/course_icon1.png'
+import Classes from '../../../styles/university.module.css'
+import Navbar from '../../../component/common/navbar'
 import NextLink from 'next/link';
 import { ChakraProvider } from '@chakra-ui/react'
-import {
-  Box,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-} from '@chakra-ui/react'
-import Footer from '../component/common/footer'
+import {  Box,Table,Thead,Tbody,Tfoot,Tr,Th,Td,TableCaption} from '@chakra-ui/react'
+import Footer from '../../../component/common/footer'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+
 function universitysingle() {
+  const [singleUniversityData, setsingleUniversityData] = useState()
+  
+    const router = useRouter()  
+    let id = router?.query?.id
+
+  useEffect(() => {
+    if(id){
+      getdata();
+    }
+  }, [id])
+
+  const getdata = async()=>{
+    try {
+      const call1 = await axios.get(`https://flywise-admin.herokuapp.com/api/uniById/${router?.query?.id}`)
+      setsingleUniversityData(call1.data.uni);
+      console.log(call1.data.uni);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
         <Navbar/>
@@ -28,14 +42,17 @@ function universitysingle() {
 
         {/* Banner */}
         <div className={Classes.universityBanner}>
-              <div class={Classes.universityBannerimg}>
+              <div class={Classes.universityBannerimg} style={{
+    background: ` linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${singleUniversityData?.photo}) `
+                ,objectFit:"cover",backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"
+              }}>
 
               </div>
               <div className={Classes.universityBannerContent}>
                 <img src={logo.src} alt="" />
-                <h3>Harvard University</h3>
+                <h3>{singleUniversityData?.name}</h3>
                 
-        <h4>Harvard is the Dream college of a majority of student.</h4>
+        <h4>{singleUniversityData?.remarks}</h4>
             </div>
         </div>
 
@@ -58,7 +75,7 @@ function universitysingle() {
                 <h3>About Harvard University</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea nam expedita sit et quae quia deserunt maxime exercitationem hic repudiandae, blanditiis, enim dicta.</p>
             </div>
-            <img src={img1.src} alt="" />
+            <img src={singleUniversityData?.photo} alt="" />
         </div>
 
 
@@ -350,3 +367,20 @@ function universitysingle() {
 }
 
 export default universitysingle
+
+// export const getServerSideProps = async ({ params }) => {
+//   const { data } = await axios.get(`https://flywise-admin.herokuapp.com/api/uniById/${params.id}`);
+//   console.log(data);
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   const University = data;
+//   return {
+//     props: {
+//       University,
+//     },
+//   };
+// };

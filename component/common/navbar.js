@@ -32,7 +32,7 @@ const Links = [
   { link: 'Services', to: '/#services' },
   { link: 'Mentors', to: '/mentors' },
   { link: 'Universities', to: '/university' },
-  { link: 'Blog', to: '/blog' },
+  { link: 'Blog', to: '/Blogs' },
   { link: 'Courses', to: '/courses' },
 ];
 import Ham from '../../public/images/icons/ham.png';

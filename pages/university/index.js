@@ -303,6 +303,7 @@ function Universities() {
           {
             universityDate?.map((university,index)=>{
               return <Universitycard 
+                    key={index}
                     name={university.name}
                     photo={university.photo}
                     country={university.country}

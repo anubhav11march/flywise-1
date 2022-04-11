@@ -5,7 +5,7 @@ import Navbar from '../../component/common/navbar'
 import SingleBlog from './SingleBlog';
 import Footer from '../../component/common/footer'
 import axios from 'axios';
-function index() {
+function Index() {
   const [blogData, setblogData] = useState([])
 
   useEffect(() => {
@@ -60,4 +60,4 @@ function index() {
   )
 }
 
-export default index
+export default Index

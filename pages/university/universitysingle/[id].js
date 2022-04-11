@@ -42,7 +42,7 @@ function universitysingle() {
 
         {/* Banner */}
         <div className={Classes.universityBanner}>
-              <div class={Classes.universityBannerimg} style={{
+              <div className={Classes.universityBannerimg} style={{
     background: ` linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${singleUniversityData?.photo}) `
                 ,objectFit:"cover",backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"
               }}>

@@ -1,6 +1,6 @@
 import React,{useEffect,useState,useMemo} from "react";
 import Navbar from "../../component/common/navbar";
-import Footer from "../../component/common/footer";
+import Footer from "../../component/common/footerr";
 import Classes from "../../styles/university.module.css";
 import { Select,RadioGroup,Stack,Radio,Checkbox,Box } from "@chakra-ui/react";
 import SliderThumbWithTooltip from "./Slider";

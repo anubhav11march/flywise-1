@@ -96,15 +96,15 @@
 }
 @media (max-width: 1400px) {
   .mainHeader {
-    width: 100%;
     justify-content: space-around;
     padding: 1% 0;
-  
   }
 }
-@media (min-width: 1400px)and (max-width: 2000px) {
+@media (min-width: 1380px)and (max-width: 2000px) {
   .mainHeader {
-  padding: 1% 10%;
+  max-width: 1190px;
+  margin: auto;
+
 }
 }
 @media (max-width: 769px) {

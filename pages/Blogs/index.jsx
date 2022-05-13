@@ -7,7 +7,7 @@ import Navbar from '../../component/common/navbar'
 import SingleBlog from './SingleBlog';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-import Footer from '../../component/common/footer'
+import Footer from '../../component/common/footerr'
 import axios from 'axios';
 function Index() {
   const [blogData, setblogData] = useState([])
@@ -78,7 +78,7 @@ function Index() {
               />
             <button className={Classes.BlogSearchIcon} ><FontAwesomeIcon style={{color:"grey",fontSize:"1.2rem"}} icon={faMagnifyingGlass} /></button>            
             </div>
-            <div  className="container-fluid col-lg-11 col-xxl-10  col-md-12 col-sm-12 col-11 my-5  ">
+            <div  className={`${Classes.BlogWidth} container-fluid col-lg-11   col-md-12 col-sm-12 col-11 my-5 `}>
             
             <div className='row '>                    {
               (searchInput.length > 1) ?  

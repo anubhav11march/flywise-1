@@ -145,6 +145,10 @@
     .BlogSearchBar input{
         padding: 1.5%;
     }
+    .BlogWidth{
+        max-width: 1190px;
+        margin: auto;
+    }
 }
 
 

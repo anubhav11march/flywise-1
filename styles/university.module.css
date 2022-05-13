@@ -303,8 +303,11 @@
         width: 48%;
     }
     .universitymain{
-        padding: 2% 10%;
+        max-width: 1190px;
+        margin: auto;
+        padding: 0;
     }
+
     .universitySearch button {
         padding-top: 20px;
     }

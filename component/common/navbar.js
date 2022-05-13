@@ -31,7 +31,7 @@ const Links = [
   { link: 'Profile Evaluation', to: '/profile-evaluation' },
   { link: 'Services', to: '/#services' },
   { link: 'Mentors', to: '/mentors' },
-  { link: 'Universities', to: '/university' },
+  // { link: 'Universities', to: '/university' },
   { link: 'Blog', to: '/blog' },
   { link: 'Courses', to: '/courses' },
 ];
@@ -201,7 +201,7 @@ function Header() {
           <div className={classes.links}>
             <AllNavLinks />
           </div>
-          <div className={classes.contact}>
+          {/* <div className={classes.contact}>
             <Flex alignItems={'center'}>
               <NextLink href='/contact-us'>
                 <Button
@@ -220,7 +220,7 @@ function Header() {
                 </Button>
               </NextLink>
             </Flex>
-          </div>
+          </div> */}
           <div id='ham' className={classes.ham} onClick={showw}>
             <Image src='/images/icons/ham.png' />
           </div>
@@ -253,6 +253,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='activity'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
@@ -265,6 +266,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='graph'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
@@ -277,6 +279,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='user'
           />
         </div>
 
@@ -290,6 +293,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='user'
           />
         </div>
 
@@ -359,6 +363,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='category'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
@@ -371,6 +376,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='send'
           />
         </div>
       </div>

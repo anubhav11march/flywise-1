@@ -25,6 +25,7 @@ import "aos/dist/aos.css";
 import { TweenMax, Expo } from "gsap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 export default function Home() {
   const responsive = {
@@ -138,52 +139,33 @@ export default function Home() {
         <GridItem rowSpan={12} colSpan={12}>
           <Navbar outline="" />
         </GridItem>
-        <GridItem rowSpan={12} colSpan={12}>
+        <GridItem rowSpan={8} colSpan={12} 
+        bg={
+            "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
+          }>
           <div className={classes.home}>
             <div className={classes.textDiv}>
               <Heading
                 mt={{ base: "6", md: "4" }}
                 textAlign={{ base: "center", md: "left" }}
-                fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
+                fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
+                fontFamily="sans-serif"
+                fontWeight={700}
+                maxW={578}
+                
               >
-                An exclusive overseas education platform for
+                Apply to your Dream University for
                 <Link
                   _hover={{ textDecoration: "none" }}
+                  fontFamily="sans-serif"
                   fontWeight="bold"
                   fontSize={["22px", "2xl", "3xl", "4xl", "4xl"]}
-                  color="#0DB3FB"
+                  color="#2B6CB0"
                 >
                   <span ref={eleven} className={classes.linkk1}>
                     {" "}
-                    {`master's`}
-                  </span>{" "}
-                  <span ref={one} className={classes.linkk2}>
-                    education
-                  </span>{" "}
-                  <span ref={two} className={classes.linkk3}>
-                    and
-                  </span>{" "}
-                  <span ref={three} className={classes.linkk4}>
-                    your
-                  </span>{" "}
-                  <span ref={four} className={classes.linkk5}>
-                    future
-                  </span>{" "}
-                  <span ref={five} className={classes.linkk6}>
-                    IT
-                  </span>{" "}
-                  <span ref={six} className={classes.linkk7}>
-                    career
-                  </span>{" "}
-                  <span ref={seven} className={classes.linkk8}>
-                    in
-                  </span>{" "}
-                  <span ref={eight} className={classes.linkk9}>
-                    the
-                  </span>{" "}
-                  <span ref={nine} className={classes.linkk10}>
-                    USA!
-                  </span>{" "}
+                    {"Free"}
+                  </span>
                 </Link>
               </Heading>
 
@@ -191,20 +173,24 @@ export default function Home() {
                 textAlign={{ base: "center", md: "left" }}
                 my="4"
                 fontSize={{ base: "16px", md: "16px" }}
+                fontFamily="sans-serif"
+                color="#595858"
+                maxW={694}
+                paddingTop={25}
+                
               >
-                Why do we go abroad? To pursue higher education, land a secure
-                and stable job, earn a steady income and further pursue our
-                dreams. Most of us dream of achieving this instantly as soon as
-                we get an admission; however, the real journey starts when you
-                land abroad.
+                We help you get admitted to your dream university with a career guidance program.
               </Text>
               <Text
                 textAlign={{ base: "center", md: "left" }}
                 my="4"
                 fontSize={{ base: "16px", md: "16px" }}
+                fontWeight="bold"
+                fontFamily="sans-serif"
+                maxW={694}
+                paddingTop={50}
               >
-                Our team at Flywise can support you along this new journey and
-                help land your dream job.
+                Shortlist the programs that best match your profile
               </Text>
               <Flex
                 my={{ base: "10", md: "5" }}
@@ -216,38 +202,46 @@ export default function Home() {
                 }}
               >
                 <NLink href="/profile-evaluation" passHref>
-                  <Button
-                    variant={"solid"}
-                    size={"md"}
-                    color="white"
+                  <Button colorScheme='blue'
+                    variant="solid"
                     fontWeight="semibold"
-                    px="6"
+                    size="md"
+                    px={6}
                     my={{ base: "4", md: "2" }}
-                    id="gradientt"
-                    colorScheme="blue"
-                    // bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-                    // _hover={{
-                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                    // }}
-                    // _focus={{
-                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                    // }}
-                    // _active={{
-                    // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-                    // }}
-                    mt="6"
-                    rounded="full"
+                    mt={6}
+                    backgroundColor="#2B6CB0"             
                   >
-                    Free Profile Evaluation
+                    
+                    {"Free Profile Evaluation  "}
+                    <ArrowForwardIcon fontSize={20} />
+                  
                   </Button>
+                    
+                
                 </NLink>
               </Flex>
             </div>
 
             <div className={classes.illuss}>
-              <Image objectFit="contain" src="/images/illus.svg" alt="main" />
+              <Image objectFit="contain" src="/images/illus2.svg" alt="main" />
             </div>
+            
           </div>
+              <div className={classes.header_benefits} style={{marginTop:"5%"}}>
+                <div className={classes.header_benefit}>
+                  <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/checkMark.svg" alt="main" />
+                  <p>Our guidelines and application process is 100% free</p>
+                </div>
+                <div  className={classes.header_benefit}>
+                  <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/bookMark.svg" alt="main" />
+                 <p>Get admits from the top universities.</p>
+                </div>
+                <div  className={classes.header_benefit}>
+                  <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/plane.svg" alt="main" />
+                 <p>Get internships and jobs at our partnered companies abroad</p>
+                </div>
+          </div>
+          
         </GridItem>
         {/* Vikas Thakur done this */}
         <GridItem
@@ -257,67 +251,139 @@ export default function Home() {
           // colSpan={{base: 12, md:6}}
 
           mt="16"
-          bg={
-            "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
-          }
+          
         >
-          <Center>
-            <Flex flexDirection={{ md: "row", base: "column" }}>
-              <Image
-                maxW="25rem"
-                maxH="70vh"
-                p="16"
-                ml={["2", "4", "8", "16", "44"]}
-                alt="desk"
-                src="/images/person_board.png"
-              />
-              <Box
-                mt={["2", "4", "8", "16", "16"]}
-                ml={["2", "4", "8", "16", "12"]}
-              >
-                <Heading
-                  mt={{ base: "4", md: "0" }}
-                  textAlign={{ base: "center", md: "left" }}
-                  mb="4"
-                >
-                  Do you worry about
-                </Heading>
-                {[
-                  "backlogs and low B.tech CGPA?",
-                  "low GRE and IELTS scores?",
-                  "switching from non-CS to CS branch?",
-                  "not getting a job after masters?",
-                ].map((i, idx) => (
-                  <Text
-                    textAlign={{ base: "center", md: "left" }}
-                    fontSize={{ base: "md", md: "xl" }}
-                    key={idx}
-                    color={"#17A2FB"}
-                    my="2"
-                    fontWeight="700"
-                  >
-                    {i}{" "}
-                  </Text>
-                ))}
 
+        <Heading
+                mt={{ base: "6", md: "4" }}
+                textAlign="center"
+                fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
+                fontFamily="sans-serif"
+                fontWeight={400}
+                color="#2B6CB0"
+                
+              >
+          How can you benefit from Flywise
+        </Heading>
+        
+        <div className={classes.benefits}>
+          <div className={classes.benefit} style={{borderLeft:0}}>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit1.svg" alt="main" />
+                </div>
+                
                 <Text
-                  maxW={{ base: "75%", md: "70%" }}
-                  textAlign={{ base: "justify", md: "left" }}
-                  my="12"
-                  mx={{ base: "auto", md: "0" }}
-                  fontWeight="400"
+                  textAlign="center"
+                
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={5}
+                  fontWeight="bold"
+                  
+                  
                 >
-                  Our founders and mentors have personally faced/seen all these
-                  issues, navigated through them and are currently working at
-                  top product based companies in the US. Our mentors will work
-                  with you to build a vision, mission and identify objectives
-                  which will help in planning to get the best job abroad
-                  irrespective of your backgrounds (which is why you are going
-                  abroad).
+                  Find the best university
                 </Text>
-              </Box>
-            </Flex>
-          </Center>
+                <Text
+                  textAlign="center"
+                  
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={50} 
+                  
+                >
+                  Select universities that best match with your preferences
+                </Text>
+          </div>
+          
+          <div className={classes.benefit}>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit2.svg" alt="main" />
+                </div>
+                
+                <Text
+                  textAlign="center"
+                
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={5}
+                  fontWeight="bold"
+                
+                  
+                >
+                  Application assistance
+                </Text>
+                <Text
+                  textAlign="center"
+                  
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={50}
+                
+                >
+                  Our dedicated admissions expert will apply for you
+                </Text>
+          </div>
+          <div className={classes.benefit} >
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit3.svg" alt="main" />
+                </div>
+                
+                
+                <Text
+                  textAlign="center"
+                
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={5}
+                  fontWeight="bold"
+                  
+                  
+                >
+                  Visa and travel assistance
+                </Text>
+                <Text
+                  textAlign="center"
+                  
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={50}
+                  
+                >
+                  Get visa application help and pre-departure guidance
+                </Text>
+          </div>
+          <div className={classes.benefit} style={{borderRight:0,paddingRight:0}}>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit4.svg" alt="main" />
+                  {/* <Image style={{width:200,height:200}} objectFit="contain" src="/images/.svg" alt="main" /> */}
+                </div>
+                <Text
+                  textAlign="center"
+                
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={5}
+                  fontWeight="bold"
+                  
+                >
+                  Career guidance
+                </Text>
+                <Text
+                  textAlign="center"
+                  
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop={50}
+                >
+                  Our career guidance program helps you get internships and jobs abroad.
+                </Text>
+          </div>
+          
+          
+        </div>
+
+          
         </GridItem>
         <GridItem
           backgroundRepeat="no-repeat"

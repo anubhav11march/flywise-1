@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import Navbar from '../../../component/common/navbar'
 import Footer from '../../../component/common/footer'
 import Classes from '../../../styles/blog.module.css'
+import Image from 'next/image';
 import axios from 'axios'
 import univeristyimg from '../../../public/images/university.png' 
 import { useRouter } from 'next/router'
@@ -14,12 +15,13 @@ function Singleblog() {
 useEffect(() => {
   if(id){
     getdata();
+    // eslint-disable-next-line
   }
 }, [id])
 
 const getdata = async()=>{
   try {
-    const call1 = await axios.get(`https://flywise-admin.herokuapp.com/api/blogById/${router?.query?.id}`)
+    const call1 = await axios.get(`https://flywise-admin2.herokuapp.com/api/blogById/${router?.query?.id}`)
     console.log(call1.data.blog);
     setblogData(call1.data.blog);
   } catch (error) {
@@ -37,7 +39,7 @@ const getdata = async()=>{
               <div className={Classes.blogDetailTitleAndImg}>
                     <h3>{blogData?.title}</h3>
                     <h5>{blogData?.minutes} Minutes Read , {blogData?.date} </h5>
-                    <img src={univeristyimg.src} alt="" />
+                    <img src={blogData?.thumbnail} alt="" />
                     <div className={Classes.BlogDetailAuthor}>
                           <img src={blogData?.writerImg} alt="" />
                           <h3>{blogData?.writerName} | {blogData?.writerTagline}</h3>

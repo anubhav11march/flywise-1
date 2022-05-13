@@ -1,9 +1,7 @@
 .mainHeader {
   height: 100%;
   background-color: white;
-  width: 1200px;
-  max-width: 100%;
-  padding: 25px 0px;
+  padding: 1% 0;
   display: flex;
   position: relative;
   margin-left: auto;
@@ -100,7 +98,14 @@
   .mainHeader {
     width: 100%;
     justify-content: space-around;
+    padding: 1% 0;
+  
   }
+}
+@media (min-width: 1400px)and (max-width: 2000px) {
+  .mainHeader {
+  padding: 1% 10%;
+}
 }
 @media (max-width: 769px) {
   .links {
@@ -117,6 +122,9 @@
   }
   .contactCard {
     margin-left: auto;
+  }
+  .mainHeader {
+    padding: 15px 2%;
   }
 }
 @media (max-width: 470px) {

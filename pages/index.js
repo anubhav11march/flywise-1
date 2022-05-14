@@ -426,7 +426,7 @@ export default function Home() {
         >
           
           <div className={classes.additionalBenefit}>
-          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit6.svg" alt="main" />
+          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit.svg" alt="main" />
                 <Text
                   textAlign="center"
                   fontSize={{ base: "16px", md: "16px" }}

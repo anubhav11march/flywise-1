@@ -382,9 +382,64 @@ export default function Home() {
           
           
         </div>
-
+        
+        
           
         </GridItem>
+          {/* ************************************************************************************************************** */}
+        <GridItem
+          rowSpan={12}
+          colSpan={6} //
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          display="flex"
+          justifyContent="center"
+          mt="16"
+          
+        >
+          
+          <div className={classes.additionalBenefit}>
+          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit5.svg" alt="main" />
+                
+                  <Text
+                  textAlign="center"
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingY="5%"
+                  paddingLeft="20%"
+                  
+                >
+                  We provide <b>live whatsapp chat support</b> to guide at every step of your abroad journey.
+                </Text>
+                
+          </div>
+        </GridItem>
+        <GridItem
+          rowSpan={12}
+          colSpan={6} //
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          display="flex"
+          justifyContent="center"
+          mt="16"
+          
+        >
+          
+          <div className={classes.additionalBenefit}>
+          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit6.svg" alt="main" />
+                <Text
+                  textAlign="center"
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingY="5%"
+                  paddingLeft="20%"
+                  
+                >
+                  We provide <b>live whatsapp chat support</b> to guide at every step of your abroad journey.
+                </Text>
+          </div>
+        </GridItem>
+        {/* ********************************************************************************* */}
         <GridItem
           backgroundRepeat="no-repeat"
           p={["1.5rem", "3rem", "4rem", "8rem", "10em"]}

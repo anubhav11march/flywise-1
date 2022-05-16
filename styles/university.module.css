@@ -407,7 +407,7 @@
 @media (max-width: 590px) {
 
     .SingleCardSingleFeatureButton {
-        font-size: 0.6rem;
+        font-size: 0.9rem;
     }
 }
 @media (max-width: 600px) {
@@ -427,7 +427,7 @@
         padding: 40px 8%;
     }
     .SingleCardSingleFeatureButton {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
 }

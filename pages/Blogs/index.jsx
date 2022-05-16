@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
 import Footer from '../../component/common/footerr'
 import axios from 'axios';
+import Loader from '../university/Loader';
 function Index() {
   const [blogData, setblogData] = useState([])
   const [currPage, setcurrPage] = useState(1)
@@ -77,7 +78,12 @@ function Index() {
                 onChange={(e)=>searchItems(e.target.value)}
               />
             <button className={Classes.BlogSearchIcon} ><FontAwesomeIcon style={{color:"grey",fontSize:"1.2rem"}} icon={faMagnifyingGlass} /></button>            
-            </div>
+        </div>
+        <div className='my-4'>
+           {
+            currenPosts.length >0 ?(""):(<Loader />)
+           } 
+        </div>
             <div  className={`${Classes.BlogWidth} container-fluid col-lg-11   col-md-12 col-sm-12 col-11 my-5 `}>
             
             <div className='row '>                    {

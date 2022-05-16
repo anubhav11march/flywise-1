@@ -15,6 +15,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons/faCircleXmark'
 import axios from "axios";
 import { Input } from '@chakra-ui/react'
+import Loader from "./Loader";
 
 function Universities() {
   const [GREValue, setGREValue] = React.useState(null)
@@ -216,7 +217,6 @@ useEffect(() => {
     <div id="overflow-hid">
       <Navbar />
       <section className={Classes.universitymain}>
-    
         <div id={sidefilter} className={Classes.universitysidefilter}>
         
         <Accordion  allowMultiple>
@@ -567,6 +567,9 @@ useEffect(() => {
             
             </div>
             <h3>You Found  {(searchInput.length > 1)?(filterData.length):(getfilterData.length)} Courses </h3>
+            {
+              currentPosts.length >0 ? (""):(<Loader/>)
+            } 
           </div>
           <div className={Classes.universityCardContainer}>
           {  (searchInput.length > 1) ? (
@@ -589,8 +592,7 @@ useEffect(() => {
                     link={university?.courseUrl}
               />     
           })
-          ):(
-            currentPosts?.map((university,index)=>{
+          ):(currentPosts?.map((university,index)=>{
               return <Universitycard 
                     key={index}
                     id={university._id}

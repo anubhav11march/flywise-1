@@ -64,9 +64,9 @@ function Universities() {
                           
                            <Checkbox spacing='1.2rem' marginBottom="5px" >Alabama</Checkbox>
                           {
-                            usStates.map((state)=>{
+                            usStates.map((state,idx)=>{
                               return (
-                                <Checkbox spacing='1.2rem' marginBottom="5px" >{state.name}</Checkbox>
+                                <Checkbox key={idx} spacing='1.2rem' marginBottom="5px" >{state.name}</Checkbox>
                               )
                             })
                           }
@@ -86,9 +86,9 @@ function Universities() {
                           </h2>
                           <AccordionPanel display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
                           {
-                            ukStates.map((state)=>{
+                            ukStates.map((state,idx)=>{
                               return (
-                                <Checkbox spacing='1.2rem' marginBottom="5px" >{state.name}</Checkbox>
+                                <Checkbox key={idx} spacing='1.2rem' marginBottom="5px" >{state.name}</Checkbox>
                               )
                             })
                           }       

@@ -16,16 +16,19 @@ import NLink from "next/link";
 import FaqList from "../component/common/faqs";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
+import Corousel from "../component/Corousel"
 import faqs from "./../content/homeFaqs";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import TestimonialCard from "../component/testimonialCard";
 import classes from "../styles/whatsappbtn.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { TweenMax, Expo } from "gsap";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import WorldMap from "react-world-map";
+
+
 
 export default function Home() {
   const responsive = {
@@ -50,6 +53,50 @@ export default function Home() {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+const row1Image = [
+  {
+  id:1,
+  image:"/images/microsoft.svg"
+},
+  {
+  id:2,
+  image:"/images/airbnb.svg"
+},
+  {
+  id:3,
+  image:"/images/google.svg"
+},
+]
+const row2Image = [
+  {
+  id:1,
+  image:"/images/stripe.svg"
+},
+  {
+  id:2,
+  image:"/images/apple.svg"
+},
+  {
+  id:3,
+  image:"/images/meta.svg"
+},
+]
+const row3Image = [
+  {
+  id:1,
+  image:"/images/amazon.svg"
+},
+  {
+  id:2,
+  image:"/images/uber.svg"
+},
+  {
+  id:2,
+  image:"/images/lyft.svg"
+},
+]
+
 
   let one = useRef(null);
   let two = useRef(null);
@@ -227,7 +274,44 @@ export default function Home() {
             </div>
             
           </div>
-              <div className={classes.header_benefits} style={{marginTop:"5%"}}>
+          </GridItem>
+          <GridItem 
+            rowSpan={12}
+            colSpan={4}
+            px={["2", "1", "4", "8", "16"]}
+            // colSpan={{base: 12, md:6}}
+            
+            mt="16">
+            <div className={classes.header_benefit2}>
+              <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/checkMark.svg" alt="main" />
+              <p>Our guidelines and application process is 100% free</p>
+              </div>
+          </GridItem>
+          <GridItem 
+            rowSpan={12}
+            colSpan={4}
+            px={["2", "1", "4", "8", "16"]}
+            // colSpan={{base: 12, md:6}}
+            
+            mt="16">
+            <div className={classes.header_benefit2}>
+              <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/bookMark.svg" alt="main" />
+              <p>Get admits from the top universities.</p>
+              </div>
+          </GridItem>
+          <GridItem 
+            rowSpan={12}
+            colSpan={4}
+            px={["2", "1", "4", "8", "16"]}
+            // colSpan={{base: 12, md:6}}
+            
+            mt="16">
+            <div className={classes.header_benefit2}>
+              <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/plane.svg" alt="main" />
+              <p>Get internships and jobs at our partnered companies abroad</p>
+              </div>
+          </GridItem>
+              {/* <div className={classes.header_benefits} style={{marginTop:"5%"}}>
                 <div className={classes.header_benefit}>
                   <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/checkMark.svg" alt="main" />
                   <p>Our guidelines and application process is 100% free</p>
@@ -240,9 +324,9 @@ export default function Home() {
                   <Image style={{position:"absolute",left:-40,top:-40,width:65,height:65}} objectFit="contain" src="/images/plane.svg" alt="main" />
                  <p>Get internships and jobs at our partnered companies abroad</p>
                 </div>
-          </div>
+          </div> */}
           
-        </GridItem>
+        
         {/* Vikas Thakur done this */}
         <GridItem
           rowSpan={12}
@@ -265,9 +349,16 @@ export default function Home() {
               >
           How can you benefit from Flywise
         </Heading>
-        
-        <div className={classes.benefits}>
-          <div className={classes.benefit} style={{borderLeft:0}}>
+        </GridItem>
+        <GridItem 
+        rowSpan={12}
+          colSpan={3}
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          className={classes.itemBorder}
+          mt="16"
+          >
+          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit1.svg" alt="main" />
                 </div>
@@ -277,7 +368,7 @@ export default function Home() {
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={5}
+                  paddingTop="1em"
                   fontWeight="bold"
                   
                   
@@ -289,14 +380,22 @@ export default function Home() {
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={50} 
+                  paddingTop="2em"
                   
                 >
                   Select universities that best match with your preferences
                 </Text>
-          </div>
-          
-          <div className={classes.benefit}>
+          {/* </div> */}
+          </GridItem>
+          <GridItem 
+        rowSpan={12}
+          colSpan={3}
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          className={classes.itemBorder}
+          mt="16"
+          >
+          {/* <div className={classes.benefit}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit2.svg" alt="main" />
                 </div>
@@ -306,7 +405,7 @@ export default function Home() {
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={5}
+                  paddingTop="1em"
                   fontWeight="bold"
                 
                   
@@ -318,13 +417,22 @@ export default function Home() {
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={50}
+                  paddingTop="2em"
                 
                 >
                   Our dedicated admissions expert will apply for you
                 </Text>
-          </div>
-          <div className={classes.benefit} >
+          {/* </div> */}
+          </GridItem>
+          <GridItem 
+        rowSpan={12}
+          colSpan={3}
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          className={classes.itemBorder}
+          mt="16"
+          >
+          {/* <div className={classes.benefit} > */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit3.svg" alt="main" />
                 </div>
@@ -335,7 +443,7 @@ export default function Home() {
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={5}
+                  paddingTop="1em"
                   fontWeight="bold"
                   
                   
@@ -347,13 +455,22 @@ export default function Home() {
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={50}
+                  paddingTop="2em"
                   
                 >
                   Get visa application help and pre-departure guidance
                 </Text>
-          </div>
-          <div className={classes.benefit} style={{borderRight:0,paddingRight:0}}>
+          {/* </div> */}
+          </GridItem>
+          <GridItem 
+        rowSpan={12}
+          colSpan={3}
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          
+          mt="16"
+          >
+          {/* <div className={classes.benefit} style={{borderRight:0,paddingRight:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit4.svg" alt="main" />
                   {/* <Image style={{width:200,height:200}} objectFit="contain" src="/images/.svg" alt="main" /> */}
@@ -363,7 +480,7 @@ export default function Home() {
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={5}
+                  paddingTop="1em"
                   fontWeight="bold"
                   
                 >
@@ -374,18 +491,14 @@ export default function Home() {
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   fontFamily="sans-serif"
-                  paddingTop={50}
+                  paddingTop="2em"
                 >
                   Our career guidance program helps you get internships and jobs abroad.
                 </Text>
-          </div>
+          {/* </div> */}
           
-          
-        </div>
-        
-        
-          
-        </GridItem>
+          </GridItem>
+                 
           {/* ************************************************************************************************************** */}
         <GridItem
           rowSpan={12}
@@ -426,7 +539,7 @@ export default function Home() {
         >
           
           <div className={classes.additionalBenefit}>
-          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit.svg" alt="main" />
+          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit6.svg" alt="main" />
                 <Text
                   textAlign="center"
                   fontSize={{ base: "16px", md: "16px" }}
@@ -440,509 +553,258 @@ export default function Home() {
           </div>
         </GridItem>
         {/* ********************************************************************************* */}
+
         <GridItem
-          backgroundRepeat="no-repeat"
-          p={["1.5rem", "3rem", "4rem", "8rem", "10em"]}
           rowSpan={12}
           colSpan={12}
-          // backgroundImage="url(/images/paperplane.png)"
+          px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+
+          mt="16"
         >
-          <Box h="100%" w="100%">
+
+          <Heading
+                  mt={{ base: "6", md: "4" }}
+                  textAlign="center"
+                  fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
+                  fontFamily="sans-serif"
+                  fontWeight={400}
+                  color="#2B6CB0"
+                  
+                >
+            Our previous students got admits from top universities such as 
+          </Heading>
+        </GridItem>
+        {/* <GridItem
+          rowSpan={12}
+          colSpan={12}
+          //px={["2", "1", "4", "8", "16"]}
+          // colSpan={{base: 12, md:6}}
+          color="#ccc"
+          mt="16"
+        >
+
+          <WorldMap />
+
+        </GridItem> */}
+
+
+
+          </Grid>
+        <div style={{position:'relative'}}>
+          <Image style={{width:"100%",position:'relative'}} objectFit="contain" src="/images/worldMap.svg" alt="main" />
+
+              <Image style={{position:"absolute",left:280,top:220,width:300}} objectFit="contain" src="/images/arizonaUni.svg" alt="main" />
+              <Image style={{position:"absolute",left:700,top:160,width:200}} objectFit="contain" src="/images/stevensUni.svg" alt="main" />
+              <Image style={{position:"absolute",right:270,top:200,width:250}} objectFit="contain" src="/images/oregonUni.svg" alt="main" />
+              <Image style={{position:"absolute",right:280,top:350,width:200}} objectFit="contain" src="/images/usf.svg" alt="main" />
+              <Image style={{position:"absolute",top:480,left:680,width:200}} objectFit="contain" src="/images/cincinnatiUni.svg" alt="main" />
+              <Image style={{position:"absolute",left:250,top:380,width:250}} objectFit="contain" src="/images/houstonUni.svg" alt="main" />
+              <Image style={{position:"absolute",left:630,top:250,width:250}} objectFit="contain" src="/images/sanjoseUni.svg" alt="main" />
+              <Text
+                  fontSize={{ base: "40px", md: "40px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="2em"
+                  paddingLeft="4em" 
+                  color="#2B6CB0"
+                  fontWeight={400}
+                  style={{position:"absolute",left:1000,top:550}}
+                >
+                  and many more...
+                </Text>
+          
+        </div>
+          <Grid overflow="hidden"
+        maxW="100vw"
+        templateRows="repeat(12, 1fr)"
+        templateColumns="repeat(12, 1fr)"
+        bg={
+                "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
+              }
+        >
+
+          <GridItem rowSpan={12} colSpan={12}>
             <Heading
-              fontSize={["2xl", "2xl", "3xl", "4xl", "4xl"]}
-              my="2"
-              textAlign="center"
-              mb="10"
-            >
-              Watch this video to better understand how Flywise helps students
-              in their Career
-            </Heading>
-
-            <Box
-              display={["none", "inset", "none", "none", "none"]}
-              border="8px"
-              borderColor="rgba(66, 134, 211, 1)"
-              rounded="3xl"
-              boxShadow="xl"
-              overflow="hidden"
-            >
-              <iframe
-                width={"100%"}
-                height={240}
-                src="https://www.youtube.com/embed/eSythjoTlss"
-                title="YouTube video player"
-                frameBorder={0}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </Box>
-
-            <Box
-              display={["inset", "none", "inset", "none", "none"]}
-              border="8px"
-              borderColor="rgba(66, 134, 211, 1)"
-              rounded="3xl"
-              boxShadow="xl"
-              overflow="hidden"
-            >
-              <iframe
-                width={"100%"}
-                height={200}
-                src="https://www.youtube.com/embed/eSythjoTlss"
-                title="YouTube video player"
-                frameBorder={0}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </Box>
-            <Box
-              display={["none", "none", "none", "inset", "inset"]}
-              border="8px"
-              borderColor="rgba(66, 134, 211, 1)"
-              rounded="3xl"
-              boxShadow="xl"
-              overflow="hidden"
-            >
-              <iframe
-                width={"100%"}
-                height={575}
-                src="https://www.youtube.com/embed/eSythjoTlss"
-                title="YouTube video player"
-                frameBorder={0}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </Box>
-            {/* <Image alt="video" src="/images/thumbnail.png" /> */}
-          </Box>
-        </GridItem>
-        <GridItem
-          rowSpan={12}
-          colSpan={12}
-          // colSpan={{base: 12, md:6}}
-          bg={
-            "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
-          }
-        >
-          <Flex flexDirection={{ md: "row", base: "column" }}>
-            <Box
-              mt={["2", "4", "8", "16", "32"]}
-              ml={["0", "4", "8", "16", "44"]}
-              pl={["1", "1", "2", "4", "20"]}
-            >
-              <Heading
-                fontSize={["2xl", "3xl", "4xl", "4xl", "4xl"]}
-                my="16"
-                mt="4"
-                textAlign="center"
-              >
-                We are specialized in below fields, fly with us!
-              </Heading>
-              {[
-                "Computer science",
-                "Data science",
-                "Business analytics",
-                "Information systems",
-              ].map((i, idx) => (
-                <Flex my="4" ml="12" key={idx}>
-                  <Image
-                    filter="box-shadow(0px 39px 99px 0px rgba(0, 0, 0, 0.16))"
-                    h="69px"
-                    alt="icon"
-                    src={`/images/icon${idx + 1}.png`}
-                  />
-                  <Text
-                    my="5"
-                    ml="4"
-                    fontWeight="600"
-                    fontSize={["1rem", "1.2rem", "1.3rem", "1.4rem"]}
-                  >
-                    {i}{" "}
-                  </Text>
-                </Flex>
-              ))}
-            </Box>
-            <Center w="100%">
-              <Image
-                mr={["2", "4", "8", "16", "40"]}
-                maxW={["100%", "100%", "100%", "75%", "70%"]}
-                py={{ base: "8", md: "32" }}
-                alt="desk"
-                src="/images/computer_desk.png"
-              />
-            </Center>
-          </Flex>
-        </GridItem>
-        <GridItem
-          rowSpan={12}
-          colSpan={12}
-          px={["0.4rem", "1rem", "3rem", "6rem", "12rem"]}
-
-          // bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
-        >
-          <Heading my={["4 ", "4", "8", "16", "16"]} textAlign="center">
-            How Flywise is better than any other overseas agencies?
+                  mt={{ base: "6", md: "4" }}
+                  textAlign="center"
+                  fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
+                  fontFamily="sans-serif"
+                  fontWeight={400}
+                  color="#2B6CB0"
+                  padding="2em"
+                >
+            What is career guidance program?
           </Heading>
-
-          <Flex
-            flexDirection={{ md: "row", base: "column" }}
-            my="4"
-            px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-          >
-            <Box
-              transform={{
-                base: "translate(0px, 0px)",
-                md: "translate(10px, 0px)",
-              }}
-              minW="32%"
-              d="flex"
-              justifyContent="center"
-              alignItems="center"
-              // h="220px"
-              rounded="17px"
-              bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
-            >
-              <Heading
-                textAlign="center"
-                color="white"
-                fontSize={["xl", "2xl", "2xl", "2xl", "3xl"]}
-                px={["2", "1", "2", "3", "4"]}
-                py={["2", "4", "8", "16", "16"]}
-              >
-                Real experienced mentors
-              </Heading>
-            </Box>
-            <Box
-              roundedRight="17px"
-              roundedLeft="none"
-              bg="rgba(106, 219, 219, 0.07)"
-            >
-              <Text fontSize="xl" fontWeight="600" py="12" px="8">
-                Unlike traditional consultancies, you will get real experienced
-                mentors who have already gone through all the steps and have
-                succeeded with great careers.{" "}
-              </Text>
-            </Box>
-          </Flex>
-          <Flex
-            flexDirection={{ md: "row", base: "column-reverse" }}
-            my="4"
-            px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-          >
-            <Box
-              roundedLeft="17px"
-              roundedRight="none"
-              bg="rgba(106, 219, 219, 0.07)"
-            >
-              <Text fontSize="xl" fontWeight="600" py="12" px="8">
-                We hate traditional metrics. Our Mentors will work with you to
-                identify your objectives, draw your vision, and show a path to
-                get into a right University based on your budget and future
-                vision!.{" "}
-              </Text>
-            </Box>
-            <Box
-              transform={{
-                base: "translate(0px, 0px)",
-                md: "translate(-10px, 0px)",
-              }}
-              minW="32%"
-              d="flex"
-              justifyContent="center"
-              alignItems="center"
-              rounded="17px"
-              bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
-            >
-              <Heading
-                textAlign="center"
-                color="white"
-                fontSize={["xl", "2xl", "2xl", "2xl", "3xl"]}
-                px={["2", "1", "2", "3", "4"]}
-                py={["2", "4", "8", "16", "16"]}
-              >
-                Admit from right University
-              </Heading>
-            </Box>
-          </Flex>
-          <Flex
-            flexDirection={{ md: "row", base: "column" }}
-            my="4"
-            px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-          >
-            <Box
-              transform={{
-                base: "translate(0px, 0px)",
-                md: "translate(10px, 0px)",
-              }}
-              minW="32%"
-              d="flex"
-              justifyContent="center"
-              alignItems="center"
-              rounded="17px"
-              bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
-            >
-              <Heading
-                textAlign="center"
-                color="white"
-                fontSize={["xl", "2xl", "2xl", "2xl", "3xl"]}
-                px={["2", "1", "2", "3", "4"]}
-                py={["2", "4", "8", "16", "16"]}
-              >
-                Land your dream job abroad!
-              </Heading>
-            </Box>
-            <Box
-              roundedRight="17px"
-              roundedLeft="none"
-              bg="rgba(106, 219, 219, 0.07)"
-            >
-              <Text fontSize="xl" fontWeight="600" py="12" px="8">
-                We take resume reviews and prepare students with mock interviews
-                by real Interviewers from top companies like Google, Facebook,
-                and Amazon. We will also build a clear roadmap and help students
-                to prepare for internships{" "}
-              </Text>
-            </Box>
-          </Flex>
-          <Flex
-            flexDirection={{ md: "row", base: "column-reverse" }}
-            my="4"
-            px={["0.4rem", "1rem", "2rem", "3rem", "4rem"]}
-          >
-            <Box
-              roundedLeft="17px"
-              roundedRight="none"
-              bg="rgba(106, 219, 219, 0.07)"
-            >
-              <Text fontSize="xl" fontWeight="600" py="12" px="8">
-                You will be part of a great community, super useful connections,
-                and a wonderful network, lifelong!
-              </Text>
-            </Box>
-            <Box
-              transform={{
-                base: "translate(0px, 0px)",
-                md: "translate(-10px, 0px)",
-              }}
-              minW="32%"
-              d="flex"
-              justifyContent="center"
-              alignItems="center"
-              rounded="17px"
-              bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
-            >
-              <Heading
-                textAlign="center"
-                color="white"
-                fontSize={["xl", "2xl", "2xl", "2xl", "3xl"]}
-                // px={[]}
-                py={["2", "4", "8", "16", "16"]}
-                px={["0", "1", "2", "3", "4"]}
-              >
-                Best professional network in a foreign land
-              </Heading>
-            </Box>
-          </Flex>
-        </GridItem>
-        {/* Vikas Thakur done this */}
-        <GridItem
-          px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
+          </GridItem>
+          <GridItem
           rowSpan={12}
-          colSpan={12}
-          bg={
-            "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
-          }
-          py={10}
-        >
-          <Heading
-            id="services"
-            pt="3rem"
-            fontSize={["3xl", "3xl", "4xl", "4xl", "5xl"]}
-            // textShadow="0px 2px 5px rgba(0,0,0,0.4)"
-            textAlign="center"
-          >
-            What we offer
-          </Heading>
-          <Text textAlign="center" color="gray.500">
-            Learn more about the services we offer{" "}
-          </Text>
-          <Center>
-            <Stack
-              pt="8"
-              direction={{ base: "column", md: "row" }}
-              spacing={{ base: "4", md: "8" }}
-            >
-              {[
-                {
-                  title: "Pre-Admission support",
-                  image: "/images/landing_card1.svg",
-                  texts: [
-                    "Free profile evaluation",
-                    "Test Preparation",
-                    "Course selection",
-                    "University selection",
-                    "SOP & LOR",
-                    "Application assistance",
-                  ],
-                },
-                {
-                  title: "Post-Admission support",
-                  image: "/images/landing_card2.svg",
-                  texts: [
-                    "VISA assistance",
-                    "Loan assistance",
-                    "Forex",
-                    "Roommate matching",
-                    "Pre departure guidance",
-                  ],
-                },
-                {
-                  title: "Abroad career support",
-                  image: "/images/landing_card3.svg",
-                  texts: [
-                    "Profile building",
-                    "Career roadmap",
-                    "Professional networking",
-                    "Interview training",
-                    "Job referrals at top tech companies",
-                  ],
-                },
-              ].map((service, idx) => (
-                <Center key={idx}>
-                  <Box
-                    rounded="md"
-                    h="100%"
-                    w={{ base: "80%", md: "24rem" }}
-                    my="4"
-                    maxH="558px"
-                    maxW="425.03px"
-                    p={["2", "4", "8", "16", "16"]}
-                    bg="white"
-                    transition="all 0.3s"
-                    _hover={{
-                      boxShadow: "0px 0px 10px 10px rgba(220, 220, 220, 0.25)",
-                    }}
-                    boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
-                  >
-                    <Center>
-                      <Image mb="4" maxH="40%" src={service.image} alt="main" />
-                    </Center>
-                    <Heading my="4" fontSize="xl">
-                      {service.title}
-                    </Heading>
-                    {service.texts.map((i, idx) => (
-                      <Flex alignItems="flex-start" key={idx}>
-                        <Image
-                          mr="2"
-                          mt="1"
-                          h="4"
-                          src="/images/icons/tick2.png"
-                          alt="tick"
-                        />
-                        <Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-                          {i}
-                        </Text>
-                      </Flex>
-                    ))}
-                  </Box>
-                </Center>
-              ))}
-            </Stack>
-          </Center>
-        </GridItem>
-        <GridItem py="8" colSpan="12" bg="white" rowSpan="12">
-          <Heading textAlign="center">Testimonials</Heading>
-        </GridItem>
-        <GridItem
-          rowSpan={12}
-          colSpan={12}
+          colSpan={4}
+          px={["2", "1", "4", "8", "16"]}
           // colSpan={{base: 12, md:6}}
-
-          mt="4"
-        >
-          <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={false}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlay={true}
-            autoPlaySpeed={10000}
-            keyBoardControl={true}
-            customTransition=""
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={[, "mobile", "smalie"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
+          mt="16"
           >
-            {[
-              {
-                name: "Akhil Daggubati",
-                uni: "University of South Florida",
-                logo: "/images/icons/floridalogo.png",
-                img: "/images/mentors/Akhil.png",
-                text: "“I always lived in a misconception that studying in the USA was ridiculously expensive. At flywise the empathetic crew surprised me by clearing all my myths about studying in the USA and guided me to find the most relevant course aligned to my interest in a great university which is within my financial reach. I heartily thank them for their continuous encouragement and guidance, which helps me crack my dream job abroad. I strongly insist flywise to any aspirants.”",
-                degree: "Business analytics and information systems",
-              },
-
-              {
-                name: "Dhanyasri Divi",
-                uni: "CSU East Bay",
-                degree: "Masters in statistics",
-                img: "/images/mentors/dhanyasri.png",
-                logo: "/images/icons/csu.png",
-                text: "I reached out to Pavan (founder) on Linkedin before Flywise was incorporated, in that call he understood my background, aspirations and suggested the best course taking all factors into consideration, that call cleared my questions and gave me a concrete understanding of the pros and cons of the course that was being suggested by Pavan. I've joined Flywise and definitely feel it's beneficial to stay up to date on the latest course offerings,  industry trends and tips to maximize my chances of getting my dream job!",
-              },
-              {
-                name: "Venkatesh Prasad",
-                uni: "Stevens institute of technology",
-                degree: "Business intelligence and analytics",
-                text: "I have my Bachelor's in Mechanical Engineering and was absolutely clueless on what to or how to pursue my Master's. My mentor Pavan, at flywise very patiently listened to all my questions, enlightened me about the IT industry and their pay structure and expertly guided me on what course and university to choose.I am really delighted and overwhelmed with the help and support Flywise provided.",
-                img: "/images/mentors/venkatesh.png",
-                logo: "/images/icons/steven.png",
-              },
-              {
-                name: "Preethi Rama",
-                uni: "Cleveland State University",
-                img: "/images/mentors/Preethi.png",
-                text: "“Flywise is a place where innovation and young energy meets real experience. I was managed in a unique manner and was given a customized approach. Going above and beyond to help achieve career goals is something Flywise strongly stands for.”",
-                logo: "/images/icons/clevelandlogo.png",
-                degree: "Information systems",
-              },
-            ].map((testimonial, idx) => (
-              <TestimonialCard
-                name={testimonial.name}
-                degree={testimonial.degree}
-                img={testimonial.img}
-                logo={testimonial.logo}
-                text={testimonial.text}
-                uni={testimonial.uni}
-                key={idx}
-              />
-            ))}
-          </Carousel>
-        </GridItem>
-        <GridItem
-          rowSpan={12}
-          colSpan={12}
-          pb="4rem"
-          px={["0", "1", "4", "8", "16"]}
-          width="100%"
+          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg1.svg" alt="main" />
+                </div>
+                
+                <Text
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="1em"
+                  fontWeight="bold"
+                  paddingLeft="4em"
+                  
+                >
+                  Attend your program
+                </Text>
+                <Text
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="2em"
+                  paddingLeft="4em"
+                  
+                >
+                  Study at one of our partnered universities by applying through flywise
+                </Text>
+          {/* </div> */}
+          </GridItem>
+          <GridItem 
+        rowSpan={12}
+          colSpan={4}
+          px={["2", "1", "4", "8", "16"]}
           // colSpan={{base: 12, md:6}}
-          // bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
-        >
-          <Heading
-            id="courses"
-            my={["2", "4", "8", "16", "16"]}
-            textAlign="center"
+          
+          mt="16"
           >
-            Have Any Questions?
-          </Heading>
-          <FaqList faqs={faqs} />
-        </GridItem>
-      </Grid>
+          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg2.svg" alt="main" />
+                </div>
+                
+                <Text
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="1em"
+                  fontWeight="bold"
+                  paddingLeft="4em"
+                  
+                >
+                  Placement Training
+                </Text>
+                <Text
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="2em"
+                  paddingLeft="4em"
+                >
+                  We provide training on professional networking and interview skills
+                </Text>
+          {/* </div> */}
+          </GridItem>
+          <GridItem 
+          rowSpan={12}
+            colSpan={4}
+            px={["2", "1", "4", "8", "16"]}
+            // colSpan={{base: 12, md:6}}
+            mt="16"
+          >
+          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
+                <div style={{display:"flex",justifyContent:"center"}}>
+                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg3.svg" alt="main" />
+                </div>
+                
+                <Text
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="1em"
+                  fontWeight="bold"
+                  paddingLeft="4em"
+                >
+                  Job Opportunities
+                </Text>
+                <Text                  
+                  fontSize={{ base: "16px", md: "16px" }}
+                  fontFamily="sans-serif"
+                  paddingTop="2em"
+                  paddingLeft="4em"
+                >
+                  SGet job referrals from previous students and partnered companies.
+                </Text>
+          {/* </div> */}
+          </GridItem>
+          </Grid>
+              {/* ***************************************************************************************** */}
+          <Grid  overflow="hidden"
+            maxW="100vw"
+            templateRows="repeat(1, 1fr)"
+            templateColumns='repeat(9, 1fr)'
+            marginLeft={50}
+            marginRight={50}
+            >
+
+              <GridItem rowSpan={1} colSpan={9}>
+                <Heading
+                      mt={{ base: "6", md: "4" }}
+                      textAlign="center"
+                      fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
+                      fontFamily="sans-serif"
+                      fontWeight={400}
+                      color="#000000"
+                      padding="2em"
+                    >
+                Our students got offered from top companies
+              </Heading>
+
+              </GridItem>
+          </Grid>
+
+              <div className="container">
+                <div className="row">
+                  <div className="col-4 mt-5" style={{textAlign:"right"}} >
+                  {row1Image.map(({id,image})=>(
+                    <Image className="p-5"   src={image} alt="main" key={id} />
+                  ))}
+                  </div>
+                  <div className="col-4" style={{textAlign:"center"}}>
+                    {row2Image.map(({id,image})=>(
+                    <Image className="p-5" src={image} alt="main" key={id} />
+                  ))}
+                  </div>
+                  <div className="col-4 mt-5">
+                      {row3Image.map(({id,image})=>(
+                    <Image className="p-5" src={image} alt="main" key={id} />
+                  ))}
+                  </div>
+                </div>
+              </div>
+
+              <GridItem rowSpan={1} colSpan={9}>
+                <Heading
+                      mt={{ base: "6", md: "4" }}
+                      textAlign="center"
+                      fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
+                      fontFamily="sans-serif"
+                      fontWeight={400}
+                      color="#000000"
+                      padding="2em"
+                    >
+                Your future is sorted out with Flywise like our <b>10,000+</b> other students
+              </Heading>
+              </GridItem>
+
+          <Corousel />
+
+
+
+
+
+
+
+
+
+
+
       <Footer />
     </Box>
   );

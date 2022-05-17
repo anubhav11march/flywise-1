@@ -5,35 +5,70 @@
 
 .corouselMain {
   width: 50%;
-  margin: 1.5rem auto;
-  height: 200px;
-  position: relative;
+  padding: 0;
+  height: auto;
 }
 
 .img {
   width: 20rem;
-  margin: 0 auto;
 }
 
 .slide {
   transform: scale(0.2);
   transition: transform 300ms;
   opacity: 0.5;
+  border-radius: 100px;
+  border: 2px solid #2B6CB0;
 }
 
 .activeSlide {
   /* transition: transform 300ms; */
   transform: scale(1.0);
   opacity: 1;
+  
 }
 
 .prevArrow {
+  z-index: 10;
+  cursor: pointer;
+  
+}
+
+
+.nextArrow {
+  
+  cursor: pointer;
+  z-index: 10;
+  
+
+}
+/* .prevArrow {
   position: absolute;
   cursor: pointer;
   z-index: 10;
   left: 0 !important;
-  top: 50%;
+  top: 50% !important;
 }
+
+
+.nextArrow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  right: 0 !important;
+  top: 50%;
+
+} */
+
+/* @media(max-width:500){
+  .prevArrow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  left: 0 !important;
+  top: 50% !important;
+}
+
 
 .nextArrow {
   position: absolute;
@@ -43,6 +78,7 @@
   top: 50%;
 
 }
+} */
 
 .svg {
   transition: color 300ms;
@@ -60,24 +96,54 @@
 
 .textContainer{
   position: relative;
-  padding: 10em;
+  padding: 10%;
+  margin: auto;
 }
 
 .leftQuote{
   position: absolute;
-  left: 10em;
-  top: -15px;
+  left: 20%;
+  top: 12.25%;
+  z-index: -1;
+  height:100px;
+  width:150px;
   
 }
 
 .rightQuote{
   position: absolute;
-  right: 10em;
-  bottom: -15px;
+  right: 20%;
+  bottom: 12.25%;
+  z-index: -1;
+  height:100px;
+  width:150px;
+}
+
+
+@media (max-width:700px){
+  .leftQuote{
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  z-index: -1;
+  height:50px;
+  width:100px;
+  
+}
+
+.rightQuote{
+  position: absolute;
+  right: 15%;
+  bottom: 10%;
+  z-index: -1;
+  height:50px;
+  width:100px;
+}
 }
 
 .nameContainer{
   margin-top: 0;
   display: flex;
   justify-content: center;
+  color: #2B6CB0;
 }

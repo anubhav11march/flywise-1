@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 
 import { useRef, useState } from "react";
 import Slider from "react-slick";
@@ -7,6 +8,7 @@ import classes from "../styles/corousel.module.css";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { ArrowButtonSmall } from "./common/sliderButton";
+import { Grid,GridItem } from "@chakra-ui/react";
 
 const data=[
     {
@@ -71,24 +73,54 @@ const settings = {
 
   return (
     <>
-        <div className={classes.corouselMain}>
-            <Slider ref={slider} {...settings}>
-                {data.map((person, idx) => (
-                <div  className={idx === currentIndex ? classes.activeSlide : classes.slide} key={idx}>
-                    {/* <img src={img} alt={img} /> */}
-                    <Image className={classes.img} src={person.image} alt={person.name} />
-                </div>
-                ))}
-            </Slider>
-            <PrevArrow  onClick={() => slider?.current?.slickPrev()} />
-            <NextArrow onClick={() => slider?.current?.slickNext()} />
-            {/* <div className="border-0">
-              <ArrowButtonSmall slider={slider} />
-            </div> */}
-        </div>
+      <Grid
+        overflow="hidden"
+        maxW="100vw"
+        templateRows="repeat(1, 1fr)"
+        templateColumns="repeat(5, 1fr)">
+        <GridItem
+          colSpan={1}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt="16">
+          <PrevArrow  onClick={() => slider?.current?.slickPrev()} />
+        </GridItem>
+        <GridItem
+          colSpan={3}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt="16">
+          <div className={classes.corouselMain}>
+                <Slider ref={slider} {...settings}>
+                    {data.map((person, idx) => (
+                    <div  className={idx === currentIndex ? classes.activeSlide : classes.slide} key={idx}>
+                        {/* <img src={img} alt={img} /> */}
+                        <Image className={classes.img} src={person.image} alt={person.name} />
+                    </div>
+                    ))}
+                </Slider>
+                
+                
+                {/* <div className="border-0">
+                  <ArrowButtonSmall slider={slider} />
+                </div> */}
+            </div>
+        </GridItem>
+        <GridItem
+          colSpan={1}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt="16">
+          <NextArrow  onClick={() => slider?.current?.slickNext()} />
+        </GridItem>
+      </Grid>
+        
         <div className={classes.nameContainer}>
             <Text
-                fontSize={{ base: "36px", md: "36px" }}
+                fontSize={{ base: "20px", md: "36px" }}
                 fontFamily="sans-serif"
                 paddingTop="1em"
                 fontWeight={700}
@@ -98,7 +130,7 @@ const settings = {
 
         
         <div className={classes.textContainer}>
-            <Image style={{height:150,width:180}} className={classes.leftQuote} src="/images/leftQuote.svg" alt="leftQuote" />
+            <img className={classes.leftQuote} src="/images/leftQuote.svg" alt="leftQuote" />
             <Text
                 fontSize={{ base: "16px", md: "16px" }}
                 fontFamily="sans-serif"
@@ -106,10 +138,11 @@ const settings = {
                 fontWeight={400}
                 marginLeft="25%"
                 marginRight="25%"
+                zIndex={10}
             >
                 {data[currentIndex].content}
             </Text>
-            <Image style={{height:150,width:180}} className={classes.rightQuote} src="/images/rightQuote.svg" alt="rightQuote" />
+            <img className={classes.rightQuote} src="/images/rightQuote.svg" alt="rightQuote" />
         </div>
 
     </>

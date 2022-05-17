@@ -9,6 +9,9 @@ class MyDocument extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-9506GFX7X1`}
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com"/>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></link>
           <script
             dangerouslySetInnerHTML={{
               __html: `

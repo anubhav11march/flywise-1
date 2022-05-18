@@ -479,7 +479,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontWeight="bold"
                   
                   
@@ -494,7 +494,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
+                  paddingTop={{base:"0.5em", md:"2em"}}
                   
                 >
                   Select universities that best match with your preferences
@@ -522,7 +522,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontWeight="bold"
                 
                   
@@ -537,7 +537,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
+                  paddingTop={{base:"0.5em", md:"2em"}}
                 
                 >
                   Our dedicated admissions expert will apply for you
@@ -566,7 +566,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontWeight="bold"
                   
                   
@@ -581,7 +581,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
+                  paddingTop={{base:"0.5em", md:"2em"}}
                   
                 >
                   Get visa application help and pre-departure guidance
@@ -609,7 +609,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontWeight="bold"
                   
                 >
@@ -623,7 +623,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
+                  paddingTop={{base:"0.5em", md:"2em"}}
                 >
                   Our career guidance program helps you get internships and jobs abroad.
                 </Text>
@@ -704,14 +704,14 @@ const col2Image = [
           <Heading
                   mt={{ base: "6", md: "4" }}
                   textAlign="center"
-                  fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
+                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight={400}
                   color="#2B6CB0"
-                  marginX="25%"
+                  marginX={{base:"8%",md:"25%"}}
                   
                 >
             Our previous students got admits from top universities such as 
@@ -908,64 +908,54 @@ const col2Image = [
 
               </GridItem>
           </Grid>
-
-              <div className={classes.largeCompanies}>
-                <div className="container">
-                <div className="row">
-                  <div className="col-4 mt-5 " style={{textAlign:"right"}} >
-                  {row1Image.map(({id,image})=>(
-                    <Image className="p-5"   src={image} alt="main" key={id} />
-                  ))}
-                  </div>
-                  <div className="col-4" style={{textAlign:"center"}}>
-                    {row2Image.map(({id,image})=>(
-                    <Image className="p-5" src={image} alt="main" key={id} />
-                  ))}
-                  </div>
-                  <div className="col-4 mt-5">
-                      {row3Image.map(({id,image})=>(
-                    <Image className="p-5" src={image} alt="main" key={id} />
-                  ))}
-                  </div>
-                </div>
-              </div>
-              </div>
-
+                {/* smallCompanies will be hidden if screen size is large */}
               <div className={classes.smallCompanies}>
               <div className="container">
                 <div className="row">
-                  <div className="col-6" >
-                    <Image className="p-5"   src="/images/microsoft.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4"  src="/images/microsoft.svg" alt="main" />
                   </div>
-                  <div className="col-6" >
-                    <Image className="p-5" src="/images/airbnb.svg" alt="main" />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-6" >
-                    <Image className="p-5"   src="/images/google.svg" alt="main" />
-                  </div>
-                  <div className="col-6" >
-                    <Image className="p-5" src="/images/stripe.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4" src="/images/airbnb.svg" alt="main" />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6" >
-                    <Image className="p-5"   src="/images/apple.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4"   src="/images/google.svg" alt="main" />
                   </div>
-                  <div className="col-6" >
-                    <Image className="p-5" src="/images/amazon.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4" src="/images/stripe.svg" alt="main" />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6" >
-                    <Image className="p-5"   src="/images/meta.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4"   src="/images/apple.svg" alt="main" />
                   </div>
-                  <div className="col-6" >
-                    <Image className="p-5" src="/images/uber.svg" alt="main" />
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4" src="/images/amazon.svg" alt="main" />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4"   src="/images/meta.svg" alt="main" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-center" >
+                    <Image className="p-4" src="/images/uber.svg" alt="main" />
                   </div>
                 </div>
                 </div>
+              </div>
+                {/* largeCompanies will be hidden if screen size is small */}
+              <div className={classes.largeCompanies}>
+                <img className={classes.microsoft} src="/images/microsoft.svg" alt="main" />
+                <img className={classes.airbnb} src="/images/airbnb.svg" alt="main" />
+                <img className={classes.google} src="/images/google.svg" alt="main" />
+                <img className={classes.stripe} src="/images/stripe.svg" alt="main" />
+                <img className={classes.apple} src="/images/apple.svg" alt="main" />
+                <img className={classes.amazon} src="/images/amazon.svg" alt="main" />
+                <img className={classes.meta} src="/images/meta.svg" alt="main" />
+                <img className={classes.uber} src="/images/uber.svg" alt="main" />
+                <img className={classes.lyft} src="/images/lyft.svg" alt="main" />
               </div>
 
               <GridItem rowSpan={1} colSpan={9}>

@@ -225,6 +225,7 @@ const col2Image = [
           <Navbar outline="" />
         </GridItem>
         </Grid>
+        
         <Grid
         overflow="hidden"
         maxW="100vw"
@@ -235,19 +236,22 @@ const col2Image = [
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
       >
-        <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}} display="flex" justifyContent="center">
-          <div className={classes.home}>
-            <div className={classes.textDiv}>
+        <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}}
+          mt="10%"
+          paddingLeft={{base:"4%",md:"20%"}}
+          mr={{base:"5%", md:0}}
+        >
+          <div  className={classes.headerDiv1} >
+            
               <Heading
-                mt={{ base: "6", md: "4" }}
-                textAlign={{ base: "center", md: "left" }}
-                paddingLeft={{base:0,md:"20%"}}
+                // mt={{ base: "6", md: "4" }}
+                textAlign="left"
+                // paddingLeft={{base:0,md:"20%"}}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
-                // fontFamily="sans-serif"
+                fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                 fontWeight={700}
                 maxW={578}
                 
@@ -260,7 +264,7 @@ const col2Image = [
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
+                  fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                   color="#2B6CB0"
                 >
                   <span ref={eleven} className={classes.linkk1}>
@@ -271,10 +275,10 @@ const col2Image = [
               </Heading>
 
               <Text
-                textAlign={{ base: "center", md: "left" }}
-                my="4"
-                paddingLeft={{base:0,md:"20%"}}
-                fontSize={{ base: "16px", md: "16px" }}
+                textAlign="left"
+                // my="4"
+                // paddingLeft={{base:0,md:"20%"}}
+                fontSize={{ base: "16px", md: "20px" }}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -286,32 +290,38 @@ const col2Image = [
               >
                 India’s best overseas education platform that travels with you till you land your dream job abroad.
               </Text>
-              </div>
+              
               </div>
         </GridItem>
-        <GridItem rowSpan={12} colSpan={{base: 12, md:6}} display="flex" justifyContent="center">
-            <div className={classes.illuss}>
+        <GridItem rowSpan={12} colSpan={{base: 12, md:6}} display="flex" justifyContent="center" mt={{base:"10%",md:"7%"}}>
+            <div className={classes.illuss} >
               <Image objectFit="contain" src="/images/illus2.svg" alt="main" />
             </div>
         </GridItem>
-        <GridItem  rowSpan={{base:12,md:4}} colSpan={{base: 12, md:6}}>
+        <GridItem  rowSpan={{base:12,md:4}} colSpan={{base: 12, md:6}} 
+            // mt="10%"
+            // marginX={{base:"10%",md:0}}
+            paddingLeft={{base:0,md:"20%"}}
+            textAlign={{base:"center",md:"left"}}
+            // mr={{base:"5%", md:0}}
+            >
 
           <Text
-                    textAlign="left"
-                    mt={{base:"5",md:"0"}}
-                    fontSize={{ base: "16px", md: "16px" }}
+                    
+                    mt={{base:"5",md:"5",lg:"0"}}
+                    fontSize={{ base: "16px", md: "20px" }}
                     fontWeight="bold"
                     sx={{
                       fontFamily:"Roboto",
                       fontFamily:'sans-serif'
                     }}
                     maxW={694}
-                    paddingLeft={{base:"4%",md:"20%"}}
+                    // paddingLeft={{base:"4%",md:"20%"}}
                     
                   >
                     Shortlist the programs that best match your profile
                   </Text>
-                  <Flex
+                  {/* <Flex
                     my={{ base: "10", md: "5" }}
                     justifyContent={{
                       base: "center",
@@ -319,7 +329,7 @@ const col2Image = [
                       lg: "center",
                       xl: "flex-start",
                     }}
-                  >
+                  > */}
                     <NLink href="/profile-evaluation" passHref>
                       <Button colorScheme='blue'
                         variant="solid"
@@ -328,13 +338,13 @@ const col2Image = [
                         
                         my={{ base: "4", md: "2" }}
                         // mt={6}
-                        marginX={{base:"0", md:"20%"}}
-                        paddingX={{base:"22%",md:"8"}}
+                        // marginX={{base:"0", md:"20%"}}
+                        paddingX={{base:"22%",md:"7%"}}
                         backgroundColor="#2B6CB0"
 
                         // textAlign="left"
                         mt={{base:"10",md:"6"}}
-                        // fontSize={{ base: "16px", md: "16px" }}
+                        fontSize={{ base: "16px", md: "16px" }}
                         // fontFamily="sans-serif"
                         // maxW={694}
                         // paddingLeft={{base:"4%",md:"24%"}}         
@@ -344,25 +354,24 @@ const col2Image = [
                         <ArrowForwardIcon fontSize={20} />
                       </Button>
                     </NLink>
-                  </Flex>
+                  {/* </Flex> */}
         </GridItem>
             
           <GridItem
             rowSpan={12}
             colSpan={4}
-            px={["2", "1", "4", "8", "16"]}
-            // colSpan={{base: 12, md:4}}
+            display="flex"
+            justifyContent="center"
+            mt="16" mb={20}
             
-            mt="16" mb={20}>
+            >
             <div className={classes.header_benefit2}>
               <img 
-              // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 
-              // objectFit="contain" 
               className={classes.header_benefitIcon}
               src="/images/checkMark.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "9px", md: "14px",lg:"16px" }}
+                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -373,19 +382,16 @@ const col2Image = [
           <GridItem 
             rowSpan={12}
             colSpan={4}
-            px={["2", "1", "4", "8", "16"]}
-            // colSpan={{base: 12, md:4}}
-            
+            display="flex"
+            justifyContent="center"
             mt="16" mb={20}>
             <div className={classes.header_benefit2}>
               <img 
-              // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 
-              // objectFit="contain" 
               className={classes.header_benefitIcon}
               src="/images/bookMark.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "9px", md: "14px",lg:"16px" }}
+                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -398,23 +404,21 @@ const col2Image = [
           <GridItem 
             rowSpan={12}
             colSpan={4}
-            px={["2", "1", "4", "8", "16"]}
-            //  colSpan={{base: 12, md:4}}
-            
+            display="flex"
+            justifyContent="center"
             mt="16" mb={20}>
             <div className={classes.header_benefit2}>
               <img 
-              // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 
-              // objectFit="contain" 
               className={classes.header_benefitIcon}
               src="/images/plane.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "9px", md: "14px",lg:"16px" }}
+                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
+
                   >Get internships and jobs at our partnered companies abroad</Text>
               
               </div>
@@ -468,7 +472,7 @@ const col2Image = [
                 </div>
                 
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -483,7 +487,7 @@ const col2Image = [
                   Find the best university
                 </Text>
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -511,7 +515,7 @@ const col2Image = [
                 </div>
                 
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -526,7 +530,7 @@ const col2Image = [
                   Application assistance
                 </Text>
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -555,7 +559,7 @@ const col2Image = [
                 
                 
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -570,7 +574,7 @@ const col2Image = [
                   Visa and travel assistance
                 </Text>
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -598,7 +602,7 @@ const col2Image = [
                   {/* <Image style={{width:200,height:200}} objectFit="contain" src="/images/.svg" alt="main" /> */}
                 </div>
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                 
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
@@ -612,7 +616,7 @@ const col2Image = [
                   Career guidance
                 </Text>
                 <Text
-                  textAlign="center"
+                  textAlign={{base:"center",md:"left"}}
                   
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{

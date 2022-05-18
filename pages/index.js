@@ -235,13 +235,13 @@ const col2Image = [
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
       >
-        <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}}>
+        <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}} display="flex" justifyContent="center">
           <div className={classes.home}>
             <div className={classes.textDiv}>
               <Heading
                 mt={{ base: "6", md: "4" }}
                 textAlign={{ base: "center", md: "left" }}
-                paddingLeft={{base:0,md:"25%"}}
+                paddingLeft={{base:0,md:"20%"}}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -273,7 +273,7 @@ const col2Image = [
               <Text
                 textAlign={{ base: "center", md: "left" }}
                 my="4"
-                paddingLeft={{base:0,md:"25%"}}
+                paddingLeft={{base:0,md:"20%"}}
                 fontSize={{ base: "16px", md: "16px" }}
                 sx={{
                   fontFamily:"Roboto",
@@ -289,7 +289,7 @@ const col2Image = [
               </div>
               </div>
         </GridItem>
-        <GridItem rowSpan={12} colSpan={{base: 12, md:6}}>
+        <GridItem rowSpan={12} colSpan={{base: 12, md:6}} display="flex" justifyContent="center">
             <div className={classes.illuss}>
               <Image objectFit="contain" src="/images/illus2.svg" alt="main" />
             </div>
@@ -353,7 +353,7 @@ const col2Image = [
             px={["2", "1", "4", "8", "16"]}
             // colSpan={{base: 12, md:4}}
             
-            mt="16">
+            mt="16" mb={20}>
             <div className={classes.header_benefit2}>
               <img 
               // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 
@@ -376,7 +376,7 @@ const col2Image = [
             px={["2", "1", "4", "8", "16"]}
             // colSpan={{base: 12, md:4}}
             
-            mt="16">
+            mt="16" mb={20}>
             <div className={classes.header_benefit2}>
               <img 
               // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 
@@ -401,7 +401,7 @@ const col2Image = [
             px={["2", "1", "4", "8", "16"]}
             //  colSpan={{base: 12, md:4}}
             
-            mt="16">
+            mt="16" mb={20}>
             <div className={classes.header_benefit2}>
               <img 
               // style={{position:"absolute",left:-40,top:-40,width:65,height:65}} 

@@ -888,20 +888,21 @@ const col2Image = [
             templateColumns='repeat(9, 1fr)'
             marginLeft={50}
             marginRight={50}
+            mt={{base:10, md:0}}
             >
 
               <GridItem rowSpan={1} colSpan={9}>
                 <Heading
-                      mt={{ base: "6", md: "4" }}
-                      textAlign="center"
-                      fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
-                      sx={{
+                    mt={{ base: "6", md: "10%" }}
+                  textAlign="center"
+                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                      fontWeight={400}
-                      color="#000000"
-                      padding="2em"
+                  fontWeight={400}
+                  marginX={{base:"8%",md:"25%"}}
+                      // padding="2em"
                     >
                 Our students got offered from top companies
               </Heading>
@@ -960,16 +961,15 @@ const col2Image = [
 
               <GridItem rowSpan={1} colSpan={9}>
                 <Heading
-                      mt={{ base: "6", md: "4" }}
-                      textAlign="center"
-                      fontSize={["25px", "xl", "2xl", "3xl", "3xl"]}
-                      sx={{
+                  mt={{ base: "10", md: "10%" }}
+                  textAlign="center"
+                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                      fontWeight={400}
-                      color="#000000"
-                      padding="2em"
+                  fontWeight={400}
+                  marginX={{base:"8%",md:"25%"}}
                     >
                 Your future is sorted out with Flywise like our <b>10,000+</b> other students
               </Heading>

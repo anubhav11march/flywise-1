@@ -362,7 +362,8 @@ const col2Image = [
             colSpan={4}
             display="flex"
             justifyContent="center"
-            mt="16" mb={20}
+            mt="16" 
+            mb={{base:20,md:20}}
             
             >
             <div className={classes.header_benefit2}>
@@ -384,7 +385,8 @@ const col2Image = [
             colSpan={4}
             display="flex"
             justifyContent="center"
-            mt="16" mb={20}>
+            mt="16"
+            mb={{base:20,md:20}}>
             <div className={classes.header_benefit2}>
               <img 
               className={classes.header_benefitIcon}
@@ -406,7 +408,8 @@ const col2Image = [
             colSpan={4}
             display="flex"
             justifyContent="center"
-            mt="16" mb={20}>
+            mt="16"
+            mb={{base:20,md:20}}>
             <div className={classes.header_benefit2}>
               <img 
               className={classes.header_benefitIcon}
@@ -439,7 +442,7 @@ const col2Image = [
           px={["2", "1", "4", "8", "16"]}
           // colSpan={{base: 12, md:6}}
 
-          mt="16"
+          mt={{base:0,md:16}}
           
         >
 
@@ -686,7 +689,7 @@ const col2Image = [
                   paddingLeft={{ base: "35%", md: "20%" }}
                   
                 >
-                  We provide <b>live whatsapp chat support</b> to guide at every step of your abroad journey.
+                  Our application service is <b>100% free for students,</b> as we are sponsored by universities.
                 </Text>
           </div>
         </GridItem>
@@ -747,7 +750,9 @@ const col2Image = [
               }
         >
 
-          <GridItem rowSpan={12} colSpan={12}>
+          <GridItem rowSpan={12} colSpan={12}
+            
+          >
             <Heading
                   mt={{ base: "6", md: "4" }}
                   textAlign="center"
@@ -764,11 +769,11 @@ const col2Image = [
           </Heading>
           </GridItem>
           <GridItem
-          rowSpan={12}
-          // colSpan={4}
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:4}}
-          mt="16"
+          mt={{base:"5%", md:16}}
+          rowSpan={12}
+          // colSpan={4}
           >
           {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
@@ -776,12 +781,12 @@ const col2Image = [
                 </div>
                 
                 <Text
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
                   fontWeight="bold"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
@@ -789,12 +794,12 @@ const col2Image = [
                   Attend your program
                 </Text>
                 <Text
+                  paddingTop={{base:"0.5em", md:"2em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
                 >
@@ -815,12 +820,13 @@ const col2Image = [
                 </div>
                 
                 <Text
+                  
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
                   fontWeight="bold"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
@@ -828,12 +834,12 @@ const col2Image = [
                   Placement Training
                 </Text>
                 <Text
+                  paddingTop={{base:"0.5em", md:"2em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
                 >
@@ -854,12 +860,12 @@ const col2Image = [
                 </div>
                 
                 <Text
+                  paddingTop={{base:"0.5em", md:"1em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="1em"
                   fontWeight="bold"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
@@ -867,12 +873,12 @@ const col2Image = [
                   Job Opportunities
                 </Text>
                 <Text                  
+                  paddingTop={{base:"0.5em", md:"2em"}}
                   fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingTop="2em"
                   paddingLeft={{ base: "0", md: "4em" }}
                   textAlign={{base: "center", md:"left"}}
                 >
@@ -900,7 +906,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  fontWeight={400}
+                  fontWeight="bold"
                   marginX={{base:"8%",md:"25%"}}
                       // padding="2em"
                     >

@@ -55,86 +55,6 @@ export default function Home() {
     },
   };
 
-const row1Image = [
-  {
-  id:1,
-  image:"/images/microsoft.svg"
-},
-  {
-  id:2,
-  image:"/images/airbnb.svg"
-},
-  {
-  id:3,
-  image:"/images/google.svg"
-},
-]
-const row2Image = [
-  {
-  id:1,
-  image:"/images/stripe.svg"
-},
-  {
-  id:2,
-  image:"/images/apple.svg"
-},
-  {
-  id:3,
-  image:"/images/meta.svg"
-},
-]
-const row3Image = [
-  {
-  id:1,
-  image:"/images/amazon.svg"
-},
-  {
-  id:2,
-  image:"/images/uber.svg"
-},
-  {
-  id:3,
-  image:"/images/lyft.svg"
-},
-]
-
-const col1Image = [
-  {
-  id:1,
-  image:"/images/microsoft.svg"
-},
-  {
-  id:2,
-  image:"/images/google.svg"
-},
-  {
-  id:3,
-  image:"/images/apple.svg"
-},
-{
-  id:4,
-  image:"/images/meta.svg"
-},
-]
-const col2Image = [
-  {
-  id:1,
-  image:"/images/airbnb.svg"
-},
-  {
-  id:2,
-  image:"/images/stripe.svg"
-},
-  {
-  id:3,
-  image:"/images/amazon.svg"
-},
-{
-  id:4,
-  image:"/images/uber.svg"
-},
-]
-
 
   // let one = useRef(null);
   // let two = useRef(null);
@@ -251,6 +171,7 @@ const col2Image = [
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
+                // className={classes.headerMainText}
                 fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                 fontWeight={700}
                 maxW={578}
@@ -278,7 +199,9 @@ const col2Image = [
                 textAlign="left"
                 // my="4"
                 // paddingLeft={{base:0,md:"20%"}}
-                fontSize={{ base: "16px", md: "20px" }}
+                // fontSize={{ base: "16px", md: "20px" }}
+                // fontSize={["20px","25px", "xl", "xl", "2xl", "2xl"]}
+                // fontSize={{ base: "16px", md: "20px" }}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -286,6 +209,7 @@ const col2Image = [
                 color="#595858"
                 maxW={680}
                 paddingTop={25}
+                className={classes.subText}
                 
               >
                 India’s best overseas education platform that travels with you till you land your dream job abroad.
@@ -309,7 +233,9 @@ const col2Image = [
           <Text
                     
                     mt={{base:"5",md:"5",lg:"0"}}
-                    fontSize={{ base: "16px", md: "20px" }}
+                    // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl","3xl"]}
+                    // fontSize={{ base: "16px", md: "20px" }}
+                    className={classes.subText}
                     fontWeight="bold"
                     sx={{
                       fontFamily:"Roboto",
@@ -340,18 +266,25 @@ const col2Image = [
                         // mt={6}
                         // marginX={{base:"0", md:"20%"}}
                         paddingX={{base:"22%",md:"7%"}}
-                        backgroundColor="#2B6CB0"
+                        paddingY={{base:"6%",md:"5%"}}
 
+                        backgroundColor="#2B6CB0"
+                        borderRadius={20}
                         // textAlign="left"
                         mt={{base:"10",md:"6"}}
-                        fontSize={{ base: "16px", md: "16px" }}
+                        // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl"]}
+                        fontSize={{ base: "16px", md: "20px" }}
                         // fontFamily="sans-serif"
                         // maxW={694}
                         // paddingLeft={{base:"4%",md:"24%"}}         
                       >
                         
                         {"Shortlist Universities  "}
-                        <ArrowForwardIcon fontSize={20} />
+                        <ArrowForwardIcon 
+                        // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl"]} 
+                        fontSize={{ base: "16px", md: "20px" }}
+
+                        />
                       </Button>
                     </NLink>
                   {/* </Flex> */}
@@ -372,7 +305,8 @@ const col2Image = [
               src="/images/checkMark.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
+                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
+                  className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -393,7 +327,8 @@ const col2Image = [
               src="/images/bookMark.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
+                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
+                  className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -416,7 +351,8 @@ const col2Image = [
               src="/images/plane.svg" 
               alt="main" />
               <Text
-                  fontSize={{ base: "11px", md: "14px",lg:"16px" }}
+                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
+                  className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -477,7 +413,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                 
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -492,7 +428,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -520,7 +456,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                 
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -535,7 +471,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -564,7 +500,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                 
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -579,7 +515,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -607,7 +543,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                 
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -621,7 +557,7 @@ const col2Image = [
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "16px" }}
+                  fontSize={{ base: "16px", md: "20px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'

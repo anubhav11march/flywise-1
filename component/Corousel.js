@@ -149,8 +149,8 @@ function Corousel() {
           fontFamily="sans-serif"
           paddingTop="1em"
           fontWeight={400}
-          marginLeft="25%"
-          marginRight="25%"
+          // marginLeft="25%"
+          // marginRight="25%"
           zIndex={10}
         >
           {data[currentIndex].content}

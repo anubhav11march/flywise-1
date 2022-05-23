@@ -850,6 +850,7 @@ export default function Home() {
                 }}
                   fontWeight={400}
                   marginX={{base:"2%",md:"25%"}}
+                  mb={{base:"2rem",md:"0"}}
                     >
                 Your future is sorted out with Flywise like our <b>10,000+</b> other students
               </Heading>

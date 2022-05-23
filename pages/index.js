@@ -356,8 +356,8 @@ export default function Home() {
           maxW="100vw"
           templateRows="repeat(12, 1fr)"
           templateColumns="repeat(12, 1fr)"
-          marginLeft={{base:0,md:"11%"}}
-          marginRight={{base:0,md:"11%"}}
+          marginLeft={{base:0,md:"5%"}}
+          marginRight={{base:0,md:"5%",xl:"1%"}}
         >
         <GridItem 
           rowSpan={12}

@@ -222,14 +222,14 @@ function Header() {
             </Flex>
           </div> */}
           <div id='ham' className={classes.ham} onClick={showw}>
-            <Image src='/images/icons/ham.png' />
+            <Image alt="ham" src='/images/icons/ham.png' />
           </div>
         </div>
         {show && <div className={classes.backdrop} onClick={hidee}></div>}
       </div>
       <div id='sidedrawer' className={classes.sidedrawer}>
         <div id='closeham' className={classes.ham} onClick={hidee}>
-          <Image src='/images/icons/ham.png' />
+          <Image alt="ham" src='/images/icons/ham.png' />
         </div>
         {/**<div className={classes.firstsidelink} onClick={hidee}>
           <NextLink passHref href={"/testprep"}>

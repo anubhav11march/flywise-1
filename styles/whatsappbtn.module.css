@@ -823,7 +823,7 @@ position:absolute;
 /* ******************************************************************************************************************************* */
 
 .textBenefit{
-  font-size: 11px !important;
+  font-size: 0.6875rem !important;
 }
 
 .subText{
@@ -870,7 +870,7 @@ position:absolute;
 
 @media (min-width:768px) {
   .textBenefit{
-    font-size: 14px !important;
+    font-size: 0.875rem !important;
   }
   .subText,.btnText{
   font-size: 1.25rem !important;
@@ -898,7 +898,7 @@ position:absolute;
 
 @media (min-width:992px) {
   .textBenefit{
-    font-size: 16px !important;
+    font-size: 1rem !important;
   }
   .subText,.btnText{
     font-size: 1.25rem !important;
@@ -926,7 +926,7 @@ position:absolute;
 
 @media (min-width:1280px) {
   .textBenefit{
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
   }
   .subText,.btnText{
     font-size: 1.5rem !important;
@@ -956,7 +956,7 @@ position:absolute;
 
 @media (min-width:1850px) {
   .textBenefit{
-    font-size: 24px !important;
+    font-size: 1.5rem !important;
   }
   .subText,.btnText{
     font-size: 2rem !important;

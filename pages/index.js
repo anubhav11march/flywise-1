@@ -2,58 +2,50 @@
 import {
   Box,
   Button,
-  Center,
-  Flex,
   Grid,
   GridItem,
   Heading,
   Image,
-  Stack,
   Text,
   Link,
 } from "@chakra-ui/react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NLink from "next/link";
-import FaqList from "../component/common/faqs";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
-import Corousel from "../component/Corousel"
-import faqs from "./../content/homeFaqs";
+import Corousel from "../component/Corousel";
 import React, { useEffect, useRef } from "react";
-import TestimonialCard from "../component/testimonialCard";
 import classes from "../styles/whatsappbtn.module.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { TweenMax, Expo } from "gsap";
 import "react-multi-carousel/lib/styles.css";
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import WorldMap from "react-world-map";
 
 
 
 export default function Home() {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1200, min: 700 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 965, min: 643 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    smalie: {
-      breakpoint: { max: 643, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 2,
+  //     slidesToSlide: 2, // optional, default to 1.
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1200, min: 700 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 965, min: 643 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  //   smalie: {
+  //     breakpoint: { max: 643, min: 0 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  // };
 
 
   // let one = useRef(null);
@@ -164,15 +156,12 @@ export default function Home() {
           <div  className={classes.headerDiv1} >
             
               <Heading
-                // mt={{ base: "6", md: "4" }}
                 textAlign="left"
-                // paddingLeft={{base:0,md:"20%"}}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                 className={classes.headerMainText}
-                // fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                 fontWeight={700}
                 maxW={578}
                 
@@ -196,11 +185,6 @@ export default function Home() {
 
               <Text
                 textAlign="left"
-                // my="4"
-                // paddingLeft={{base:0,md:"20%"}}
-                // fontSize={{ base: "16px", md: "20px" }}
-                // fontSize={["20px","25px", "xl", "xl", "2xl", "2xl"]}
-                // fontSize={{ base: "16px", md: "20px" }}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -222,18 +206,13 @@ export default function Home() {
             </div>
         </GridItem>
         <GridItem  rowSpan={{base:12,md:4}} colSpan={{base: 12, md:6}} 
-            // mt="10%"
-            // marginX={{base:"10%",md:0}}
             paddingLeft={{base:0,md:"20%"}}
             textAlign={{base:"center",md:"left"}}
-            // mr={{base:"5%", md:0}}
             >
 
           <Text
                     
                     mt={{base:"5",md:"5",lg:"0"}}
-                    // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl","3xl"]}
-                    // fontSize={{ base: "16px", md: "20px" }}
                     className={classes.subText}
                     fontWeight="bold"
                     sx={{
@@ -241,20 +220,11 @@ export default function Home() {
                       fontFamily:'sans-serif'
                     }}
                     maxW={694}
-                    // paddingLeft={{base:"4%",md:"20%"}}
                     
                   >
                     Shortlist the programs that best match your profile
                   </Text>
-                  {/* <Flex
-                    my={{ base: "10", md: "5" }}
-                    justifyContent={{
-                      base: "center",
-                      md: "center",
-                      lg: "center",
-                      xl: "flex-start",
-                    }}
-                  > */}
+                  
                     <NLink href="/profile-evaluation" passHref>
                       <Button colorScheme='blue'
                         variant="solid"
@@ -275,7 +245,6 @@ export default function Home() {
                         />
                       </Button>
                     </NLink>
-                  {/* </Flex> */}
         </GridItem>
             
           <GridItem
@@ -293,7 +262,6 @@ export default function Home() {
               src="/images/checkMark.svg" 
               alt="main" />
               <Text
-                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
                   className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
@@ -315,15 +283,12 @@ export default function Home() {
               src="/images/bookMark.svg" 
               alt="main" />
               <Text
-                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
                   className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   >Get admits from the top universities</Text>
-              
-              {/* <p>Get admits from the top universities.</p> */}
               </div>
           </GridItem>
           <GridItem 
@@ -339,7 +304,6 @@ export default function Home() {
               src="/images/plane.svg" 
               alt="main" />
               <Text
-                  // fontSize={{ base: "11px", md: "14px",lg:"16px",xl:"20px" }}
                   className={classes.textBenefit}
                   sx={{
                   fontFamily:"Roboto",
@@ -364,8 +328,6 @@ export default function Home() {
           rowSpan={12}
           colSpan={12}
           px={["2", "1", "4", "8", "16"]}
-          // colSpan={{base: 12, md:6}}
-
           mt={{base:0,md:16}}
           
         >
@@ -373,7 +335,6 @@ export default function Home() {
         <Heading
                 mt={{ base: "6", md: "4" }}
                 textAlign="center"
-                // fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
                 className={classes.benefitsHeading}
                 sx={{
                   fontFamily:"Roboto",
@@ -395,26 +356,22 @@ export default function Home() {
           maxW="100vw"
           templateRows="repeat(12, 1fr)"
           templateColumns="repeat(12, 1fr)"
-          // style={{marginLeft:"200px",marginRight:"200px"}}
           marginLeft={{base:0,md:"11%"}}
           marginRight={{base:0,md:"11%"}}
         >
         <GridItem 
           rowSpan={12}
-          // colSpan={3}
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:6,lg:3}}
           className={classes.itemBorder}
           mt="16"
           >
-          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img style={{width:200,height:200}} src="/images/benefit_1.svg" alt="main" />
                 </div>
                 
                 <Text
                   textAlign="center"
-                  // fontSize={{ base: "16px", md: "20px" }}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
@@ -429,8 +386,6 @@ export default function Home() {
                 </Text>
                 <Text
                   textAlign={{base:"center",md:"left"}}
-                  
-                  // fontSize={{ base: "16px", md: "20px" }}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
@@ -441,17 +396,14 @@ export default function Home() {
                 >
                   Select universities that best match with your preferences
                 </Text>
-          {/* </div> */}
           </GridItem>
           <GridItem 
-        rowSpan={12}
-          // colSpan={3}
+          rowSpan={12}
           px={["2", "1", "4", "8", "16"]}
            colSpan={{base: 12, md:6,lg:3}}
           className={classes.itemBorder}
           mt="16"
           >
-          {/* <div className={classes.benefit}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img style={{width:200,height:200}} src="/images/benefit_2.svg" alt="main" />
                 </div>
@@ -484,17 +436,14 @@ export default function Home() {
                 >
                   Our dedicated admissions expert will apply for you
                 </Text>
-          {/* </div> */}
           </GridItem>
           <GridItem 
         rowSpan={12}
-          // colSpan={3}
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:6,lg:3}}
           className={classes.itemBorder}
           mt="16"
           >
-          {/* <div className={classes.benefit} > */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img style={{width:200,height:200}} src="/images/benefit_3.svg" alt="main" />
                 </div>
@@ -528,20 +477,16 @@ export default function Home() {
                 >
                   Get visa application help and pre-departure guidance
                 </Text>
-          {/* </div> */}
           </GridItem>
           <GridItem 
         rowSpan={12}
-          // colSpan={3}
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:6,lg:3}}
           
           mt="16"
           >
-          {/* <div className={classes.benefit} style={{borderRight:0,paddingRight:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img style={{width:200,height:200}} src="/images/benefit_4.svg" alt="main" />
-                  {/* <Image style={{width:200,height:200}} objectFit="contain" src="/images/.svg" alt="main" /> */}
                 </div>
                 <Text
                   textAlign="center"
@@ -569,14 +514,12 @@ export default function Home() {
                 >
                   Our career guidance program helps you get internships and jobs abroad.
                 </Text>
-          {/* </div> */}
           
           </GridItem>
                  
           {/* ************************************************************************************************************** */}
         <GridItem
           rowSpan={12}
-          // colSpan={6} //
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, lg:6}}
           display="flex"
@@ -606,7 +549,6 @@ export default function Home() {
         </GridItem>
         <GridItem
           rowSpan={12}
-          // colSpan={6} //
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, lg:6}}
           display="flex"
@@ -620,7 +562,6 @@ export default function Home() {
                 <Text
                   textAlign="left"
                   className={classes.additionalBenefitContent}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -639,8 +580,6 @@ export default function Home() {
           rowSpan={12}
           colSpan={12}
           px={["2", "1", "4", "8", "16"]}
-          // colSpan={{base: 12, md:6}}
-
           mt="16"
         >
 
@@ -696,7 +635,6 @@ export default function Home() {
             <Heading
                   mt={{ base: "6", md: "4" }}
                   textAlign="center"
-                  // fontSize={["23px", "xl", "2xl", "3xl", "3xl"]}
                   className={classes.benefitsHeading}
                   sx={{
                   fontFamily:"Roboto",
@@ -715,16 +653,13 @@ export default function Home() {
           colSpan={{base: 12, md:4}}
           mt={{base:"5%", md:16}}
           rowSpan={12}
-          // colSpan={4}
           >
-          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img className={classes.cgImage} src="/images/cg1.svg" alt="main" />
                 </div>
                 
                 <Text
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
@@ -738,7 +673,6 @@ export default function Home() {
                 </Text>
                 <Text
                   paddingTop={{base:"0.5em", md:"2em"}}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
@@ -749,16 +683,13 @@ export default function Home() {
                 >
                   Study at one of our partnered universities by applying through flywise
                 </Text>
-          {/* </div> */}
           </GridItem>
           <GridItem 
-        rowSpan={12}
-          // colSpan={4}
-          px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:4}}
-          mt="16"
-          >
-          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
+            rowSpan={12}
+            px={["2", "1", "4", "8", "16"]}
+            colSpan={{base: 12, md:4}}
+            mt="16"
+            >
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img className={classes.cgImage} src="/images/cg2.svg" alt="main" />
                 </div>
@@ -766,7 +697,6 @@ export default function Home() {
                 <Text
                   
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
@@ -780,7 +710,6 @@ export default function Home() {
                 </Text>
                 <Text
                   paddingTop={{base:"0.5em", md:"2em"}}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
@@ -791,23 +720,20 @@ export default function Home() {
                 >
                   We provide training on professional networking and interview skills
                 </Text>
-          {/* </div> */}
+          
           </GridItem>
           <GridItem 
           rowSpan={12}
-            // colSpan={4}
             px={["2", "1", "4", "8", "16"]}
             colSpan={{base: 12, md:4}}
             mt="16"
           >
-          {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img className={classes.cgImage}  src="/images/cg3.svg" alt="main" />
                 </div>
                 
                 <Text
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
@@ -849,7 +775,6 @@ export default function Home() {
                 <Heading
                     mt={{ base: "6", md: "10%" }}
                   textAlign="center"
-                  // fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
                   className={classes.benefitsHeading}
                   sx={{
                   fontFamily:"Roboto",
@@ -928,8 +853,6 @@ export default function Home() {
                     >
                 Your future is sorted out with Flywise like our <b>10,000+</b> other students
               </Heading>
-              
-
           <Corousel />
 
       <Footer />

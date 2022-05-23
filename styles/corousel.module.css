@@ -10,7 +10,7 @@
 }
 
 .img {
-  width: 20rem;
+  width: 20rem !important;
 }
 
 .slide {
@@ -36,49 +36,10 @@
 
 
 .nextArrow {
-  
   cursor: pointer;
   z-index: 10;
-  
-
-}
-/* .prevArrow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 10;
-  left: 0 !important;
-  top: 50% !important;
 }
 
-
-.nextArrow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 10;
-  right: 0 !important;
-  top: 50%;
-
-} */
-
-/* @media(max-width:500){
-  .prevArrow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 10;
-  left: 0 !important;
-  top: 50% !important;
-}
-
-
-.nextArrow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 10;
-  right: 0 !important;
-  top: 50%;
-
-}
-} */
 
 .svg {
   transition: color 300ms;
@@ -123,7 +84,7 @@
 @media (max-width:700px){
   .leftQuote{
   position: absolute;
-  left: 15%;
+  left: 0;
   top: 10%;
   z-index: -1;
   height:50px;
@@ -133,7 +94,7 @@
 
 .rightQuote{
   position: absolute;
-  right: 15%;
+  right: 0;
   bottom: 10%;
   z-index: -1;
   height:50px;
@@ -146,4 +107,30 @@
   display: flex;
   justify-content: center;
   color: #2B6CB0;
+}
+
+.name{
+  font-size: 1.75rem;
+}
+
+.testimonialText{
+  font-size: 1.25rem;
+}
+
+
+@media (min-width:768px) {
+  .name{
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (min-width:1850px) {
+  .name{
+    font-size: 2.25rem;
+  }
+
+  .testimonialText{
+    font-size: 1.875rem;
+  }
 }

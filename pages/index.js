@@ -171,8 +171,8 @@ export default function Home() {
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                // className={classes.headerMainText}
-                fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
+                className={classes.headerMainText}
+                // fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                 fontWeight={700}
                 maxW={578}
                 
@@ -185,7 +185,6 @@ export default function Home() {
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  fontSize={["36px", "3xl", "4xl", "4xl", "5xl"]}
                   color="#2B6CB0"
                 >
                   <span ref={eleven} className={classes.linkk1}>
@@ -261,29 +260,18 @@ export default function Home() {
                         variant="solid"
                         fontWeight="semibold"
                         size="md"
-                        
                         my={{ base: "4", md: "2" }}
-                        // mt={6}
-                        // marginX={{base:"0", md:"20%"}}
-                        paddingX={{base:"22%",md:"7%"}}
-                        paddingY={{base:"6%",md:"5%"}}
-
+                        paddingX={{base:"22%",md:"12%",lg:"7%"}}
+                        paddingY={{base:"4%",md:"7%",lg:"5%"}}
                         backgroundColor="#2B6CB0"
                         borderRadius={20}
-                        // textAlign="left"
                         mt={{base:"10",md:"6"}}
-                        // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl"]}
-                        fontSize={{ base: "16px", md: "20px" }}
-                        // fontFamily="sans-serif"
-                        // maxW={694}
-                        // paddingLeft={{base:"4%",md:"24%"}}         
+                        className={classes.btnText}    
                       >
                         
                         {"Shortlist Universities  "}
-                        <ArrowForwardIcon 
-                        // fontSize={["20px","25px", "xl", "xl", "2xl", "3xl"]} 
-                        fontSize={{ base: "16px", md: "20px" }}
-
+                        <ArrowForwardIcon
+                          className={classes.btnText}
                         />
                       </Button>
                     </NLink>
@@ -385,7 +373,8 @@ export default function Home() {
         <Heading
                 mt={{ base: "6", md: "4" }}
                 textAlign="center"
-                fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
+                // fontSize={["30px", "2xl", "3xl", "4xl", "4xl"]}
+                className={classes.benefitsHeading}
                 sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -397,8 +386,21 @@ export default function Home() {
           How can you benefit from Flywise
         </Heading>
         </GridItem>
+        </Grid>
+
+
+
+        <Grid
+          overflow="hidden"
+          maxW="100vw"
+          templateRows="repeat(12, 1fr)"
+          templateColumns="repeat(12, 1fr)"
+          // style={{marginLeft:"200px",marginRight:"200px"}}
+          marginLeft={{base:0,md:"11%"}}
+          marginRight={{base:0,md:"11%"}}
+        >
         <GridItem 
-        rowSpan={12}
+          rowSpan={12}
           // colSpan={3}
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:6,lg:3}}
@@ -407,13 +409,13 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit_1.svg" alt="main" />
+                  <img style={{width:200,height:200}} src="/images/benefit_1.svg" alt="main" />
                 </div>
                 
                 <Text
-                  textAlign={{base:"center",md:"left"}}
-                
-                  fontSize={{ base: "16px", md: "20px" }}
+                  textAlign="center"
+                  // fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -428,7 +430,8 @@ export default function Home() {
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "20px" }}
+                  // fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -450,13 +453,13 @@ export default function Home() {
           >
           {/* <div className={classes.benefit}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit_2.svg" alt="main" />
+                  <img style={{width:200,height:200}} src="/images/benefit_2.svg" alt="main" />
                 </div>
                 
                 <Text
-                  textAlign={{base:"center",md:"left"}}
+                  textAlign="center"
                 
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -471,7 +474,7 @@ export default function Home() {
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -493,14 +496,14 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} > */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit_3.svg" alt="main" />
+                  <img style={{width:200,height:200}} src="/images/benefit_3.svg" alt="main" />
                 </div>
                 
                 
                 <Text
-                  textAlign={{base:"center",md:"left"}}
+                  textAlign="center"
                 
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -515,7 +518,7 @@ export default function Home() {
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -537,13 +540,13 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} style={{borderRight:0,paddingRight:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/benefit_4.svg" alt="main" />
+                  <img style={{width:200,height:200}} src="/images/benefit_4.svg" alt="main" />
                   {/* <Image style={{width:200,height:200}} objectFit="contain" src="/images/.svg" alt="main" /> */}
                 </div>
                 <Text
-                  textAlign={{base:"center",md:"left"}}
+                  textAlign="center"
                 
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -557,7 +560,7 @@ export default function Home() {
                 <Text
                   textAlign={{base:"center",md:"left"}}
                   
-                  fontSize={{ base: "16px", md: "20px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -575,7 +578,7 @@ export default function Home() {
           rowSpan={12}
           // colSpan={6} //
           px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:6}}
+          colSpan={{base: 12, lg:6}}
           display="flex"
           justifyContent="center"
           mt="16"
@@ -583,11 +586,11 @@ export default function Home() {
         >
           
           <div className={classes.additionalBenefit}>
-          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit5.svg" alt="main" />
+          <img style={{width:150,height:150,position:"absolute",left:"-2em",top:"-1em"}}  src="/images/benefit5.svg" alt="main" />
                 
                   <Text
                   textAlign="left"
-                  fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.additionalBenefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -605,7 +608,7 @@ export default function Home() {
           rowSpan={12}
           // colSpan={6} //
           px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:6}}
+          colSpan={{base: 12, lg:6}}
           display="flex"
           justifyContent="center"
           mt="16"
@@ -613,10 +616,11 @@ export default function Home() {
         >
           
           <div className={classes.additionalBenefit}>
-          <Image style={{width:150,height:150,position:"absolute",left:"-2em",top:"-2em"}}  objectFit="contain" src="/images/benefit6.svg" alt="main" />
+          <img style={{width:150,height:150,position:"absolute",left:"-2em",top:"-1em"}}  src="/images/benefit6.svg" alt="main" />
                 <Text
                   textAlign="left"
-                  fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.additionalBenefitContent}
+                  // fontSize={{ base: "16px", md: "16px" }}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -643,14 +647,14 @@ export default function Home() {
           <Heading
                   mt={{ base: "6", md: "4" }}
                   textAlign="center"
-                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  className={classes.universitiesTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight={400}
                   color="#2B6CB0"
-                  marginX={{base:"8%",md:"25%"}}
+                  marginX={{base:"5.5%",md:"25%"}}
                   
                 >
             Our previous students got admits from top universities such as 
@@ -692,7 +696,8 @@ export default function Home() {
             <Heading
                   mt={{ base: "6", md: "4" }}
                   textAlign="center"
-                  fontSize={["23px", "xl", "2xl", "3xl", "3xl"]}
+                  // fontSize={["23px", "xl", "2xl", "3xl", "3xl"]}
+                  className={classes.benefitsHeading}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
@@ -705,6 +710,7 @@ export default function Home() {
           </Heading>
           </GridItem>
           <GridItem
+          
           px={["2", "1", "4", "8", "16"]}
           colSpan={{base: 12, md:4}}
           mt={{base:"5%", md:16}}
@@ -713,30 +719,32 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg1.svg" alt="main" />
+                  <img className={classes.cgImage} src="/images/cg1.svg" alt="main" />
                 </div>
                 
                 <Text
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   Attend your program
                 </Text>
                 <Text
                   paddingTop={{base:"0.5em", md:"2em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   Study at one of our partnered universities by applying through flywise
@@ -752,31 +760,33 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg2.svg" alt="main" />
+                  <img className={classes.cgImage} src="/images/cg2.svg" alt="main" />
                 </div>
                 
                 <Text
                   
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   Placement Training
                 </Text>
                 <Text
                   paddingTop={{base:"0.5em", md:"2em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   We provide training on professional networking and interview skills
@@ -792,30 +802,32 @@ export default function Home() {
           >
           {/* <div className={classes.benefit} style={{borderLeft:0}}> */}
                 <div style={{display:"flex",justifyContent:"center"}}>
-                  <Image style={{width:200,height:200}} objectFit="contain" src="/images/cg3.svg" alt="main" />
+                  <img className={classes.cgImage}  src="/images/cg3.svg" alt="main" />
                 </div>
                 
                 <Text
                   paddingTop={{base:"0.5em", md:"1em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   Job Opportunities
                 </Text>
                 <Text                  
                   paddingTop={{base:"0.5em", md:"2em"}}
-                  fontSize={{ base: "16px", md: "16px" }}
+                  // fontSize={{ base: "16px", md: "16px" }}
+                  className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4em" }}
+                  paddingLeft={{ base: "0", md: "4rem" }}
                   textAlign={{base: "center", md:"left"}}
                 >
                   Get job referrals from previous students and partnered companies.
@@ -837,13 +849,15 @@ export default function Home() {
                 <Heading
                     mt={{ base: "6", md: "10%" }}
                   textAlign="center"
-                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  // fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  className={classes.benefitsHeading}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  fontWeight="bold"
+                  fontWeight="semi-bold"
                   marginX={{base:"8%",md:"25%"}}
+                  mb={{base:0,md:'1rem'}}
                       // padding="2em"
                     >
                 Our students got offered from top companies
@@ -901,21 +915,20 @@ export default function Home() {
                 <img className={classes.lyft} src="/images/lyft.svg" alt="main" />
               </div>
 
-              <GridItem rowSpan={1} colSpan={9}>
                 <Heading
                   mt={{ base: "10", md: "10%" }}
                   textAlign="center"
-                  fontSize={["20px", "lg", "xl", "2xl", "3xl"]}
+                  className={classes.testimonialsHeading}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight={400}
-                  marginX={{base:"8%",md:"25%"}}
+                  marginX={{base:"2%",md:"25%"}}
                     >
                 Your future is sorted out with Flywise like our <b>10,000+</b> other students
               </Heading>
-              </GridItem>
+              
 
           <Corousel />
 

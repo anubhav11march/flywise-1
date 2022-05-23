@@ -46,7 +46,7 @@ function Universitycard(prop) {
                     </div>
                     <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
                       <h5 className='pb-2'>Deadline</h5>
-                      <h6>{ prop?.fall?.final ? (prop?.fall?.final) : ("N/A")}</h6>
+                      <h6>{ (prop?.deadline==='fall') ? (prop?.fall?.final) : ( prop?.deadline==='spring' ? (prop?.spring?.final) : (prop?.deadline==='summer' ? (prop?.summer?.final) :(prop?.fall?.final ? (prop?.fall?.final):("N/A"))) )}</h6>
                     </div>
                         <a className={`${Classes.SingleCardSingleFeatureButton} mb-2   p-2 `}  href="#" onClick={()=>window.open(prop.link)} target={"_blank"}>
                            Program details     

@@ -17,6 +17,7 @@ import axios from "axios";
 import { Input } from '@chakra-ui/react'
 import Loader from "./Loader";
 
+
 function Universities() {
   const [GREValue, setGREValue] = React.useState(null)
   const [UndergradTypeValue, setUndergradTypeValue] = React.useState(null)
@@ -34,7 +35,8 @@ function Universities() {
   const [getfilterData, setgetfilterData] = useState([])
   const [currPage, setcurrPage] = useState(1)
   const [postPerPage] = useState(4)
-  
+  const [window, setwindow] = useState(5)
+  const [paginateSize, setpaginateSize] = useState(5)
 
 //pagination
 
@@ -47,11 +49,26 @@ setcurrPage(pageNumber)
 };
 
 const pageNumbers = [];
-console.log(pageNumbers);
 for (let i = 1; i <= Math.ceil(getfilterData.length / postPerPage); i++) {
   pageNumbers.push(i);
 }
+const pagesize= pageNumbers.length;
+var startPage = 1;
+var endPage = window;
+let paginationslot = [];
 
+if(currPage>=endPage){
+  startPage=window;
+  endPage=endPage+paginateSize
+  setwindow(window+paginateSize)
+  for(var i=startPage ; i<=endPage ; i++){
+      paginationslot.push(i);
+  }
+}else{
+   for(var i=startPage ; i<=endPage ; i++){
+       paginationslot.push(i);
+    }
+}
 
 
 //filter usestate
@@ -123,13 +140,14 @@ const [sidefilterData, setsidefilterData] = useState({
 
   const callUniversityData =async()=>{
     try {
-      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses");
+      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses?activeStatus=true");
       setuniversityData(call1.data.allcourses)
     } catch (error) {
       console.log(error);
     } 
   }
-
+console.log(universityData)
+console.log(getfilterData)
   
 //Searching of university 
 
@@ -362,7 +380,7 @@ useEffect(() => {
       {/* university fee slider */}
       <div className={Classes.universityFeeSlider}>
       <div className={Classes.universityFeeHead}>
-         <h3>Tution Fee (USD)</h3>
+        <span className="d-flex w-100 justify-content-between"> <h3>Tution Fee (USD)</h3> <h3>{sidefilterData?.fees}</h3> </span> 
          </div>
          
         <div className={Classes.universityFeeBracket}>
@@ -384,7 +402,7 @@ useEffect(() => {
 
       <div className={Classes.universityFeeSlider}>
       <div className={Classes.universityFeeHead}>
-         <h3>Application Fee (USD)</h3>
+      <span className="d-flex w-100 justify-content-between"> <h3>Application Fee (USD)</h3> <h3>{sidefilterData?.appFees}</h3> </span>
          {/* <h3>USD</h3> */}
          </div>
          
@@ -566,10 +584,13 @@ useEffect(() => {
             <button className={Classes.universityFilterIcon} onClick={HandleSidebar} ><FontAwesomeIcon style={{color:"grey",fontSize:"1.2rem"}} icon={faFilter} /></button>
             
             </div>
-            <h3>You Found  {(searchInput.length > 1)?(filterData.length):(getfilterData.length)} Courses </h3>
             {
-              currentPosts.length >0 ? (""):(<Loader/>)
+              currentPosts.length >0 ? (""):(<Loader/>
+                  
+              )
             } 
+            <h3>{(currentPosts.length>0) ?(`You Found  ${(searchInput.length > 1)?(filterData.length):(getfilterData.length)} Courses `):("Searching...")}</h3>
+           
           </div>
           <div className={Classes.universityCardContainer}>
           {  (searchInput.length > 1) ? (
@@ -590,6 +611,9 @@ useEffect(() => {
                     country={university?.university?.country}
                     state={university?.university?.state}
                     link={university?.courseUrl}
+                    fall={university?.fallDeadline}
+                    spring={university?.springDeadline}
+                    summer={university?.summerDeadline}
               />     
           })
           ):(currentPosts?.map((university,index)=>{
@@ -612,6 +636,7 @@ useEffect(() => {
                     spring={university?.springDeadline}
                     summer={university?.summerDeadline}
                     link={university?.courseUrl}
+                    deadline= {sidefilterData?.deadline}
               />     
           }))
             
@@ -626,7 +651,7 @@ useEffect(() => {
                 <a className="page-link" href="#" onClick={()=>{ setcurrPage(currPage-1) }} >Previous</a>
               </li>
               {
-                pageNumbers.map((num,index)=>{
+                paginationslot.map((num,index)=>{
                   return <li key={index} className="page-item"><a className={`${currPage === num ? (Classes.activePage):("") } page-link`} onClick={(e)=>{paginate(num)}} href="#">{num}</a></li>
                 })
               }

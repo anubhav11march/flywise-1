@@ -14,7 +14,7 @@
     display: none;
 }
 .universitysidefilter{
-    width: 30%;
+    width: 28%;
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 4px 4px 0px 0px;
     margin-top: 150px;
@@ -84,7 +84,7 @@
 .universitySearch button {
     
         overflow: hidden;
-        top: -5px;
+        top: 20%;
         margin: 0;
         border: 1px solid transparent;
         border-radius: inherit;
@@ -308,21 +308,21 @@
         margin: auto;
         padding: 0;
     }
-
     .universitySearch button {
-        padding-top: 20px;
+        top: 27%;
     }
 
 }
 @media (min-width: 1080px)and (max-width: 1400px) {
-    .universitySearch button {
-        padding-top: 17px;
-    }
+   
     .SingleCard{
         width:48%;
     }   
     .universitycontent{
         width: 72%;
+    }
+    .universitySearch button {
+        top: 25%;
     }
 }
 
@@ -344,13 +344,13 @@
     .universitymain{
     padding: 2% ;
     }
+    .universitySearch button {
+        top: 25%;
+    }
     .universityCardContainer {
         justify-content: center;
     }
-    .universitySearch button {
-        padding-top: 17px;
-    }
-    
+      
 }
 @media (max-width: 770px) {
 

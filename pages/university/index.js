@@ -140,7 +140,7 @@ const [sidefilterData, setsidefilterData] = useState({
 
   const callUniversityData =async()=>{
     try {
-      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses?activeStatus=true");
+      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allCourses?activeStatus=true");
       setuniversityData(call1.data.allcourses)
     } catch (error) {
       console.log(error);
@@ -264,7 +264,7 @@ useEffect(() => {
                               <AccordionIcon />
                             </AccordionButton>
                           </h2>
-                          <AccordionPanel display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>                          
+                          <AccordionPanel display='flex' className="d-flex flex-column" height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>                          
                           {
                             usStates.map((state,ind)=>{
                               return (
@@ -287,7 +287,7 @@ useEffect(() => {
                             </AccordionButton>
                               
                           </h2>
-                          <AccordionPanel display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
+                          <AccordionPanel className="d-flex flex-column" display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
                           {
                             ukStates.map((state,ind)=>{
                               return (
@@ -311,7 +311,7 @@ useEffect(() => {
                             </AccordionButton>
                               
                           </h2>
-                          <AccordionPanel display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
+                          <AccordionPanel className="d-flex flex-column" display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
                           {
                             CAStates.map((state,ind)=>{
                               return (
@@ -327,7 +327,7 @@ useEffect(() => {
 
                           <AccordionItem>
                           <h2>
-                            <AccordionButton>
+                            <AccordionButton  >
                               <Box flex='1' textAlign='left'>
                               <Checkbox  onChange={(e)=>handlecountry(e)}  value="AU"  spacing='1.2rem' marginBottom="5px" >Austrilia</Checkbox>
                               </Box>                                                       
@@ -336,7 +336,7 @@ useEffect(() => {
                             </AccordionButton>
                               
                           </h2>
-                          <AccordionPanel display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
+                          <AccordionPanel className="d-flex flex-column" display='flex' height="30vh" overflowY="auto" flexDirection='column' bgColor='rgba(0,0,0,0.05)' pb={4}>
                           {
                             AuStates.map((state,ind)=>{
                               return (
@@ -365,7 +365,7 @@ useEffect(() => {
               </AccordionButton>
             </h2>
             {/* setsidefilterData({...sidefilterData,disciplines: e.target.value */}
-            <AccordionPanel pb={4}>
+            <AccordionPanel className="d-flex flex-column" pb={4}>
                 <Checkbox  onChange={(e)=>handlediscipline(e)}  value="Computer Science"  spacing='1.2rem' marginBottom="5px" >Computer Science</Checkbox>
                 <Checkbox  onChange={(e)=>handlediscipline(e)}  value="Information System"  spacing='1.2rem' marginBottom="5px" >Information System</Checkbox>
                 <Checkbox  onChange={(e)=>handlediscipline(e)} value="Data Science"  spacing='1.2rem' marginBottom="5px" >Data Science</Checkbox>

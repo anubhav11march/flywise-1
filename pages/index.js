@@ -334,6 +334,8 @@ export default function Home() {
 
         <Heading
                 mt={{ base: "6", md: "4" }}
+                mb={{ base: "6", md: "15" }}
+
                 textAlign="center"
                 className={classes.benefitsHeading}
                 sx={{
@@ -351,6 +353,155 @@ export default function Home() {
 
 
 
+        <div
+          className="container"
+          // overflow="hidden"
+          // maxW="100vw"
+          // templateRows="repeat(12, 1fr)"
+          // templateColumns="repeat(12, 1fr)"
+          // marginLeft={{base:0,md:"5%"}}
+          // marginRight={{base:0,md:"5%",xl:"1%"}}
+        >
+        <div className="row mb-5">
+        <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+          <div style={{display:"flex",justifyContent:"center"}}>
+              <img style={{width:200,height:200}} src="/images/benefit_1.svg" alt="main" />
+            </div>
+            <div className={classes.benefitsTitleContainer}>
+              <Text
+                textAlign="center"
+                className={classes.benefitTitle}
+                sx={{
+                fontFamily:"Roboto",
+                fontFamily:'sans-serif'
+              }}
+                paddingTop={{base:"0.5em", md:"1em"}}
+                fontWeight="bold"
+              >
+                Find the best university
+              </Text>
+             </div>
+             <div className={classes.benefitsContentContainer}>
+            <Text
+              textAlign={{base:"center",md:"left"}}
+              className={classes.benefitContent}
+              sx={{
+              fontFamily:"Roboto",
+              fontFamily:'sans-serif'
+            }}
+              paddingTop={{base:"0.5em", md:"2em"}}
+              
+            >
+              Select universities that best match with your preferences
+            </Text>
+            </div>
+        </div>
+        <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+          <div style={{display:"flex",justifyContent:"center"}}>
+              <img style={{width:200,height:200}} src="/images/benefit_2.svg" alt="main" />
+            </div>
+            <div className={classes.benefitsTitleContainer}>
+              <Text
+                textAlign="center"
+                className={classes.benefitTitle}
+                sx={{
+                fontFamily:"Roboto",
+                fontFamily:'sans-serif'
+              }}
+                paddingTop={{base:"0.5em", md:"1em"}}
+                fontWeight="bold"
+              >
+                Application assistance
+              </Text>
+            </div>
+            <div className={classes.benefitsContentContainer}>
+            <Text
+              textAlign={{base:"center",md:"left"}}
+              className={classes.benefitContent}
+              sx={{
+              fontFamily:"Roboto",
+              fontFamily:'sans-serif'
+            }}
+              paddingTop={{base:"0.5em", md:"2em"}}
+              
+            >
+              Our dedicated admissions expert will apply for you
+            </Text>
+            </div>
+        </div>
+        <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+          <div style={{display:"flex",justifyContent:"center"}}>
+              <img style={{width:200,height:200}} src="/images/benefit_3.svg" alt="main" />
+            </div>
+            
+            <div className={classes.benefitsTitleContainer}>
+              <Text
+                textAlign="center"
+                className={classes.benefitTitle}
+                sx={{
+                fontFamily:"Roboto",
+                fontFamily:'sans-serif'
+              }}
+                paddingTop={{base:"0.5em", md:"1em"}}
+                fontWeight="bold"
+              >
+                Visa and travel assistance
+              </Text>
+            </div>
+            <div className={classes.benefitsContentContainer}>
+            <Text
+              textAlign={{base:"center",md:"left"}}
+              className={classes.benefitContent}
+              sx={{
+              fontFamily:"Roboto",
+              fontFamily:'sans-serif'
+            }}
+              paddingTop={{base:"0.5em", md:"2em"}}
+              
+            >
+              Get visa application help and pre-departure guidance
+            </Text>
+            </div>
+        </div>
+        <div className= {`col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+          <div style={{display:"flex",justifyContent:"center"}}>
+              <img style={{width:200,height:200}} src="/images/benefit_4.svg" alt="main" />
+            </div>
+            <div className={classes.benefitsTitleContainer}>
+              <Text
+                textAlign="center"
+                className={classes.benefitTitle}
+                sx={{
+                fontFamily:"Roboto",
+                fontFamily:'sans-serif'
+              }}
+                paddingTop={{base:"0.5em", md:"1em"}}
+                fontWeight="bold"
+              >
+                Career guidance
+              </Text>
+            </div>
+            <div className={classes.benefitsContentContainer}>
+            <Text
+              textAlign={{base:"center",md:"left"}}
+              className={classes.benefitContent}
+              sx={{
+              fontFamily:"Roboto",
+              fontFamily:'sans-serif'
+            }}
+              paddingTop={{base:"0.5em", md:"2em"}}
+              
+            >
+              Our career guidance program helps you get internships and jobs abroad.
+            </Text>
+            </div>
+        </div>
+        
+              </div>
+          </div>
+          
+                 
+          {/* ************************************************************************************************************** */}
         <Grid
           overflow="hidden"
           maxW="100vw"
@@ -359,165 +510,6 @@ export default function Home() {
           marginLeft={{base:0,md:"5%"}}
           marginRight={{base:0,md:"5%",xl:"1%"}}
         >
-        <GridItem 
-          rowSpan={12}
-          px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:6,lg:3}}
-          className={classes.itemBorder}
-          mt="16"
-          >
-                <div style={{display:"flex",justifyContent:"center"}}>
-                  <img style={{width:200,height:200}} src="/images/benefit_1.svg" alt="main" />
-                </div>
-                
-                <Text
-                  textAlign="center"
-                  className={classes.benefitTitle}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"1em"}}
-                  fontWeight="bold"
-                  
-                  
-                >
-                  Find the best university
-                </Text>
-                <Text
-                  textAlign={{base:"center",md:"left"}}
-                  className={classes.benefitContent}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"2em"}}
-                  
-                >
-                  Select universities that best match with your preferences
-                </Text>
-          </GridItem>
-          <GridItem 
-          rowSpan={12}
-          px={["2", "1", "4", "8", "16"]}
-           colSpan={{base: 12, md:6,lg:3}}
-          className={classes.itemBorder}
-          mt="16"
-          >
-                <div style={{display:"flex",justifyContent:"center"}}>
-                  <img style={{width:200,height:200}} src="/images/benefit_2.svg" alt="main" />
-                </div>
-                
-                <Text
-                  textAlign="center"
-                
-                  className={classes.benefitTitle}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"1em"}}
-                  fontWeight="bold"
-                
-                  
-                >
-                  Application assistance
-                </Text>
-                <Text
-                  textAlign={{base:"center",md:"left"}}
-                  
-                  className={classes.benefitContent}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"2em"}}
-                
-                >
-                  Our dedicated admissions expert will apply for you
-                </Text>
-          </GridItem>
-          <GridItem 
-        rowSpan={12}
-          px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:6,lg:3}}
-          className={classes.itemBorder}
-          mt="16"
-          >
-                <div style={{display:"flex",justifyContent:"center"}}>
-                  <img style={{width:200,height:200}} src="/images/benefit_3.svg" alt="main" />
-                </div>
-                
-                
-                <Text
-                  textAlign="center"
-                
-                  className={classes.benefitTitle}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"1em"}}
-                  fontWeight="bold"
-                  
-                  
-                >
-                  Visa and travel assistance
-                </Text>
-                <Text
-                  textAlign={{base:"center",md:"left"}}
-                  
-                  className={classes.benefitContent}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"2em"}}
-                  
-                >
-                  Get visa application help and pre-departure guidance
-                </Text>
-          </GridItem>
-          <GridItem 
-        rowSpan={12}
-          px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:6,lg:3}}
-          
-          mt="16"
-          >
-                <div style={{display:"flex",justifyContent:"center"}}>
-                  <img style={{width:200,height:200}} src="/images/benefit_4.svg" alt="main" />
-                </div>
-                <Text
-                  textAlign="center"
-                
-                  className={classes.benefitTitle}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"1em"}}
-                  fontWeight="bold"
-                  
-                >
-                  Career guidance
-                </Text>
-                <Text
-                  textAlign={{base:"center",md:"left"}}
-                  
-                  className={classes.benefitContent}
-                  sx={{
-                  fontFamily:"Roboto",
-                  fontFamily:'sans-serif'
-                }}
-                  paddingTop={{base:"0.5em", md:"2em"}}
-                >
-                  Our career guidance program helps you get internships and jobs abroad.
-                </Text>
-          
-          </GridItem>
-                 
-          {/* ************************************************************************************************************** */}
         <GridItem
           rowSpan={12}
           px={["2", "1", "4", "8", "16"]}

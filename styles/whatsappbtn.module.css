@@ -506,7 +506,7 @@ position:absolute;
 
 
 .itemBorder{
-  border-right: 1px solid #E6F6FF;
+  border-right: 0px;
 }
 /* #E6F6FF */
 
@@ -868,6 +868,16 @@ position:absolute;
   font-size: 1.5rem !important;
 }
 
+.benefitsTitleContainer{
+
+}
+
+.benefitsContentContainer{
+  
+}
+
+
+
 @media (min-width:768px) {
   .textBenefit{
     font-size: 0.875rem !important;
@@ -920,8 +930,17 @@ position:absolute;
   .universitiesTitle{
     font-size: 1.25rem !important;
   }
+  .benefitsTitleContainer{
+    height: 4rem;
+  }
 
- 
+  .benefitsContentContainer{
+    height: 6rem;
+  }
+  .itemBorder{
+    border-right:1px solid #E6F6FF;
+  }
+
 }
 
 @media (min-width:1280px) {
@@ -1005,5 +1024,11 @@ position:absolute;
   .testimonialsHeading{
     font-size: 3rem !important;
   }
-  
+  .benefitsTitleContainer{
+    height: 8rem;
+  }
+
+  .benefitsContentContainer{
+    height: 8rem;
+  }
 }

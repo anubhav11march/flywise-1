@@ -123,11 +123,14 @@ export default function Home() {
   let bg = "transparent";
 
   return (
-    <Box maxW="100vw">
+    <div>
+      <Navbar outline="" />
+    
+    <Box maxW="100vw" >
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Flywise</title>
 
-      <Grid
+      {/* <Grid
         overflow="hidden"
         maxW="100vw"
         templateRows="repeat(12, 1fr)"
@@ -136,7 +139,7 @@ export default function Home() {
         <GridItem rowSpan={12} colSpan={12}>
           <Navbar outline="" />
         </GridItem>
-        </Grid>
+        </Grid> */}
         
         <Grid
         overflow="hidden"
@@ -145,12 +148,12 @@ export default function Home() {
         templateColumns="repeat(12, 1fr)"
          
         bg={
-            "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
+            "linear-gradient(180deg, #caeafc 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
       >
         <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}}
           mt="10%"
-          paddingLeft={{base:"4%",md:"20%"}}
+          paddingLeft={{base:"4%",md:"22%"}}
           mr={{base:"5%", md:0}}
         >
           <div  className={classes.headerDiv1} >
@@ -178,7 +181,7 @@ export default function Home() {
                 >
                   <span ref={eleven} className={classes.linkk1}>
                     {" "}
-                    {"Free"}
+                    {"FREE"}
                   </span>
                 </Link>
               </Heading>
@@ -206,7 +209,7 @@ export default function Home() {
             </div>
         </GridItem>
         <GridItem  rowSpan={{base:12,md:4}} colSpan={{base: 12, md:6}} 
-            paddingLeft={{base:0,md:"20%"}}
+            paddingLeft={{base:0,md:"22%"}}
             textAlign={{base:"center",md:"left"}}
             >
 
@@ -254,7 +257,7 @@ export default function Home() {
             justifyContent="center"
             mt="16" 
             mb={{base:20,md:20}}
-            
+            ml={{base:0,md:"12%"}}
             >
             <div className={classes.header_benefit2}>
               <img 
@@ -297,7 +300,9 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             mt="16"
-            mb={{base:20,md:20}}>
+            mb={{base:20,md:20}}
+            mr={{base:0,md:"12%"}}
+            >
             <div className={classes.header_benefit2}>
               <img 
               className={classes.header_benefitIcon}
@@ -354,7 +359,7 @@ export default function Home() {
 
 
         <div
-          className="container"
+          className={classes.benefitsContainer}
           // overflow="hidden"
           // maxW="100vw"
           // templateRows="repeat(12, 1fr)"
@@ -617,7 +622,7 @@ export default function Home() {
         templateRows="repeat(12, 1fr)"
         templateColumns="repeat(12, 1fr)"
         bg={
-                "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
+                "linear-gradient(180deg, #caeafc 41.47%, rgba(255, 255, 255, 0) 100%)"
               }
         >
 
@@ -625,7 +630,7 @@ export default function Home() {
             
           >
             <Heading
-                  mt={{ base: "6", md: "4" }}
+                  mt={{ base: "6", lg: "4" }}
                   textAlign="center"
                   className={classes.benefitsHeading}
                   sx={{
@@ -642,8 +647,10 @@ export default function Home() {
           <GridItem
           
           px={["2", "1", "4", "8", "16"]}
-          colSpan={{base: 12, md:4}}
-          mt={{base:"5%", md:16}}
+          colSpan={{base: 12, lg:4}}
+          mt={{base:"3rem", lg:"1rem"}}
+          ml={{base:0,lg:"11%"}}
+          // ml={{base:0,md:"11%"}}
           rowSpan={12}
           >
                 <div style={{display:"flex",justifyContent:"center"}}>
@@ -651,27 +658,27 @@ export default function Home() {
                 </div>
                 
                 <Text
-                  paddingTop={{base:"0.5em", md:"1em"}}
+                  paddingTop={{base:"0.5em", lg:"1em"}}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   Attend your program
                 </Text>
                 <Text
-                  paddingTop={{base:"0.5em", md:"2em"}}
+                  paddingTop={{base:"0.5em", lg:"2em"}}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   Study at one of our partnered universities by applying through flywise
                 </Text>
@@ -679,8 +686,8 @@ export default function Home() {
           <GridItem 
             rowSpan={12}
             px={["2", "1", "4", "8", "16"]}
-            colSpan={{base: 12, md:4}}
-            mt="16"
+            colSpan={{base: 12, lg:4}}
+            mt={{base:"6rem", lg:"1rem"}}
             >
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img className={classes.cgImage} src="/images/cg2.svg" alt="main" />
@@ -688,27 +695,27 @@ export default function Home() {
                 
                 <Text
                   
-                  paddingTop={{base:"0.5em", md:"1em"}}
+                  paddingTop={{base:"0.5em", lg:"1em"}}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   Placement Training
                 </Text>
                 <Text
-                  paddingTop={{base:"0.5em", md:"2em"}}
+                  paddingTop={{base:"0.5em", lg:"2em"}}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   We provide training on professional networking and interview skills
                 </Text>
@@ -717,36 +724,37 @@ export default function Home() {
           <GridItem 
           rowSpan={12}
             px={["2", "1", "4", "8", "16"]}
-            colSpan={{base: 12, md:4}}
-            mt="16"
+            colSpan={{base: 12, lg:4}}
+            mt={{base:"6rem", lg:"1rem"}}
+            mr={{base:0,lg:"11%"}}
           >
                 <div style={{display:"flex",justifyContent:"center"}}>
                   <img className={classes.cgImage}  src="/images/cg3.svg" alt="main" />
                 </div>
                 
                 <Text
-                  paddingTop={{base:"0.5em", md:"1em"}}
+                  paddingTop={{base:"0.5em", lg:"1em"}}
                   className={classes.benefitTitle}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
                   fontWeight="bold"
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   Job Opportunities
                 </Text>
                 <Text                  
-                  paddingTop={{base:"0.5em", md:"2em"}}
+                  paddingTop={{base:"0.5em", lg:"2em"}}
                   // fontSize={{ base: "16px", md: "16px" }}
                   className={classes.benefitContent}
                   sx={{
                   fontFamily:"Roboto",
                   fontFamily:'sans-serif'
                 }}
-                  paddingLeft={{ base: "0", md: "4rem" }}
-                  textAlign={{base: "center", md:"left"}}
+                  paddingLeft={{ base: "0", lg: "4rem" }}
+                  textAlign={{base: "center", lg:"left"}}
                 >
                   Get job referrals from previous students and partnered companies.
                 </Text>
@@ -850,5 +858,6 @@ export default function Home() {
 
       <Footer />
     </Box>
+    </div>
   );
 }

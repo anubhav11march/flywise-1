@@ -164,6 +164,7 @@ const AllNavLinks = ({ outline }) => {
 
 function Header() {
   const [show, setShow] = useState(false);
+  const [scrolled,setScrolled]=useState(false);
   useEffect(() => {
     console.log(show);
   }, [show]);
@@ -183,18 +184,32 @@ function Header() {
     setShow(false);
     $('#sidedrawer').removeClass(`${classes.show}`);
   }
-
+  const handleScroll=() => {
+    const offset=window.scrollY;
+    if(offset > 100 ){
+      setScrolled(true);
+      
+    }
+    else{
+      setScrolled(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll',handleScroll)
+  })
   return (
     <div>
-      <div className={classes.header}>
-        <div className={classes.mainHeader}>
+      <div className={scrolled?classes.headerShrinked:classes.header}>
+        <div className={scrolled?classes.mainHeaderShrinked:classes.mainHeader}>
           <div className={classes.logo}>
             <NextLink href='/'>
               <Image
                 _hover={{ cursor: 'pointer' }}
                 maxH='5rem'
+                width={{base:'12rem',md:'8rem',lg:'12rem'}}
                 alt='logo'
-                src='/images/logo.svg'
+                src='/images/flywiseLogo.png'
+                mt={{base:0,md:"1rem",lg:0}}
               />
             </NextLink>
           </div>

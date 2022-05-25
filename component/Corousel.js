@@ -85,8 +85,9 @@ function Corousel() {
         <GridItem
           colSpan={1}
           display="flex"
-          justifyContent="center"
+          textAlign="center"
           alignItems="center"
+          justifyContent="flex-end"
           mt={{ base: "2%", md: "10%" }}
         >
           <PrevArrow onClick={prev} />
@@ -116,8 +117,9 @@ function Corousel() {
         <GridItem
           colSpan={1}
           display="flex"
-          justifyContent="center"
           alignItems="center"
+          justifyContent="flex-start"
+          // alignItems="center"
           mt={{ base: "2%", md: "10%" }}
         >
           <NextArrow onClick={next} />

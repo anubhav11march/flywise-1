@@ -868,12 +868,8 @@ position:absolute;
   font-size: 1.5rem !important;
 }
 
-.benefitsTitleContainer{
-
-}
-
-.benefitsContentContainer{
-  
+.benefitsContainer{
+  margin: 0 11% 0 11%;
 }
 
 
@@ -882,8 +878,12 @@ position:absolute;
   .textBenefit{
     font-size: 0.875rem !important;
   }
-  .subText,.btnText{
+  .subText{
   font-size: 1.25rem !important;
+  }
+
+  .btnText{
+  font-size: 1.15rem !important;
   }
   .headerMainText{
     font-size: 2rem !important;
@@ -910,8 +910,11 @@ position:absolute;
   .textBenefit{
     font-size: 1rem !important;
   }
-  .subText,.btnText{
+  .subText{
     font-size: 1.25rem !important;
+  }
+  .btnText{
+    font-size: 1.15rem !important;
   }
   .headerMainText{
     font-size: 2.25rem !important;
@@ -947,8 +950,11 @@ position:absolute;
   .textBenefit{
     font-size: 1.25rem !important;
   }
-  .subText,.btnText{
+  .subText{
     font-size: 1.5rem !important;
+  }
+  .btnText{
+    font-size: 1.3rem !important;
   }
   .headerMainText{
     font-size: 3rem !important;
@@ -977,8 +983,11 @@ position:absolute;
   .textBenefit{
     font-size: 1.5rem !important;
   }
-  .subText,.btnText{
+  .subText{
     font-size: 2rem !important;
+  }
+  .btnText{
+    font-size: 1.7rem !important;
   }
   .headerMainText{
     font-size: 3.5rem !important;

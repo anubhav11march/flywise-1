@@ -140,7 +140,7 @@ const [sidefilterData, setsidefilterData] = useState({
 
   const callUniversityData =async()=>{
     try {
-      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allCourses?activeStatus=true");
+      const call1 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses?activeStatus=true");
       setuniversityData(call1.data.allcourses)
     } catch (error) {
       console.log(error);
@@ -209,7 +209,7 @@ const handlestate = (e)=> {
 
 const getAllfilterdata = async()=>{
         try {
-          const call2 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses", { params:  sidefilterData  }); 
+          const call2 = await axios.get("https://flywise-admin2.herokuapp.com/api/allcourses?activeStatus=true", { params:  sidefilterData  }); 
         setgetfilterData(call2.data.allcourses)
         } catch (error) {
           console.log(error);

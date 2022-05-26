@@ -40,7 +40,7 @@ const NavLink = ({ to, link, outline }) => (
   <NextLink passHref href={to}>
     <Link
       // className={props.link === props.outline ? `bottom-outline` : ``}
-      px={4}
+      px={{base:4,md:2,lg:4}}
       py={1}
       roundedTop={'md'}
       color={link === outline ? `rgba(41, 82, 134,1)` : `blackAlpha.700`}
@@ -55,6 +55,7 @@ const NavLink = ({ to, link, outline }) => (
         color: 'rgba(41, 82, 134,1)',
         borderBottom: '1px solid rgba(41, 82, 134,0.8)',
       }}
+      fontSize={{md:'0.8rem', lg:'0.9rem',xl:'1rem'}}
     >
       {link}
     </Link>
@@ -206,10 +207,10 @@ function Header() {
               <Image
                 _hover={{ cursor: 'pointer' }}
                 maxH='5rem'
-                width={{base:'12rem',md:'8rem',lg:'12rem'}}
+                width={{base:'10rem',md:'8rem',lg:'12rem',xl:'12rem'}}
                 alt='logo'
                 src='/images/flywiseLogo.png'
-                mt={{base:0,md:"1rem",lg:0}}
+                mt={{base:"0.5rem",md:"1rem",lg:0}}
               />
             </NextLink>
           </div>

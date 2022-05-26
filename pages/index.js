@@ -148,7 +148,7 @@ export default function Home() {
         templateColumns="repeat(12, 1fr)"
          
         bg={
-            "linear-gradient(180deg, #caeafc 41.47%, rgba(255, 255, 255, 0) 100%)"
+            "linear-gradient(180deg, #d6f0ff 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
       >
         <GridItem rowSpan={{base:12,md:8}} colSpan={{base: 12, md:6}}
@@ -622,7 +622,7 @@ export default function Home() {
         templateRows="repeat(12, 1fr)"
         templateColumns="repeat(12, 1fr)"
         bg={
-                "linear-gradient(180deg, #caeafc 41.47%, rgba(255, 255, 255, 0) 100%)"
+                "linear-gradient(180deg, #d6f0ff 41.47%, rgba(255, 255, 255, 0) 100%)"
               }
         >
 

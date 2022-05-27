@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
+import Classes from '../styles/about.module.css'
 import {
   Text,
   Container,
@@ -14,8 +15,8 @@ function courses() {
   return (
     <div>
       <Navbar />
-      <Container maxW="80%" my="10" textAlign="justify">
-        <Heading as="h1" size="2xl" mb="10" textAlign="center">
+      <Container className={Classes.aboutContainer} maxW="auto" my="10" textAlign="justify">
+        <Heading as="h1"  mb="10" textAlign="center">
           About Us
         </Heading>
         <Text mb="5">

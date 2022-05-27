@@ -1,24 +1,39 @@
-import React from 'react'
-import img1 from '../public/images/canada_bg.png'
-import img2 from '../public/images/student_cap_icon.png'
-import logo from '../public/images/course_icon1.png'
-import classes from '../styles/university.module.css'
-import Navbar from '../component/common/navbar'
+import React,{useEffect,useState} from 'react'
+import img1 from '../../../public/images/canada_bg.png'
+import img2 from '../../../public/images/student_cap_icon.png'
+import logo from '../../../public/images/course_icon1.png'
+import Classes from '../../../styles/university.module.css'
+import Navbar from '../../../component/common/navbar'
 import NextLink from 'next/link';
 import { ChakraProvider } from '@chakra-ui/react'
-import {
-  Box,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-} from '@chakra-ui/react'
-import Footer from '../component/common/footer'
-function universitysingle() {
+import {  Box,Table,Thead,Tbody,Tfoot,Tr,Th,Td,TableCaption} from '@chakra-ui/react'
+import Footer from '../../../component/common/footer'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+
+function Universitysingle() {
+  const [singleUniversityData, setsingleUniversityData] = useState()
+  
+    const router = useRouter()  
+    let id = router?.query?.id
+
+  useEffect(() => {
+    if(id){
+      getdata();
+      // eslint-disable-next-line
+    }
+  }, [id])
+
+  const getdata = async()=>{
+    try {
+      const call1 = await axios.get(`https://flywise-admin.herokuapp.com/api/courseById/${router?.query?.id}`)
+      setsingleUniversityData(call1.data.course);
+      console.log(call1.data.course);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
         <Navbar/>
@@ -27,15 +42,18 @@ function universitysingle() {
         
 
         {/* Banner */}
-        <div className={classes.universityBanner}>
-              <div className={classes.universityBannerimg}>
+        <div className={Classes.universityBanner}>
+              <div className={Classes.universityBannerimg} style={{
+    background: ` linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${singleUniversityData?.university?.photo}) `
+                ,objectFit:"cover",backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"
+              }}>
 
               </div>
               <div className={classes.universityBannerContent}>
                 <img src={logo.src} alt="" />
-                <h3>Harvard University</h3>
+                <h3>{singleUniversityData?.university?.name}</h3>
                 
-        <h4>Harvard is the Dream college of a majority of student.</h4>
+        <h4>{singleUniversityData?.remarks}</h4>
             </div>
         </div>
 
@@ -53,12 +71,12 @@ function universitysingle() {
             </ul>
         </div>
 
-        <div id='about' className={classes.universityAboutSection}>
-            <div className={classes.universityAboutContent} >
-                <h3>About Harvard University</h3>
+        <div id='about' className={Classes.universityAboutSection}>
+            <div className={Classes.universityAboutContent} >
+                <h3>About {singleUniversityData?.university?.name}</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea nam expedita sit et quae quia deserunt maxime exercitationem hic repudiandae, blanditiis, enim dicta.</p>
             </div>
-            <img src={img1.src} alt="" />
+            <img src={singleUniversityData?.university?.photo} alt="" />
         </div>
 
 
@@ -75,47 +93,34 @@ function universitysingle() {
                 <Table size='lg' variant='simple'>
                 <Thead>
                   <Tr >
-                    <Th >Application Fee</Th>
-                    <Th>105 USD</Th>
+                    <Th >Application Fee </Th>
+                    <Th>{singleUniversityData?.applicationFees} (USD)</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >Minimum GPA</Th>
-                    <Th>-</Th>
-                  </Tr>
-                </Thead>
-                <Thead>
-                  <Tr size='lg'>
-                    <Th >SAT Range</Th>
-                    <Th>-</Th>
-                  </Tr>
-                </Thead>
-                <Thead>
-                  <Tr size='lg'>
-                    <Th >ACT Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.gre?.minTotal ?  singleUniversityData?.gre?.minTotal : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >IELTS Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.ielts?.total ?  singleUniversityData?.ielts?.total : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >TOEFL Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.toefl?.total ?  singleUniversityData?.toefl?.total : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >PTE Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.pte?.minScore ?  singleUniversityData?.pte?.minScore : "N/A"}</Th>
                   </Tr>
                 </Thead>
-              
               </Table>
               </div>
               <div className={classes.universityGraduate}>
@@ -123,47 +128,34 @@ function universitysingle() {
                   <Table size='lg' variant='simple'>
                 <Thead>
                   <Tr >
-                    <Th >Application Fee</Th>
-                    <Th> 75 USD</Th>
+                    <Th >Application Fee </Th>
+                    <Th>{singleUniversityData?.applicationFees} (USD)</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >Minimum GPA</Th>
-                    <Th>-</Th>
-                  </Tr>
-                </Thead>
-                <Thead>
-                  <Tr size='lg'>
-                    <Th >SAT Range</Th>
-                    <Th>-</Th>
-                  </Tr>
-                </Thead>
-                <Thead>
-                  <Tr size='lg'>
-                    <Th >ACT Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.gre?.minTotal ?  singleUniversityData?.gre?.minTotal : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >IELTS Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.ielts?.total ?  singleUniversityData?.ielts?.total : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >TOEFL Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.toefl?.total ?  singleUniversityData?.toefl?.total : "N/A"}</Th>
                   </Tr>
                 </Thead>
                 <Thead>
                   <Tr size='lg'>
                     <Th >PTE Range</Th>
-                    <Th>-</Th>
+                    <Th>{singleUniversityData?.pte?.minScore ?  singleUniversityData?.pte?.minScore : "N/A"}</Th>
                   </Tr>
                 </Thead>
-              
               </Table>
               </div>
               </div>
@@ -181,9 +173,9 @@ function universitysingle() {
 
         <div id='ranking' className={classes.universityRankingSection}>
         <h3>Ranking</h3>
-        <div className={classes.universityRankingContainer}>
-            <img src={img1.src} alt="" />
-            <div className={classes.universityRankingContent} >
+        <div className={Classes.universityRankingContainer}>
+            <img src={singleUniversityData?.university?.photo} alt="" />
+            <div className={Classes.universityRankingContent} >
                 <h3>#1 in Global</h3>
                 <ol>
                   <li>Private University</li>
@@ -349,4 +341,4 @@ function universitysingle() {
   )
 }
 
-export default universitysingle
+export default Universitysingle

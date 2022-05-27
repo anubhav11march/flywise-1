@@ -1,0 +1,10 @@
+.aboutContainer{
+    max-width: 90%;
+}
+
+@media (min-width: 1400px)and (max-width: 2000px) {
+  .aboutContainer{
+    max-width: 1190px;
+    margin: auto;
+}
+}

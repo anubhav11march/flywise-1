@@ -98,68 +98,69 @@ const Otp = (props) => {
     // setLoading(true);
     // setSuccess("");
     setError('');
+    router.push('/success');
 
-    axios({
-      url: 'https://api.flywise.in/api/user/add',
-      method: 'POST',
-      headers: {
-        contentType: 'applications/json',
-      },
-      // body: formData
-      // data: {
-      //   whichCountry: country,
-      //   majorBarrier: majorBarrier,
-      //   courses: course,
-      //   GreQuantScore: greQuant,
-      //   GreVerbalScore: greVerbal,
-      //   // ielts_toefl: ieltsToefl,
-      //   englishTestType: englishTestType,
-      //   englishTestScore: englishTestScore,
-      //   GreTraining: greTraining,
-      //   workExperience: workEx,
-      //   noofbacklogs: backlogs,
-      //   cgpa: cgpa,
-      //   college: clgUni,
-      //   budget: budget,
-      //   fund: fundMasters,
-      //   firstName: firstName,
-      //   lastName: lastName,
-      //   email: userEmail,
-      //   mobileNo: userPhone,
-      //   session: session,
-      //   iscsit: iscsit,
-      //   referral: referral,
-      //   discover: discover == "Other" ? other : discover,
-      // },
-      data: JSON.parse(localStorage.getItem('profile')),
-    })
-      .then((res) => {
-        console.log(res.data);
+    // axios({
+    //   url: 'https://api.flywise.in/api/user/add',
+    //   method: 'POST',
+    //   headers: {
+    //     contentType: 'applications/json',
+    //   },
+    //   // body: formData
+    //   // data: {
+    //   //   whichCountry: country,
+    //   //   majorBarrier: majorBarrier,
+    //   //   courses: course,
+    //   //   GreQuantScore: greQuant,
+    //   //   GreVerbalScore: greVerbal,
+    //   //   // ielts_toefl: ieltsToefl,
+    //   //   englishTestType: englishTestType,
+    //   //   englishTestScore: englishTestScore,
+    //   //   GreTraining: greTraining,
+    //   //   workExperience: workEx,
+    //   //   noofbacklogs: backlogs,
+    //   //   cgpa: cgpa,
+    //   //   college: clgUni,
+    //   //   budget: budget,
+    //   //   fund: fundMasters,
+    //   //   firstName: firstName,
+    //   //   lastName: lastName,
+    //   //   email: userEmail,
+    //   //   mobileNo: userPhone,
+    //   //   session: session,
+    //   //   iscsit: iscsit,
+    //   //   referral: referral,
+    //   //   discover: discover == "Other" ? other : discover,
+    //   // },
+    //   data: JSON.parse(localStorage.getItem('profile')),
+    // })
+    //   .then((res) => {
+    //     console.log(res.data);
 
-        localStorage.removeItem('profile');
-        if (res.data.error === 'ALl fields required') {
-          setError('All fields are required please try again');
-        } else {
-          router.push('/success');
+    //     localStorage.removeItem('profile');
+    //     if (res.data.error === 'ALl fields required') {
+    //       setError('All fields are required please try again');
+    //     } else {
+    //       router.push('/success');
 
-          console.log(' ot success');
-        }
-      })
-      .catch((err) => {
-        localStorage.removeItem('profile');
-        if (err) {
-          console.log(err);
-          // console.log(err.response.data.error);
-          if (
-            err.response.data.error ==
-            'This user has already applied for profile evaluation'
-          ) {
-            setError('You have already applied');
-          } else {
-            setError('There was an error');
-          }
-        }
-      });
+    //       console.log(' ot success');
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     localStorage.removeItem('profile');
+    //     if (err) {
+    //       console.log(err);
+    //       // console.log(err.response.data.error);
+    //       if (
+    //         err.response.data.error ==
+    //         'This user has already applied for profile evaluation'
+    //       ) {
+    //         setError('You have already applied');
+    //       } else {
+    //         setError('There was an error');
+    //       }
+    //     }
+    //   });
     // .finally(() => setLoading(false));
   }
   return (

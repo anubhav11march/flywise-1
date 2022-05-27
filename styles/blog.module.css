@@ -1,0 +1,269 @@
+.BlogSection{
+    background-color: rgba(213, 213, 213,0.4);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.BlogContainer{
+    min-height: 100vh;
+    width: 100vw;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.BlogSearchBar{
+    margin-top: 4% ;
+    width: 60%;
+    position: relative;
+    display: flex
+}
+.BlogSearchBar input{
+    background: #FFFFFF;
+    border: 2px solid #4080D3;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 100%;
+    padding: 1% 5%;
+}
+.BlogSearchIcon{
+    position: absolute;
+    right: 3%;
+    top: 30%;
+}
+/* blogcard */
+.activePage{
+    background-color: #4080D3;
+    color: white;
+}
+.SingleBlog{
+    background-color: #FFFBFC;
+    width: 27vw;
+
+    border-radius:  5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-bottom: 30px;
+}
+
+.BlogContentContainer h5{
+    color: #4080D3;
+}
+.BlogContent{
+    height: 100%;
+    padding: 20px;
+}
+.BlogContent h5{
+    margin-bottom: 10px;    
+}
+
+.BlogTitleAndBody{
+    display: flex;
+}
+.BlogTitle h3{
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 22px;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    color: black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.BlogTitle h4{
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+    color: black;
+    overflow: hidden;
+    line-height: 20px;
+    display: -webkit-box;
+    /* line-height: 16px; */
+    max-height: 83px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    color: gray;
+}
+.BlogImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BlogImg img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+.BlogAuthorAndSocial{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.BlogAuthorAndSocial h5{
+    font-size: 0.7rem;
+    color: black;
+    font-weight: 600;
+}
+.BlogAuthorAndSocial img{
+    height: 6vh;
+    width: 3.5vw;
+    border-radius: 50%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    margin-right: 10px;
+}
+.author{
+    display: flex;
+    align-items: center;
+}
+.Social{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Social img{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+@media (min-width: 1400px)and (max-width: 2000px) {
+    .BlogContainer{
+        padding: 2% 10%;
+    }
+    .SingleBlog{
+        width: 95%;
+    }
+    .BlogSearchBar{
+        margin-top: 4% ;
+        margin-bottom: 2%;
+    }   
+    .BlogSearchBar input{
+        padding: 1.5%;
+    }
+    .BlogWidth{
+        max-width: 1190px;
+        margin: auto;
+    }
+}
+
+
+
+@media (max-width: 980px){
+    .SingleBlog{
+        width: 30vw;margin-left: 5px;
+    }
+}
+
+@media (max-width: 780px){
+    .SingleBlog{
+        width: 45vw;
+    }   
+    .Social img{
+        height: 25px;
+        width: 25px;
+    }
+    .BlogSearchBar input{
+        padding: 2% 3%;
+    }
+    .BlogSearchBar button{
+        right: 5%;
+    }
+    .author h5{
+        font-size: 0.8rem;
+    }
+    .author img{
+        width: 30px;
+        height: 30px;       
+    }
+ 
+    .BlogAuthorAndSocial h5{
+        font-size: 0.6rem;
+    }
+    .Social img{
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 600px){
+    .SingleBlog{
+        width: 85vw;
+    }   
+    .BlogSearchBar{
+        width: 85%;
+        margin-top: 10%;
+    }
+    .BlogSearchBar input{
+        padding: 3% 7%;
+    }
+    .BlogSearchBar button{
+        right: 5%;
+    }
+}
+
+/* //blog details */
+
+
+
+.blogDetailContainer{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(213, 213, 213,0.2);
+
+
+}
+.blogDetailContent{
+    width: 80vw;
+
+}
+
+.blogDetailTitleAndImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+.blogDetailTitleAndImg h3{
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.blogDetailTitleAndImg h5{
+    font-size: 1rem;
+    text-align: center;
+    color: gray;
+    padding: 20px 0;
+}
+.blogDetailTitleAndImg img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    
+}
+.BlogDetailAuthor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+}
+.BlogDetailAuthor h3{
+    font-size: 1rem;
+    color: gray;
+    font-weight: 400;
+}
+.BlogDetailAuthor img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}

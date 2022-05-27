@@ -1,57 +1,58 @@
 import React from "react";
 import Classes from "../../styles/university.module.css";
-import img1 from "../../public/images/canada_bg.png";
 import icn1 from '../../public/images/session_icon_white.png'
-import location from '../../public/images/location.png'
-import { Button } from "@chakra-ui/react";
-function Universitycard() {
+import Link from 'next/link'
 
-  console.log(img1.src);
+function Universitycard(prop) {
+  const clickHandle = () => {
+    document.location.href = prop.link;
+
+  }
   return (
     <>
       <div className={Classes.SingleCard}>
-        <img src={img1.src} alt="..." />
+        <img src={prop.photo} alt="..." />
         <div className={Classes.SingleCardcontent}>
-              <h2>Harvard University</h2>
+              <h2>{prop?.name}</h2>
               <div className={Classes.SingleCardlocation}>
                 <img src={icn1.src} alt="" />
-                <p>Dramatic Arts, Masters</p>
+                <p>{prop?.coursename}</p>
             </div>
             <section className={Classes.SingleCardFeatures}>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>Type</h5>
-                      <h6>Private</h6>
+                    <div className={`${Classes.SingleCardSingleFeature}  mb-2   p-2 `}>
+                      <h5 className='pb-2' >GRE Required</h5>
+                      <h6>{prop?.gre ? "Yes" : "No"}</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>GRE Waiver</h5>
-                      <h6>-</h6>
+                    
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2'>Application Fee (USD)</h5>
+                      <h6>{prop?.applicationFees }</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>Application Fee (USD)</h5>
-                      <h6>100k</h6>
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2' >Program Fee (USD)</h5>
+                      <h6>{prop?.programFees}</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>Tution Fee (USD)</h5>
-                      <h6>100</h6>
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2'>IELTS Score</h5>
+                      <h6>{prop?.ielts ? prop?.ielts : "N/A" }</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>IELTS Score</h5>
-                      <h6>6.5</h6>
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2'>TOEFL Score</h5>
+                      <h6>{prop?.toefl ? prop.toefl : "N/A"}</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>TOEFL Score</h5>
-                      <h6>69iBT</h6>
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2'>Duolingo Score</h5>
+                      <h6>{prop?.duolingo ? prop.duolingo : "N/A"}</h6>
                     </div>
-                    <div className={Classes.SingleCardSingleFeature}>
-                      <h5>Duolingo Score</h5>
-                      <h6>8.5</h6>
+                    <div className={`${Classes.SingleCardSingleFeature} mb-2   p-2 `}>
+                      <h5 className='pb-2'>Deadline</h5>
+                      <h6>{ (prop?.deadline==='fall') ? (prop?.fall?.final) : ( prop?.deadline==='spring' ? (prop?.spring?.final) : (prop?.deadline==='summer' ? (prop?.summer?.final) :(prop?.fall?.final ? (prop?.fall?.final):("N/A"))) )}</h6>
                     </div>
+                        <a className={`${Classes.SingleCardSingleFeatureButton} mb-2   p-2 `}  href="#" onClick={()=>window.open(prop.link)} target={"_blank"}>
+                           Program details     
+                        </a>       
             </section>
-              <div className={Classes.SingleCardProgramBtn}>
-                <a   href={"/universitysingle"}>
-                        <Button bgColor='#4080D3'color="white" size="sm" > Program details ..</Button>
-                </a>       
-              </div>
+              
         </div>
       </div>
     </>

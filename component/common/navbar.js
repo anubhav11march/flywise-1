@@ -29,10 +29,10 @@ import $ from 'jquery';
 const Links = [
   { link: 'About Us', to: '/aboutus' },
   { link: 'Profile Evaluation', to: '/profile-evaluation' },
-  { link: 'Services', to: '/#services' },
+//  { link: 'Services', to: '/#services' },
   { link: 'Mentors', to: '/mentors' },
-  // { link: 'Universities', to: '/university' },
-  { link: 'Blog', to: '/blog' },
+  { link: 'Universities', to: '/university' },
+  { link: 'Blog', to: '/Blogs' },
   { link: 'Courses', to: '/courses' },
 ];
 import Ham from '../../public/images/icons/ham.png';
@@ -273,12 +273,13 @@ function Header() {
             alt='activity'
           />
         </div>
+        
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={'/#services'}>
-            <p>Service</p>
+          <NextLink passHref href={'/mentors'}>
+            <p>Mentors</p>
           </NextLink>
           <Image
-            src='/images/icons/Graph.png'
+            src='/images/icons/3 User.png'
             marginRight='20px'
             marginLeft='20px'
             height='25px'
@@ -286,9 +287,10 @@ function Header() {
             alt='graph'
           />
         </div>
+
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={'/mentors'}>
-            <p>Mentors</p>
+          <NextLink passHref href={'/university'}>
+            <p>Universities</p>
           </NextLink>
           <Image
             src='/images/icons/3 User.png'
@@ -301,8 +303,8 @@ function Header() {
         </div>
 
         <div className={classes.sidelink} onClick={hidee}>
-          <NextLink passHref href={'/university'}>
-            <p>Universities</p>
+          <NextLink passHref href={'/Blogs'}>
+            <p>Blogs</p>
           </NextLink>
           <Image
             src='/images/icons/3 User.png'

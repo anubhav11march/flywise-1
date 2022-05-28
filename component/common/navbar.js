@@ -210,7 +210,7 @@ function Header() {
                 width={{base:'10rem',md:'8rem',lg:'12rem',xl:'12rem'}}
                 alt='logo'
                 src='/images/flywiseLogo.png'
-                mt={{base:scrolled?"0.75rem":"0.5rem",md:scrolled?"0.75rem":"1rem",lg:0}}
+                mt={{base:scrolled?"0.35rem":"0.2rem",md:scrolled?"0.75rem":"1rem",lg:0}}
                 
               />
             </NextLink>

@@ -43,9 +43,12 @@
     "react-modal": "^3.14.4",
     "react-multi-carousel": "^2.6.5",
     "react-otp-input": "^2.4.0",
+    "react-slick": "^0.29.0",
     "react-router-dom": "^6.3.0",
     "react-toastify": "^8.0.3",
-    "sharp": "^0.30.3"
+    "react-world-map": "^2.4.0",
+    "sharp": "^0.30.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "7.32.0",

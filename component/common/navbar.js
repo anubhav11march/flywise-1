@@ -40,7 +40,7 @@ const NavLink = ({ to, link, outline }) => (
   <NextLink passHref href={to}>
     <Link
       // className={props.link === props.outline ? `bottom-outline` : ``}
-      px={4}
+      px={{base:4,md:2,lg:4}}
       py={1}
       roundedTop={'md'}
       color={link === outline ? `rgba(41, 82, 134,1)` : `blackAlpha.700`}
@@ -55,6 +55,7 @@ const NavLink = ({ to, link, outline }) => (
         color: 'rgba(41, 82, 134,1)',
         borderBottom: '1px solid rgba(41, 82, 134,0.8)',
       }}
+      fontSize={{md:'0.8rem', lg:'0.9rem',xl:'1rem'}}
     >
       {link}
     </Link>
@@ -164,6 +165,7 @@ const AllNavLinks = ({ outline }) => {
 
 function Header() {
   const [show, setShow] = useState(false);
+  const [scrolled,setScrolled]=useState(false);
   useEffect(() => {
     console.log(show);
   }, [show]);
@@ -183,25 +185,40 @@ function Header() {
     setShow(false);
     $('#sidedrawer').removeClass(`${classes.show}`);
   }
-
+  const handleScroll=() => {
+    const offset=window.scrollY;
+    if(offset > 100 ){
+      setScrolled(true);
+      
+    }
+    else{
+      setScrolled(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll',handleScroll)
+  })
   return (
     <div>
-      <div className={classes.header}>
-        <div className={classes.mainHeader}>
+      <div className={scrolled?classes.headerShrinked:classes.header}>
+        <div className={scrolled?classes.mainHeaderShrinked:classes.mainHeader}>
           <div className={classes.logo}>
             <NextLink href='/'>
               <Image
                 _hover={{ cursor: 'pointer' }}
                 maxH='5rem'
+                width={{base:'10rem',md:'8rem',lg:'12rem',xl:'12rem'}}
                 alt='logo'
-                src='/images/logo.svg'
+                src='/images/flywiseLogo.png'
+                mt={{base:scrolled?"0.35rem":"0.2rem",md:scrolled?"0.75rem":"1rem",lg:0}}
+                
               />
             </NextLink>
           </div>
           <div className={classes.links}>
             <AllNavLinks />
           </div>
-          <div className={classes.contact}>
+          {/* <div className={classes.contact}>
             <Flex alignItems={'center'}>
               <NextLink href='/contact-us'>
                 <Button
@@ -220,16 +237,16 @@ function Header() {
                 </Button>
               </NextLink>
             </Flex>
-          </div>
+          </div> */}
           <div id='ham' className={classes.ham} onClick={showw}>
-            <Image src='/images/icons/ham.png' />
+            <Image alt="ham" src='/images/icons/ham.png' />
           </div>
         </div>
         {show && <div className={classes.backdrop} onClick={hidee}></div>}
       </div>
       <div id='sidedrawer' className={classes.sidedrawer}>
         <div id='closeham' className={classes.ham} onClick={hidee}>
-          <Image src='/images/icons/ham.png' />
+          <Image alt="ham" src='/images/icons/ham.png' />
         </div>
         {/**<div className={classes.firstsidelink} onClick={hidee}>
           <NextLink passHref href={"/testprep"}>
@@ -253,6 +270,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='activity'
           />
         </div>
         
@@ -266,6 +284,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='graph'
           />
         </div>
 
@@ -279,6 +298,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='user'
           />
         </div>
 
@@ -292,6 +312,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='user'
           />
         </div>
 
@@ -361,6 +382,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='category'
           />
         </div>
         <div className={classes.sidelink} onClick={hidee}>
@@ -373,6 +395,7 @@ function Header() {
             marginLeft='20px'
             height='25px'
             width='25px'
+            alt='send'
           />
         </div>
       </div>

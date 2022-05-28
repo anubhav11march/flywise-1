@@ -1,0 +1,239 @@
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+/* @Import "slick-carousel/slick/slick.css";
+@Import "slick-carousel/slick/slick-theme.css"; */
+
+.corouselMain {
+  width: 50%;
+  padding: 0;
+  height: auto;
+}
+
+.img {
+  width: 20rem !important;
+}
+
+.slide {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+  border-radius: 100px;
+  border: 2px solid #2B6CB0;
+}
+
+.activeSlide {
+  /* transition: transform 300ms; */
+  transform: scale(1.0);
+  opacity: 1;
+  
+}
+
+.prevArrow {
+  z-index: 10;
+  cursor: pointer;
+  
+}
+
+
+.nextArrow {
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.svg {
+  transition: color 300ms;
+}
+
+.svg:hover {
+  color: #0DB3FB;
+}
+
+
+
+.textContainer{
+  position: relative;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  text-align: center;
+  /* padding: 10%; */
+  /* margin: auto; */
+}
+
+.leftQuote{
+  position: absolute;
+  left: 0;
+  top: -10%;
+  z-index: -1;
+  height:50px;
+  width:100px;
+  
+}
+
+.rightQuote{
+  position: absolute;
+  right: 0;
+  bottom: -5%;
+  z-index: -1;
+  height:50px;
+  width:100px;
+}
+
+.nameContainer{
+  display: none;
+}
+
+.name{
+  font-size: 1.75rem;
+}
+
+.testimonialText{
+    font-size: 1.25rem !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+  }
+
+
+@media (min-width:768px) {
+  .nameContainer{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    color: #2B6CB0;
+  }
+  .name{
+    font-size: 1.5rem;
+  }
+  .testimonialText{
+    font-size: 1.6rem !important;
+    margin-left: 7% !important;
+    margin-right: 7% !important;
+  }
+  .textContainer{
+    position: relative;
+    padding: 10%;
+    margin: auto;
+  }
+  .leftQuote{
+    position: absolute;
+    left: 0%;
+    top: 12.25%;
+    z-index: -1;
+    height:75px;
+    width:125px;
+    
+  }
+
+  .rightQuote{
+    position: absolute;
+    right: 7%;
+    bottom: 12.25%;
+    z-index: -1;
+    height:75px;
+    width:125px;
+  }
+}
+@media (min-width:992px) {
+  .name{
+    font-size: 1.7rem;
+  }
+
+  .testimonialText{
+    font-size: 1.8rem  !important;
+    margin-left: 10%  !important;
+    margin-right: 10%  !important;
+  }
+  .textContainer{
+    position: relative;
+    padding: 10%;
+    margin: auto;
+  }
+  .leftQuote{
+    position: absolute;
+    left: 5%;
+    top: 12.25%;
+    z-index: -1;
+    height:100px;
+    width:150px;
+    
+  }
+
+  .rightQuote{
+    position: absolute;
+    right: 12%;
+    bottom: 12.25%;
+    z-index: -1;
+    height:100px;
+    width:150px;
+  }
+}
+@media (min-width:1280px) {
+  .name{
+    font-size: 2rem;
+  }
+
+  
+  .testimonialText{
+    font-size: 2rem !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+  }
+  .textContainer{
+    position: relative;
+    padding: 10%;
+    margin: auto;
+  }
+  .leftQuote{
+    position: absolute;
+    left: 10%;
+    top: 12.25%;
+    z-index: -1;
+    height:150px;
+    width:200px;
+    
+  }
+
+  .rightQuote{
+    position: absolute;
+    right: 15%;
+    bottom: 12.25%;
+    z-index: -1;
+    height:150px;
+    width:200px;
+  }
+}
+
+@media (min-width:1850px) {
+  .name{
+    font-size: 2.25rem;
+  }
+
+  .testimonialText{
+    font-size: 1.875rem !important;
+    margin-left: 25% !important;
+    margin-right: 25% !important;
+  }
+  .textContainer{
+    position: relative;
+    padding: 10%;
+    margin: auto;
+  }
+  .leftQuote{
+    position: absolute;
+    left: 20%;
+    top: 12.25%;
+    z-index: -1;
+    height:175px;
+    width:225px;
+    
+  }
+
+  .rightQuote{
+    position: absolute;
+    right: 20%;
+    bottom: 12.25%;
+    z-index: -1;
+    height:175px;
+    width:225px;
+  }
+}

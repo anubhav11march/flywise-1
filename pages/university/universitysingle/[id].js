@@ -38,7 +38,7 @@ function Universitysingle() {
     <>
         <Navbar/>
 
-        <section className={Classes.universityPage}>
+        <section className={classes.universityPage}>
         
 
         {/* Banner */}
@@ -49,7 +49,7 @@ function Universitysingle() {
               }}>
 
               </div>
-              <div className={Classes.universityBannerContent}>
+              <div className={classes.universityBannerContent}>
                 <img src={logo.src} alt="" />
                 <h3>{singleUniversityData?.university?.name}</h3>
                 
@@ -59,7 +59,7 @@ function Universitysingle() {
 
         {/* Navbar */}
 
-        <div className={Classes.universitybar} >
+        <div className={classes.universitybar} >
             <ul>
               <li><NextLink href='/universitysingle/#about'>ABOUT</NextLink></li>
               <li><NextLink href='/universitysingle/#admission'>ADMISSIONS</NextLink></li>
@@ -81,14 +81,14 @@ function Universitysingle() {
 
 
 
-        <div id='admission' className={Classes.universityAdmission}>
+        <div id='admission' className={classes.universityAdmission}>
           <h3>Admissions</h3>
           <h2>Acceptance Rate 10%</h2>
 
 
-          <div className={Classes.universityAcceptanceRate}>
-              <div className={Classes.universityTable}>
-              <div className={Classes.universityGraduate}>
+          <div className={classes.universityAcceptanceRate}>
+              <div className={classes.universityTable}>
+              <div className={classes.universityGraduate}>
                 <h4>Graduate</h4>
                 <Table size='lg' variant='simple'>
                 <Thead>
@@ -123,7 +123,7 @@ function Universitysingle() {
                 </Thead>
               </Table>
               </div>
-              <div className={Classes.universityGraduate}>
+              <div className={classes.universityGraduate}>
                   <h4>UnderGraduate</h4>
                   <Table size='lg' variant='simple'>
                 <Thead>
@@ -166,12 +166,12 @@ function Universitysingle() {
 
 
         {/* Ranking */}
-        <div className={Classes.UniversitySpace}>
+        <div className={classes.UniversitySpace}>
 
         </div>
 
 
-        <div id='ranking' className={Classes.universityRankingSection}>
+        <div id='ranking' className={classes.universityRankingSection}>
         <h3>Ranking</h3>
         <div className={Classes.universityRankingContainer}>
             <img src={singleUniversityData?.university?.photo} alt="" />
@@ -188,16 +188,16 @@ function Universitysingle() {
         </div>
 
 
-      <div className={Classes.UniversitySpace}>
+      <div className={classes.UniversitySpace}>
       </div>
 
       {/* Courses */}
         
-        <div id='courses' className={Classes.universityCoursesSection} >
+        <div id='courses' className={classes.universityCoursesSection} >
             <h3>Courses</h3>
-            <div className={Classes.universityCoursesTable}>
+            <div className={classes.universityCoursesTable}>
             <Box overflowX="auto">      
-            <Table w={{sm:"400", lg: "760px", lg: "1000px" }} className={Classes.universityCoursesTablestyle} shadow={"black"} variant='simple'>
+            <Table w={{sm:"400", lg: "760px", lg: "1000px" }} className={classes.universityCoursesTablestyle} shadow={"black"} variant='simple'>
                 <Thead >
                   <Tr>
                     <Th>Courses</Th>
@@ -238,16 +238,16 @@ function Universitysingle() {
               </div>
         </div>
 
-        <div className={Classes.UniversitySpace}>
+        <div className={classes.UniversitySpace}>
       </div>
 
       {/* Fees */}
 
-      <div id='fee' className={Classes.universityFeesSection}>
+      <div id='fee' className={classes.universityFeesSection}>
           <h3>Fees</h3>
           <h2>Tution Fees, scholarships,accomodation costs & more All the costs mentioned below are average costs annually </h2>
-        <div className={Classes.universityTable}>
-          <div className={Classes.universityGraduate} >
+        <div className={classes.universityTable}>
+          <div className={classes.universityGraduate} >
           <h4>Graduate</h4>
                 <Table size='lg' variant='simple'>
                 <Thead>
@@ -277,7 +277,7 @@ function Universitysingle() {
               
               </Table>
               </div>
-              <div className={Classes.universityGraduate}>
+              <div className={classes.universityGraduate}>
                   <h4>UnderGraduate</h4>
                   <Table size='lg' variant='simple'>
                 <Thead>
@@ -311,15 +311,15 @@ function Universitysingle() {
       </div>
 
 
-        <div className={Classes.UniversitySpace}>
+        <div className={classes.UniversitySpace}>
       </div>
         {/* student life */}
 
-    <div id='studentlife' className={Classes.universityStudentLife}>
-          <div  className={Classes.universityStudentLifeContent}>
-              <div className={Classes.universityStudentLifeContentHead}>
+    <div id='studentlife' className={classes.universityStudentLife}>
+          <div  className={classes.universityStudentLifeContent}>
+              <div className={classes.universityStudentLifeContentHead}>
                   <img src={img2.src} alt="" />
-                  <h3>Student's Life</h3>
+                  <h3>{`Student's Life`}</h3>
               </div>
               <p>Things to keep in mind as an international student in the USA:</p>
               <ul>
@@ -330,7 +330,7 @@ function Universitysingle() {
           </div>
     </div>
 
-    <div className={Classes.UniversitySpace}>
+    <div className={classes.UniversitySpace}>
     </div>
 
 

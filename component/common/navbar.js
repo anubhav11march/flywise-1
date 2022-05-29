@@ -239,7 +239,7 @@ function Header() {
             </Flex>
           </div> */}
           <div id='ham' className={classes.ham} onClick={showw}>
-            <Image alt="ham" src='/images/icons/ham.png' />
+            <Image alt="ham" src='/images/icons/ham.png' mt={{base:scrolled?"0":"0.2rem",md:scrolled?"0":"1rem",lg:0}} />
           </div>
         </div>
         {show && <div className={classes.backdrop} onClick={hidee}></div>}

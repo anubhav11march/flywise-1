@@ -41,41 +41,41 @@ const data = [
   }
 ];
 
-[
-              {
-                name: "Akhil Daggubati",
-                uni: "University of South Florida",
-                logo: "/images/icons/floridalogo.png",
-                img: "/images/mentors/Akhil.png",
-                text: "“I always lived in a misconception that studying in the USA was ridiculously expensive. At flywise the empathetic crew surprised me by clearing all my myths about studying in the USA and guided me to find the most relevant course aligned to my interest in a great university which is within my financial reach. I heartily thank them for their continuous encouragement and guidance, which helps me crack my dream job abroad. I strongly insist flywise to any aspirants.”",
-                degree: "Business analytics and information systems",
-              },
+// [
+//               {
+//                 name: "Akhil Daggubati",
+//                 uni: "University of South Florida",
+//                 logo: "/images/icons/floridalogo.png",
+//                 img: "/images/mentors/Akhil.png",
+//                 text: "“I always lived in a misconception that studying in the USA was ridiculously expensive. At flywise the empathetic crew surprised me by clearing all my myths about studying in the USA and guided me to find the most relevant course aligned to my interest in a great university which is within my financial reach. I heartily thank them for their continuous encouragement and guidance, which helps me crack my dream job abroad. I strongly insist flywise to any aspirants.”",
+//                 degree: "Business analytics and information systems",
+//               },
 
-              {
-                name: "Dhanyasri Divi",
-                uni: "CSU East Bay",
-                degree: "Masters in statistics",
-                img: "/images/mentors/dhanyasri.png",
-                logo: "/images/icons/csu.png",
-                text: "I reached out to Pavan (founder) on Linkedin before Flywise was incorporated, in that call he understood my background, aspirations and suggested the best course taking all factors into consideration, that call cleared my questions and gave me a concrete understanding of the pros and cons of the course that was being suggested by Pavan. I've joined Flywise and definitely feel it's beneficial to stay up to date on the latest course offerings,  industry trends and tips to maximize my chances of getting my dream job!",
-              },
-              {
-                name: "Venkatesh Prasad",
-                uni: "Stevens institute of technology",
-                degree: "Business intelligence and analytics",
-                text: "I have my Bachelor's in Mechanical Engineering and was absolutely clueless on what to or how to pursue my Master's. My mentor Pavan, at flywise very patiently listened to all my questions, enlightened me about the IT industry and their pay structure and expertly guided me on what course and university to choose.I am really delighted and overwhelmed with the help and support Flywise provided.",
-                img: "/images/mentors/venkatesh.png",
-                logo: "/images/icons/steven.png",
-              },
-              {
-                name: "Preethi Rama",
-                uni: "Cleveland State University",
-                img: "/images/mentors/Preethi.png",
-                text: "“Flywise is a place where innovation and young energy meets real experience. I was managed in a unique manner and was given a customized approach. Going above and beyond to help achieve career goals is something Flywise strongly stands for.”",
-                logo: "/images/icons/clevelandlogo.png",
-                degree: "Information systems",
-              },
-            ]
+//               {
+//                 name: "Dhanyasri Divi",
+//                 uni: "CSU East Bay",
+//                 degree: "Masters in statistics",
+//                 img: "/images/mentors/dhanyasri.png",
+//                 logo: "/images/icons/csu.png",
+//                 text: "I reached out to Pavan (founder) on Linkedin before Flywise was incorporated, in that call he understood my background, aspirations and suggested the best course taking all factors into consideration, that call cleared my questions and gave me a concrete understanding of the pros and cons of the course that was being suggested by Pavan. I've joined Flywise and definitely feel it's beneficial to stay up to date on the latest course offerings,  industry trends and tips to maximize my chances of getting my dream job!",
+//               },
+//               {
+//                 name: "Venkatesh Prasad",
+//                 uni: "Stevens institute of technology",
+//                 degree: "Business intelligence and analytics",
+//                 text: "I have my Bachelor's in Mechanical Engineering and was absolutely clueless on what to or how to pursue my Master's. My mentor Pavan, at flywise very patiently listened to all my questions, enlightened me about the IT industry and their pay structure and expertly guided me on what course and university to choose.I am really delighted and overwhelmed with the help and support Flywise provided.",
+//                 img: "/images/mentors/venkatesh.png",
+//                 logo: "/images/icons/steven.png",
+//               },
+//               {
+//                 name: "Preethi Rama",
+//                 uni: "Cleveland State University",
+//                 img: "/images/mentors/Preethi.png",
+//                 text: "“Flywise is a place where innovation and young energy meets real experience. I was managed in a unique manner and was given a customized approach. Going above and beyond to help achieve career goals is something Flywise strongly stands for.”",
+//                 logo: "/images/icons/clevelandlogo.png",
+//                 degree: "Information systems",
+//               },
+//             ]
 function Corousel() {
   const slider = useRef(null);
   const NextArrow = ({ onClick }) => {
@@ -94,7 +94,7 @@ function Corousel() {
     );
   };
 
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   // console.log(currentIndex);
   const prev = () => {
     if (currentIndex > 0 && currentIndex !== data.length) {

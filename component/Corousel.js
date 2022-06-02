@@ -113,9 +113,12 @@ function Corousel() {
   };
   const settings = {
     infinite: true,
+    lazyLoad:true,
     slidesToShow: data.length,
     scrollToShow: 1,
     speed: 300,
+    centerMode: true,
+    centerPadding: 0,
   };
   return (
     <>
@@ -124,6 +127,7 @@ function Corousel() {
         maxW="100vw"
         templateRows="repeat(1, 1fr)"
         templateColumns="repeat(5, 1fr)"
+        
       >
         <GridItem
           colSpan={1}
@@ -140,10 +144,11 @@ function Corousel() {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          mt={{ base: "2%", md: "10%" }}
+          mt={{ base: "2%"}}
+          
         >
           <div className={classes.corouselMain}>
-            <Slider ref={slider} {...settings}>
+            <Slider ref={slider} {...settings}  adaptiveHeight={true}>
               {data.map(({ image, id, name }) => (
                 <div
                   className={
@@ -151,7 +156,7 @@ function Corousel() {
                   }
                   key={id}
                 >
-                  <Image className={classes.img} borderRadius="full" src={image} alt={name} />
+                  <img className={classes.img} style={{borderRadius:'100%'}} src={image} alt={name} />
                 </div>
               ))}
             </Slider>

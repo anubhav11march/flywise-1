@@ -12,7 +12,7 @@ const Parentdiv = ({ children }) => {
   return (
     <div>
       <Fragment>{children}</Fragment>
-      {path !== "/profile-evaluation" ? (
+      {/* {path !== "/profile-evaluation" ? (
         <div className={classes.what}>
         <a style={{ color: 'black' }} href={`https://api.whatsapp.com/send?phone=19254459180&text=${text}` }target='_blank'>
                       <Image alt="whatsapp" src={Whats} />
@@ -20,7 +20,7 @@ const Parentdiv = ({ children }) => {
           
         </div>
         
-      ) : null}
+      ) : null} */}
       {path =="/mentors"?(
         <NLink href="/mentors/#mentorrs">
         <div className={classes.godown}>

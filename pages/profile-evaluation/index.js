@@ -80,11 +80,14 @@ function One() {
        await StoreIntoLocalStorage()
        console.log("done")
          router.push("/otp")
+         setLoading(false);
         // ...
       })
       .catch((error) => {
+
         StoreIntoLocalStorage();
         console.log(error);
+        setLoading(false);
         // Error; SMS not sent
         // ...
       });
@@ -102,7 +105,7 @@ function One() {
   );
   const [pe, setPe] = useState(1);
   const [greTraining, setGreTraining] = useState("yes");
-  const [session, setSession] = useState("Spring 2022");
+  const [session, setSession] = useState(null);
   const [countryCode, setCountryCode] = useState("+91");
   const [greQuant, setGreQuant] = useState();
   const [greVerbal, setGreVerbal] = useState();
@@ -197,7 +200,10 @@ function One() {
     headers: {
       contentType: "applications/json",
     },
-    data: JSON.parse(data)})    
+    data: JSON.parse(data)})
+    .catch((e)=>{
+      console.log(e);
+    })
     }
   return (
     <div>
@@ -1299,6 +1305,7 @@ function One() {
                         Previous
                       </Button>
                       <Button
+                        isDisabled={!session}
                         color="white"
                         px="8"
                         mb="4"

@@ -43,7 +43,7 @@ function ContactUS() {
       alert('All fields required');
       return;
     }
-    fetch('https://api.flywise.in//api/contact', {
+    fetch('https://api.flywise.in/api/contact', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

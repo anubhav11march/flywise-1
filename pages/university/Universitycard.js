@@ -2,10 +2,27 @@ import React from "react";
 import Classes from "../../styles/university.module.css";
 import icn1 from '../../public/images/session_icon_white.png'
 import Link from 'next/link'
+import { useToast } from '@chakra-ui/react';
 
 function Universitycard(prop) {
+  const toast = useToast()
   const clickHandle = () => {
     document.location.href = prop.link;
+
+  }
+  const handleProgramDetails=()=>{
+    if(prop.link==""||prop.link==null||prop.link=="null"){
+      toast({
+          title: 'It will be updated soon',
+          description: "We're working on creating the page",
+          status: 'info',
+          duration: 5000,
+          isClosable: true,
+        })
+    }
+    else{
+      window.open(prop.link);
+    }
 
   }
   return (
@@ -48,7 +65,7 @@ function Universitycard(prop) {
                       <h5 className='pb-2'>Deadline</h5>
                       <h6>{ (prop?.deadline==='fall') ? (prop?.fall?.final) : ( prop?.deadline==='spring' ? (prop?.spring?.final) : (prop?.deadline==='summer' ? (prop?.summer?.final) :(prop?.fall?.final ? (prop?.fall?.final):("N/A"))) )}</h6>
                     </div>
-                        <a className={`${Classes.SingleCardSingleFeatureButton} mb-2   p-2 `}  href="#" onClick={()=>window.open(prop.link)} target={"_blank"}>
+                        <a className={`${Classes.SingleCardSingleFeatureButton} mb-2   p-2 `}  onClick={handleProgramDetails} target={"_blank"}>
                            Program details     
                         </a>       
             </section>

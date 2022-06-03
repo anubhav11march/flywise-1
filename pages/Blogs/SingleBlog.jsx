@@ -21,7 +21,7 @@ function SingleBlog(prop) {
                             </div>
 
                               <div className={`${Classes.BlogContent} `}>
-                                        <h5>{prop?.tag}</h5>
+                                        <h5>{(prop?.tag=='null'||prop?.tag==null)?'':prop?.tag}</h5>
                                         
                                         <div className={Classes.BlogTitleAndBody}>
                                                 <div className={Classes.BlogTitle}>

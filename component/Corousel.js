@@ -195,7 +195,6 @@ function Corousel() {
                   <Image className={classes.img} borderRadius="full" src={image} alt={name} />
                 </div>
               ))}
-              
             </Slider>
           </div>
         </GridItem>

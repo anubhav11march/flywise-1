@@ -102,8 +102,6 @@ function Corousel() {
     } else if (currentIndex === 0) {
       setCurrentIndex(data.length - 1);
     } else setCurrentIndex(currentIndex + 1);
-    // slider.current.slickPrev();
-    console.log(slider)
   };
   const next = () => {
     if (currentIndex > 0 && currentIndex !== data.length) {
@@ -112,37 +110,13 @@ function Corousel() {
     if (currentIndex === data.length - 1) {
       setCurrentIndex(data.length - 1 - currentIndex);
     } else setCurrentIndex(currentIndex + 1);
-    // slider.current.slickNext();
-    console.log(slider)
   };
   const settings = {
     infinite: true,
     slidesToShow: data.length,
-    slidesToScroll: 1,
+    scrollToShow: 1,
     speed: 300,
   };
-  const options = {
-        loop: true,
-        center: true,
-        items: 3,
-        margin: 0,
-        autoplay: true,
-        dots: true,
-        autoplayTimeout: 8500,
-        smartSpeed: 450,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 3
-            }
-        }
-    };
   return (
     <>
       <Grid
@@ -168,23 +142,8 @@ function Corousel() {
           alignItems="center"
           mt={{ base: "2%", md: "10%" }}
         >
-          <div className={classes.corouselMain1} >
-            
-            {data.map(({ image, id, name }) => (
-                <div
-                  className={
-                    id === currentIndex ? classes.activeSlide : classes.slide
-                  }
-                  hidden={id!==currentIndex?true:false}
-                  
-                  key={id}
-                >
-                  <Image className={classes.img} borderRadius="full" src={image} alt={name} />
-                </div>
-              ))}
-          </div>
-          <div className={classes.corouselMain2}>
-          <Slider ref={slider} {...settings}>
+          <div className={classes.corouselMain}>
+            <Slider ref={slider} {...settings}>
               {data.map(({ image, id, name }) => (
                 <div
                   className={
@@ -247,8 +206,6 @@ function Corousel() {
           alt="rightQuote"
         />
       </div>
-      
-      
     </>
   );
 }

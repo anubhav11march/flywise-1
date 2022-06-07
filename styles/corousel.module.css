@@ -3,29 +3,34 @@
 /* @Import "slick-carousel/slick/slick.css";
 @Import "slick-carousel/slick/slick-theme.css"; */
 
-.corouselMain {
+.corouselMain1 {
   width: 50%;
   padding: 0;
-  height:max-content;
-  position: relative;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.corouselMain2 {
+  display: none;
 }
 
 .img {
-  width: 50em !important;
+  width: 8rem !important;
+  
 }
 
 .slide {
-  display: none !important;
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+  border-radius: 100px;
+  border: 2px solid #2B6CB0;
 }
-/* .slide img{
-  display: none !important;
-} */
 
 .activeSlide {
   /* transition: transform 300ms; */
   transform: scale(1.0);
   opacity: 1;
-  /* font-size: 2rem; */
   
 }
 
@@ -96,17 +101,6 @@
 
 
 @media (min-width:768px) {
-  .img {
-  width: 20rem !important;
-}
-  .slide {
-  display: block !important;
-  transform: scale(0.3);
-  transition: transform 300ms;
-  opacity: 0.5;
-  border-radius: 100px;
-  border: 2px solid #2B6CB0;
-}
   .nameContainer{
     margin-top: 0;
     display: flex;
@@ -146,6 +140,21 @@
   }
 }
 @media (min-width:992px) {
+  .img {
+  width: 20rem !important;
+  
+}
+  .corouselMain1 {
+    display: none;
+  }
+  .corouselMain2 {
+    width: 50%;
+    padding: 0;
+    height: auto;
+    display: flex;
+    display: block;
+    justify-content: center;
+  }
   .name{
     font-size: 1.7rem;
   }
@@ -179,7 +188,7 @@
     width:150px;
   }
 }
-@media (min-width:1280px) {
+@media (min-width:1280px){
   .name{
     font-size: 2rem;
   }

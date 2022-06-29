@@ -35,7 +35,6 @@ function Universities() {
   const [getfilterData, setgetfilterData] = useState([])
   const [currPage, setcurrPage] = useState(1)
   const [postPerPage] = useState(4)
-  const [window, setwindow] = useState(5)
   const [paginateSize, setpaginateSize] = useState(5)
 
 //pagination
@@ -52,23 +51,53 @@ const pageNumbers = [];
 for (let i = 1; i <= Math.ceil(getfilterData.length / postPerPage); i++) {
   pageNumbers.push(i);
 }
-const pagesize= pageNumbers.length;
-var startPage = 1;
-var endPage = window;
-let paginationslot = [];
 
-if(currPage>=endPage){
-  startPage=window;
-  endPage=endPage+paginateSize
-  setwindow(window+paginateSize)
-  for(var i=startPage ; i<=endPage ; i++){
-      paginationslot.push(i);
-  }
-}else{
-   for(var i=startPage ; i<=endPage ; i++){
-       paginationslot.push(i);
-    }
+let paginationslot = [];
+const pagesize= pageNumbers.length;
+const [start, setstart] = useState(1)
+const [end, setend] = useState(5)
+
+
+for(var i=start;i<=end;i++){
+  paginationslot.push(i);
 }
+
+const handleprev=()=>{
+  if(start>=5){
+    setstart(start-5)
+    setend(end-5);
+  }
+}
+const handlefirst=()=>{
+  
+    setstart(1)
+    setend(5);
+}
+const handlelast=()=>{
+  
+    setstart(pagesize-5)
+    setend(pagesize);
+}
+const handlenext=()=>{
+  if(end<=(pagesize-5)){
+    setstart(start+5);
+    setend(end+5);
+  }
+}
+
+
+// if(currPage>=endPage){
+//   startPage=window;
+//   endPage=endPage+paginateSize
+//   setwindow(window+paginateSize)
+//   for(var i=start ; i<=end ; i++){
+//       paginationslot.push(i);
+//   }
+// }else{
+//    for(var i=startPage ; i<=endPage ; i++){
+//        paginationslot.push(i);
+//     }
+// }
 
 
 //filter usestate
@@ -146,8 +175,7 @@ const [sidefilterData, setsidefilterData] = useState({
       console.log(error);
     } 
   }
-console.log(universityData)
-console.log(getfilterData)
+
   
 //Searching of university 
 
@@ -647,8 +675,11 @@ useEffect(() => {
         <div  className='my-5 col-md-12 col-sm-6 container-fluid'>
                 <nav aria-label="Page navigation example  ">
             <ul className="pagination   justify-content-center">
+               <li className={`page-item `}>
+                <a className="page-link" href="#" onClick={handlefirst} >First</a>
+              </li>
                <li className={`${(currPage<=1) ? ("disabled") : ("") } page-item `}>
-                <a className="page-link" href="#" onClick={()=>{ setcurrPage(currPage-1) }} >Previous</a>
+                <a className="page-link" href="#" onClick={handleprev} >Previous</a>
               </li>
               {
                 paginationslot.map((num,index)=>{
@@ -656,7 +687,10 @@ useEffect(() => {
                 })
               }
               <li className={`${(currPage>=pageNumbers.length) ? ("disabled") : ("") } page-item `}>
-                <a className="page-link" onClick={()=>{ setcurrPage(currPage+1) }} href="#">Next  </a>
+                <a className="page-link" onClick={handlenext} href="#">Next  </a>
+              </li>
+              <li className={`page-item `}>
+                <a className="page-link" href="#" onClick={handlelast} >last</a>
               </li>
             </ul>
           </nav>

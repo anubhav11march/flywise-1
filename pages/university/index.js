@@ -672,21 +672,21 @@ useEffect(() => {
 
           
           </div>
-        <div  className='my-5 col-md-12 col-sm-6 container-fluid'>
+        <div  className='my-5 col-xs-4 col-md-12 col-sm-6 container'>
                 <nav aria-label="Page navigation example  ">
             <ul className="pagination   justify-content-center">
                <li className={`page-item `}>
                 <a className="page-link" href="#" onClick={handlefirst} >First</a>
               </li>
-               <li className={`${(currPage<=1) ? ("disabled") : ("") } page-item `}>
-                <a className="page-link" href="#" onClick={handleprev} >Previous</a>
+               <li className={`${(start<=1) ? ("disabled") : ("") } page-item `}>
+                <a className="page-link" href="#" onClick={handleprev} >Prev</a>
               </li>
               {
                 paginationslot.map((num,index)=>{
                   return <li key={index} className="page-item"><a className={`${currPage === num ? (Classes.activePage):("") } page-link`} onClick={(e)=>{paginate(num)}} href="#">{num}</a></li>
                 })
               }
-              <li className={`${(currPage>=pageNumbers.length) ? ("disabled") : ("") } page-item `}>
+              <li className={`${(end>=pageNumbers.length) ? ("disabled") : ("") } page-item `}>
                 <a className="page-link" onClick={handlenext} href="#">Next  </a>
               </li>
               <li className={`page-item `}>

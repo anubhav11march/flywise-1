@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import react,{useState} from 'react'
 import {
   Box,
   Button,
@@ -8,6 +9,16 @@ import {
   Image,
   Text,
   Link,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  Input,
+  ModalFooter
 } from "@chakra-ui/react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NLink from "next/link";
@@ -20,9 +31,8 @@ import "aos/dist/aos.css";
 import { TweenMax, Expo } from "gsap";
 import "react-multi-carousel/lib/styles.css";
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-
-
-
+import { useDisclosure } from '@chakra-ui/react';
+import axios from 'axios';
 export default function Home() {
   // const responsive = {
   //   desktop: {
@@ -121,6 +131,87 @@ export default function Home() {
   }, []);
   // let bg = 'red';
   let bg = "transparent";
+
+// modal
+const { isOpen, onOpen, onClose } = useDisclosure()
+const [showModal, setshowModal] = useState(true);
+const [formData, setformData] = useState({
+  name:"",
+  email:"",
+  number:""
+})
+const initialRef = React.useRef(null)
+const finalRef = React.useRef(null)
+
+const open =()=>{
+  onOpen();
+}
+
+const emailValidation=()=>{
+  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if(!formData.email || regex.test(formData.email) === false){
+    return false;
+  }
+  return true;
+}
+const phoneValidation=()=> {
+const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
+if(!formData.number || regex.test(formData.number) === false){
+  return false
+}
+return true;
+}
+
+
+const handleSubmitModal = async(event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (  emailValidation() === false && phoneValidation()===false)  {
+       alert('Email and Contact No. is invalid')
+        event.stopPropagation();
+    }else if(  emailValidation() === false && phoneValidation()===true)  {
+      alert('Email  is invalid')
+       event.stopPropagation();
+    }
+    else if(  emailValidation() === true && phoneValidation()===false)  {
+      alert('Contact No.  is invalid')
+       event.stopPropagation();
+    }
+    else{
+      try {
+        const data = axios.post('https://flywise0.herokuapp.com/api/admin/submit-form',formData)
+        console.log(data);
+        localStorage.setItem('modalopen',true);
+        onClose()
+      } catch (error) {
+       console.log(error) 
+      }
+    }
+}
+
+
+const handleclose = ()=>{
+  onClose();
+  setshowModal(false);
+}
+
+useEffect(()=>{
+  let val = JSON.parse(localStorage.getItem('modalopen'))
+  console.log(val)
+  if(val==null && showModal==true){
+    setTimeout(()=>{
+        open()
+      }, 4000)
+  } else if(val==true){
+    clearTimeout()
+  }
+
+  }, [])
+
+const handlechange=(e)=>{
+  const {name} = e.target;
+  setformData({...formData,[name]:e.target.value})
+}
 
   return (
     <div>
@@ -227,8 +318,6 @@ export default function Home() {
                   >
                     Shortlist the programs that best match your profile
                   </Text>
-                  
-                    <NLink href="/profile-evaluation" passHref>
                       <Button colorScheme='blue'
                         variant="solid"
                         fontWeight="semibold"
@@ -240,6 +329,9 @@ export default function Home() {
                         borderRadius={20}
                         mt={{base:"10",md:"6"}}
                         className={classes.btnText}    
+                        onClick={()=>{
+
+                        }}
                       >
                         
                         {"Shortlist Universities  "}
@@ -247,9 +339,46 @@ export default function Home() {
                           className={classes.btnText}
                         />
                       </Button>
-                    </NLink>
         </GridItem>
-            
+
+        <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={isOpen}
+        onClose={onClose}
+        onClick={()=>handleclose()}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Submit your Application</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl >
+              <FormLabel>Full name</FormLabel>
+              <Input ref={initialRef} onChange={handlechange} name="name" type="text" placeholder='Full name' />
+            </FormControl>
+           
+            <FormControl mt={4}>
+              <FormLabel>Email</FormLabel>
+              <Input ref={initialRef} onChange={handlechange} name="email" type="email" placeholder='Email' />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Phone No.</FormLabel>
+              <Input placeholder='Phone' type="tel" onChange={handlechange} name="number"/>
+            </FormControl>
+          </ModalBody>
+          {/*  */}
+          <ModalFooter>
+            <Button colorScheme='blue' onClick={handleSubmitModal}  type="submit" mr={3}>
+              Submit
+            </Button>
+            <Button onClick={handleclose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+
           <GridItem
             rowSpan={12}
             colSpan={4}

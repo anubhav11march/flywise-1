@@ -64,6 +64,7 @@ function One() {
       auth
     );
   };
+  
   const onSignInSubmit = (e) => {
     e.preventDefault();
     configureRecaptcha();

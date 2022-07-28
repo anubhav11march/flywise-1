@@ -98,8 +98,7 @@ const Otp = (props) => {
     // setLoading(true);
     // setSuccess("");
     setError('');
-    router.push('/success');
-
+    router.push('/university')
     // axios({
     //   url: 'https://api.flywise.in/api/user/add',
     //   method: 'POST',

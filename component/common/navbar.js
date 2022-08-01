@@ -385,7 +385,7 @@ function Header() {
             alt='category'
           />
         </div>
-        <div className={classes.sidelink} onClick={hidee}>
+        {/* <div className={classes.sidelink} onClick={hidee}>
           <NextLink passHref href={'/contact-us'}>
             <p>Contact Us</p>
           </NextLink>
@@ -397,7 +397,7 @@ function Header() {
             width='25px'
             alt='send'
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

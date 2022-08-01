@@ -350,7 +350,7 @@ const handlechange=(e)=>{
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Submit your Application</ModalHeader>
+          <ModalHeader>Speak To Us</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl >

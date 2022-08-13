@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import react,{useState} from 'react'
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import {
   Box,
   Button,
@@ -350,7 +351,7 @@ const handlechange=(e)=>{
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Speak To Us</ModalHeader>
+          <ModalHeader>Speak To Us <SupportAgentIcon style={{fontSize:"1.8rem",marginLeft:"5px",color:"var(--chakra-colors-blue-500)"}} /></ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl >

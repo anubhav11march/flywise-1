@@ -17,9 +17,9 @@ function footerr() {
           <h1>CONTACT US</h1>
           <div className={classes.number}>
             <div className={classes.phone}>
-              <Image src={Phone} />
+              {/* <Image src={Phone} /> */}
             </div>
-            <p>+19254459180</p>
+            {/* <p>+19254459180</p> */}
           </div>
           <h3 style={{ fontWeight: "600", fontSize: "17px" }}>California</h3>
           <p>

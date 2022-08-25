@@ -34,6 +34,7 @@ import "react-multi-carousel/lib/styles.css";
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react';
 import axios from 'axios';
+import NextLink from 'next/link';
 export default function Home() {
   // const responsive = {
   //   desktop: {
@@ -319,6 +320,7 @@ const handlechange=(e)=>{
                   >
                     Shortlist the programs that best match your profile
                   </Text>
+                  <NextLink href={'/university'}>
                       <Button colorScheme='blue'
                         variant="solid"
                         fontWeight="semibold"
@@ -330,9 +332,7 @@ const handlechange=(e)=>{
                         borderRadius={20}
                         mt={{base:"10",md:"6"}}
                         className={classes.btnText}    
-                        onClick={()=>{
-
-                        }}
+                     
                       >
                         
                         {"Shortlist Universities  "}
@@ -340,6 +340,7 @@ const handlechange=(e)=>{
                           className={classes.btnText}
                         />
                       </Button>
+                      </NextLink>
         </GridItem>
 
         <Modal

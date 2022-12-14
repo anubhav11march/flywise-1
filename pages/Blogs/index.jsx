@@ -59,7 +59,7 @@ function Index() {
 
   const getData = async()=>{
       try {
-        const call1 = await axios.get('https://flywise-admin2.herokuapp.com/api/allBlogs')
+        const call1 = await axios.get('https://api.flywise.in/api/allBlogs')
         setblogData(call1.data.allBlogs)
       } catch (error) {
         console.log(error);

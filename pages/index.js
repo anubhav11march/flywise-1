@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import react, { useState } from 'react'
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import react, { useState } from "react";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import {
   Box,
   Button,
@@ -19,9 +19,9 @@ import {
   FormControl,
   FormLabel,
   Input,
-  ModalFooter
+  ModalFooter,
 } from "@chakra-ui/react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import NLink from "next/link";
 import Footer from "../component/common/footerr";
 import Navbar from "../component/common/navbar";
@@ -31,10 +31,10 @@ import classes from "../styles/whatsappbtn.module.css";
 import "aos/dist/aos.css";
 import { TweenMax, Expo } from "gsap";
 import "react-multi-carousel/lib/styles.css";
-import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { useDisclosure } from '@chakra-ui/react';
-import axios from 'axios';
-import NextLink from 'next/link';
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { useDisclosure } from "@chakra-ui/react";
+import axios from "axios";
+import NextLink from "next/link";
 export default function Home() {
   // const responsive = {
   //   desktop: {
@@ -58,7 +58,6 @@ export default function Home() {
   //     slidesToSlide: 1, // optional, default to 1.
   //   },
   // };
-
 
   // let one = useRef(null);
   // let two = useRef(null);
@@ -135,91 +134,91 @@ export default function Home() {
   let bg = "transparent";
 
   // modal
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [showModal, setshowModal] = useState(true);
   const [formData, setformData] = useState({
     name: "",
     email: "",
-    number: ""
-  })
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+    number: "",
+  });
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
 
   const open = () => {
     onOpen();
-  }
+  };
 
   const emailValidation = () => {
-    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const regex =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!formData.email || regex.test(formData.email) === false) {
       return false;
     }
     return true;
-  }
+  };
   const phoneValidation = () => {
     const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     if (!formData.number || regex.test(formData.number) === false) {
-      return false
+      return false;
     }
     return true;
-  }
-
+  };
 
   const handleSubmitModal = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (emailValidation() === false && phoneValidation() === false) {
-      alert('Email and Contact No. is invalid')
+      alert("Email and Contact No. is invalid");
       event.stopPropagation();
     } else if (emailValidation() === false && phoneValidation() === true) {
-      alert('Email  is invalid')
+      alert("Email  is invalid");
       event.stopPropagation();
-    }
-    else if (emailValidation() === true && phoneValidation() === false) {
-      alert('Contact No.  is invalid')
+    } else if (emailValidation() === true && phoneValidation() === false) {
+      alert("Contact No.  is invalid");
       event.stopPropagation();
-    }
-    else {
+    } else {
       try {
-        const data = axios.post('https://api.flywise.in/api/admin/submit-form', formData)
+        const data = axios.post(
+          "https://api.flywise.in/api/admin/submit-form",
+          formData
+        );
         console.log(data);
-        localStorage.setItem('modalopen', true);
-        onClose()
+        debugger;
+        localStorage.setItem("modalopen", true);
+        onClose();
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
-  }
-
+  };
 
   const handleclose = () => {
     onClose();
     setshowModal(false);
-  }
+  };
 
   useEffect(() => {
-    let val = JSON.parse(localStorage.getItem('modalopen'))
-    console.log(val)
+    let val = JSON.parse(localStorage.getItem("modalopen"));
+    console.log(val);
     if (val == null && showModal == true) {
       setTimeout(() => {
-        open()
-      }, 4000)
+        open();
+      }, 4000);
     } else if (val == true) {
-      clearTimeout()
+      clearTimeout();
     }
-
-  }, [])
+  }, []);
 
   const handlechange = (e) => {
     const { name } = e.target;
-    setformData({ ...formData, [name]: e.target.value })
-  }
+    setformData({ ...formData, [name]: e.target.value });
+  };
 
   return (
     <div>
       <Navbar outline="" />
 
-      <Box maxW="100vw" >
+      <Box maxW="100vw">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Flywise</title>
 
@@ -239,35 +238,34 @@ export default function Home() {
           maxW="100vw"
           templateRows="repeat(12, 1fr)"
           templateColumns="repeat(12, 1fr)"
-
           bg={
             "linear-gradient(180deg, #d6f0ff 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
         >
-          <GridItem rowSpan={{ base: 12, md: 8 }} colSpan={{ base: 12, md: 6 }}
+          <GridItem
+            rowSpan={{ base: 12, md: 8 }}
+            colSpan={{ base: 12, md: 6 }}
             mt="10%"
             paddingLeft={{ base: "4%", md: "22%" }}
             mr={{ base: "5%", md: 0 }}
           >
-            <div className={classes.headerDiv1} >
-
+            <div className={classes.headerDiv1}>
               <Heading
                 textAlign="left"
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
                 className={classes.headerMainText}
                 fontWeight={700}
                 maxW={578}
-
               >
                 Apply to your Dream University for
                 <Link
                   _hover={{ textDecoration: "none" }}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   fontWeight="bold"
                   color="#2B6CB0"
@@ -283,45 +281,50 @@ export default function Home() {
                 textAlign="left"
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
                 color="#595858"
                 maxW={680}
                 paddingTop={25}
                 className={classes.subText}
-
               >
-                India’s best overseas education platform that travels with you till you land your dream job abroad.
+                India’s best overseas education platform that travels with you
+                till you land your dream job abroad.
               </Text>
-
             </div>
           </GridItem>
-          <GridItem rowSpan={12} colSpan={{ base: 12, md: 6 }} display="flex" justifyContent="center" mt={{ base: "10%", md: "7%" }}>
-            <div className={classes.illuss} >
+          <GridItem
+            rowSpan={12}
+            colSpan={{ base: 12, md: 6 }}
+            display="flex"
+            justifyContent="center"
+            mt={{ base: "10%", md: "7%" }}
+          >
+            <div className={classes.illuss}>
               <Image objectFit="contain" src="/images/illus2.svg" alt="main" />
             </div>
           </GridItem>
-          <GridItem rowSpan={{ base: 12, md: 4 }} colSpan={{ base: 12, md: 6 }}
+          <GridItem
+            rowSpan={{ base: 12, md: 4 }}
+            colSpan={{ base: 12, md: 6 }}
             paddingLeft={{ base: 0, md: "22%" }}
             textAlign={{ base: "center", md: "left" }}
           >
-
             <Text
-
               mt={{ base: "5", md: "5", lg: "0" }}
               className={classes.subText}
               fontWeight="bold"
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               maxW={694}
-
             >
               Shortlist the programs that best match your profile
             </Text>
-            <NextLink href={'/university'}>
-              <Button colorScheme='blue'
+            <NextLink href={"/university"}>
+              <Button
+                colorScheme="blue"
                 variant="solid"
                 fontWeight="semibold"
                 size="md"
@@ -332,13 +335,9 @@ export default function Home() {
                 borderRadius={20}
                 mt={{ base: "10", md: "6" }}
                 className={classes.btnText}
-
               >
-
                 {"Shortlist Universities  "}
-                <ArrowForwardIcon
-                  className={classes.btnText}
-                />
+                <ArrowForwardIcon className={classes.btnText} />
               </Button>
             </NextLink>
           </GridItem>
@@ -352,34 +351,64 @@ export default function Home() {
           >
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader>Speak To Us <SupportAgentIcon style={{ fontSize: "1.8rem", marginLeft: "5px", color: "var(--chakra-colors-blue-500)" }} /></ModalHeader>
+              <ModalHeader>
+                Speak To Us{" "}
+                <SupportAgentIcon
+                  style={{
+                    fontSize: "1.8rem",
+                    marginLeft: "5px",
+                    color: "var(--chakra-colors-blue-500)",
+                  }}
+                />
+              </ModalHeader>
               <ModalCloseButton />
               <ModalBody pb={6}>
-                <FormControl >
+                <FormControl>
                   <FormLabel>Full name</FormLabel>
-                  <Input ref={initialRef} onChange={handlechange} name="name" type="text" placeholder='Full name' />
+                  <Input
+                    ref={initialRef}
+                    onChange={handlechange}
+                    name="name"
+                    type="text"
+                    placeholder="Full name"
+                  />
                 </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Email</FormLabel>
-                  <Input ref={initialRef} onChange={handlechange} name="email" type="email" placeholder='Email' />
+                  <Input
+                    ref={initialRef}
+                    onChange={handlechange}
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                  />
                 </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Phone No.</FormLabel>
-                  <Input placeholder='Phone' type="tel" onChange={handlechange} name="number" />
+                  <Input
+                    placeholder="Phone"
+                    type="tel"
+                    onChange={handlechange}
+                    name="number"
+                  />
                 </FormControl>
               </ModalBody>
               {/*  */}
               <ModalFooter>
-                <Button colorScheme='blue' onClick={handleSubmitModal} type="submit" mr={3}>
+                <Button
+                  colorScheme="blue"
+                  onClick={handleSubmitModal}
+                  type="submit"
+                  mr={3}
+                >
                   Submit
                 </Button>
                 <Button onClick={handleclose}>Cancel</Button>
               </ModalFooter>
             </ModalContent>
           </Modal>
-
 
           <GridItem
             rowSpan={12}
@@ -394,14 +423,17 @@ export default function Home() {
               <img
                 className={classes.header_benefitIcon}
                 src="/images/checkMark.svg"
-                alt="main" />
+                alt="main"
+              />
               <Text
                 className={classes.textBenefit}
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
-              >Our guidelines and application process is 100% free</Text>
+              >
+                Top-notch guidance and application process
+              </Text>
             </div>
           </GridItem>
           <GridItem
@@ -410,19 +442,23 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             mt="16"
-            mb={{ base: 20, md: 20 }}>
+            mb={{ base: 20, md: 20 }}
+          >
             <div className={classes.header_benefit2}>
               <img
                 className={classes.header_benefitIcon}
                 src="/images/bookMark.svg"
-                alt="main" />
+                alt="main"
+              />
               <Text
                 className={classes.textBenefit}
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
-              >Get admits from the top universities</Text>
+              >
+                Get admits from the top universities
+              </Text>
             </div>
           </GridItem>
           <GridItem
@@ -438,19 +474,19 @@ export default function Home() {
               <img
                 className={classes.header_benefitIcon}
                 src="/images/plane.svg"
-                alt="main" />
+                alt="main"
+              />
               <Text
                 className={classes.textBenefit}
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
-
-              >Get internships and jobs at our partnered companies abroad</Text>
-
+              >
+                Get internships and jobs at our partnered companies abroad
+              </Text>
             </div>
           </GridItem>
-
         </Grid>
 
         {/* Vikas Thakur done this */}
@@ -465,43 +501,43 @@ export default function Home() {
             colSpan={12}
             px={["2", "1", "4", "8", "16"]}
             mt={{ base: 0, md: 16 }}
-
           >
-
             <Heading
               mt={{ base: "6", md: "4" }}
               mb={{ base: "6", md: "15" }}
-
               textAlign="center"
               className={classes.benefitsHeading}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight={400}
               color="#2B6CB0"
-
             >
               How can you benefit from Flywise
             </Heading>
           </GridItem>
         </Grid>
 
-
-
         <div
           className={classes.benefitsContainer}
-        // overflow="hidden"
-        // maxW="100vw"
-        // templateRows="repeat(12, 1fr)"
-        // templateColumns="repeat(12, 1fr)"
-        // marginLeft={{base:0,md:"5%"}}
-        // marginRight={{base:0,md:"5%",xl:"1%"}}
+          // overflow="hidden"
+          // maxW="100vw"
+          // templateRows="repeat(12, 1fr)"
+          // templateColumns="repeat(12, 1fr)"
+          // marginLeft={{base:0,md:"5%"}}
+          // marginRight={{base:0,md:"5%",xl:"1%"}}
         >
           <div className="row mb-5">
-            <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+            <div
+              className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}
+            >
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img style={{ width: 200, height: 200 }} src="/images/benefit_1.svg" alt="main" />
+                <img
+                  style={{ width: 200, height: 200 }}
+                  src="/images/benefit_1.svg"
+                  alt="main"
+                />
               </div>
               <div className={classes.benefitsTitleContainer}>
                 <Text
@@ -509,7 +545,7 @@ export default function Home() {
                   className={classes.benefitTitle}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "1em" }}
                   fontWeight="bold"
@@ -523,18 +559,23 @@ export default function Home() {
                   className={classes.benefitContent}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "2em" }}
-
                 >
                   Select universities that best match with your preferences
                 </Text>
               </div>
             </div>
-            <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+            <div
+              className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}
+            >
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img style={{ width: 200, height: 200 }} src="/images/benefit_2.svg" alt="main" />
+                <img
+                  style={{ width: 200, height: 200 }}
+                  src="/images/benefit_2.svg"
+                  alt="main"
+                />
               </div>
               <div className={classes.benefitsTitleContainer}>
                 <Text
@@ -542,7 +583,7 @@ export default function Home() {
                   className={classes.benefitTitle}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "1em" }}
                   fontWeight="bold"
@@ -556,18 +597,23 @@ export default function Home() {
                   className={classes.benefitContent}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "2em" }}
-
                 >
                   Our dedicated admissions expert will apply for you
                 </Text>
               </div>
             </div>
-            <div className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
+            <div
+              className={`${classes.itemBorder} col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}
+            >
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img style={{ width: 200, height: 200 }} src="/images/benefit_3.svg" alt="main" />
+                <img
+                  style={{ width: 200, height: 200 }}
+                  src="/images/benefit_3.svg"
+                  alt="main"
+                />
               </div>
 
               <div className={classes.benefitsTitleContainer}>
@@ -576,7 +622,7 @@ export default function Home() {
                   className={classes.benefitTitle}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "1em" }}
                   fontWeight="bold"
@@ -590,10 +636,9 @@ export default function Home() {
                   className={classes.benefitContent}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "2em" }}
-
                 >
                   Get visa application help and pre-departure guidance
                 </Text>
@@ -601,7 +646,11 @@ export default function Home() {
             </div>
             <div className={`col-12 col-md-6 col-lg-3 mt-5 mb-5 mb-md-0`}>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img style={{ width: 200, height: 200 }} src="/images/benefit_4.svg" alt="main" />
+                <img
+                  style={{ width: 200, height: 200 }}
+                  src="/images/benefit_4.svg"
+                  alt="main"
+                />
               </div>
               <div className={classes.benefitsTitleContainer}>
                 <Text
@@ -609,7 +658,7 @@ export default function Home() {
                   className={classes.benefitTitle}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "1em" }}
                   fontWeight="bold"
@@ -623,19 +672,17 @@ export default function Home() {
                   className={classes.benefitContent}
                   sx={{
                     fontFamily: "Roboto",
-                    fontFamily: 'sans-serif'
+                    fontFamily: "sans-serif",
                   }}
                   paddingTop={{ base: "0.5em", md: "2em" }}
-
                 >
-                  Our career guidance program helps you get internships and jobs abroad.
+                  Our career guidance program helps you get internships and jobs
+                  abroad.
                 </Text>
               </div>
             </div>
-
           </div>
         </div>
-
 
         {/* ************************************************************************************************************** */}
         <Grid
@@ -653,26 +700,33 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             mt="16"
-
           >
-
             <div className={classes.additionalBenefit}>
-              <img style={{ width: 150, height: 150, position: "absolute", left: "-2em", top: "-1em" }} src="/images/benefit5.svg" alt="main" />
+              <img
+                style={{
+                  width: 150,
+                  height: 150,
+                  position: "absolute",
+                  left: "-2em",
+                  top: "-1em",
+                }}
+                src="/images/benefit5.svg"
+                alt="main"
+              />
 
               <Text
                 textAlign="left"
                 className={classes.additionalBenefitContent}
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
                 paddingY="5%"
                 paddingLeft={{ base: "35%", md: "20%" }}
-
               >
-                We provide <b>live whatsapp chat support</b> to guide at every step of your abroad journey.
+                We provide <b>live whatsapp chat support</b> to guide at every
+                step of your abroad journey.
               </Text>
-
             </div>
           </GridItem>
           <GridItem
@@ -682,23 +736,31 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             mt="16"
-
           >
-
             <div className={classes.additionalBenefit}>
-              <img style={{ width: 150, height: 150, position: "absolute", left: "-2em", top: "-1em" }} src="/images/benefit6.svg" alt="main" />
+              <img
+                style={{
+                  width: 150,
+                  height: 150,
+                  position: "absolute",
+                  left: "-2em",
+                  top: "-1em",
+                }}
+                src="/images/benefit6.svg"
+                alt="main"
+              />
               <Text
                 textAlign="left"
                 className={classes.additionalBenefitContent}
                 sx={{
                   fontFamily: "Roboto",
-                  fontFamily: 'sans-serif'
+                  fontFamily: "sans-serif",
                 }}
                 paddingY="5%"
                 paddingLeft={{ base: "35%", md: "20%" }}
-
               >
-                Our application service is <b>100% free for students,</b> as we are sponsored by universities.
+                Our application service is <b>100% free for students,</b> as we
+                are sponsored by universities.
               </Text>
             </div>
           </GridItem>
@@ -710,45 +772,66 @@ export default function Home() {
             px={["2", "1", "4", "8", "16"]}
             mt="16"
           >
-
             <Heading
               mt={{ base: "6", md: "4" }}
               textAlign="center"
               className={classes.universitiesTitle}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight={400}
               color="#2B6CB0"
               marginX={{ base: "5.5%", md: "25%" }}
-
             >
               Our previous students got admits from top universities such as
             </Heading>
           </GridItem>
         </Grid>
 
+        <div style={{ position: "relative" }}>
+          <img
+            className={classes.mapImage}
+            src="/images/worldMap.svg"
+            alt="main"
+          />
 
-        <div style={{ position: 'relative' }}>
-          <img className={classes.mapImage} src="/images/worldMap.svg" alt="main" />
-
-          <img className={classes.arizonaUni} src="/images/arizonaUni.svg" alt="main" />
-          <img className={classes.stevensUni} src="/images/stevensUni.svg" alt="main" />
-          <img className={classes.houstonUni} src="/images/houstonUni.svg" alt="main" />
-          <img className={classes.sanjoseUni} src="/images/sanjoseUni.svg" alt="main" />
-          <img className={classes.oregonUni} src="/images/oregonUni.svg" alt="main" />
+          <img
+            className={classes.arizonaUni}
+            src="/images/arizonaUni.svg"
+            alt="main"
+          />
+          <img
+            className={classes.stevensUni}
+            src="/images/stevensUni.svg"
+            alt="main"
+          />
+          <img
+            className={classes.houstonUni}
+            src="/images/houstonUni.svg"
+            alt="main"
+          />
+          <img
+            className={classes.sanjoseUni}
+            src="/images/sanjoseUni.svg"
+            alt="main"
+          />
+          <img
+            className={classes.oregonUni}
+            src="/images/oregonUni.svg"
+            alt="main"
+          />
           <img className={classes.usf} src="/images/usf.svg" alt="main" />
-          <img className={classes.cincinnatiUni} src="/images/cincinnatiUni.svg" alt="main" />
+          <img
+            className={classes.cincinnatiUni}
+            src="/images/cincinnatiUni.svg"
+            alt="main"
+          />
 
-          <p
-            className={classes.andMore}
-          >
-            and many more...
-          </p>
-
+          <p className={classes.andMore}>and many more...</p>
         </div>
-        <Grid overflow="hidden"
+        <Grid
+          overflow="hidden"
           maxW="100vw"
           templateRows="repeat(12, 1fr)"
           templateColumns="repeat(12, 1fr)"
@@ -756,17 +839,14 @@ export default function Home() {
             "linear-gradient(180deg, #d6f0ff 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
         >
-
-          <GridItem rowSpan={12} colSpan={12}
-
-          >
+          <GridItem rowSpan={12} colSpan={12}>
             <Heading
               mt={{ base: "6", lg: "4" }}
               textAlign="center"
               className={classes.benefitsHeading}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight={400}
               color="#2B6CB0"
@@ -776,7 +856,6 @@ export default function Home() {
             </Heading>
           </GridItem>
           <GridItem
-
             px={["2", "1", "4", "8", "16"]}
             colSpan={{ base: 12, lg: 4 }}
             mt={{ base: "3rem", lg: "1rem" }}
@@ -785,7 +864,11 @@ export default function Home() {
             rowSpan={12}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img className={classes.cgImage} src="/images/cg1.svg" alt="main" />
+              <img
+                className={classes.cgImage}
+                src="/images/cg1.svg"
+                alt="main"
+              />
             </div>
 
             <Text
@@ -793,7 +876,7 @@ export default function Home() {
               className={classes.benefitTitle}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight="bold"
               paddingLeft={{ base: "0", lg: "4rem" }}
@@ -806,12 +889,13 @@ export default function Home() {
               className={classes.benefitContent}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               paddingLeft={{ base: "0", lg: "4rem" }}
               textAlign={{ base: "center", lg: "left" }}
             >
-              Study at one of our partnered universities by applying through flywise
+              Study at one of our partnered universities by applying through
+              flywise
             </Text>
           </GridItem>
           <GridItem
@@ -821,16 +905,19 @@ export default function Home() {
             mt={{ base: "6rem", lg: "1rem" }}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img className={classes.cgImage} src="/images/cg2.svg" alt="main" />
+              <img
+                className={classes.cgImage}
+                src="/images/cg2.svg"
+                alt="main"
+              />
             </div>
 
             <Text
-
               paddingTop={{ base: "0.5em", lg: "1em" }}
               className={classes.benefitTitle}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight="bold"
               paddingLeft={{ base: "0", lg: "4rem" }}
@@ -843,14 +930,14 @@ export default function Home() {
               className={classes.benefitContent}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               paddingLeft={{ base: "0", lg: "4rem" }}
               textAlign={{ base: "center", lg: "left" }}
             >
-              We provide training on professional networking and interview skills
+              We provide training on professional networking and interview
+              skills
             </Text>
-
           </GridItem>
           <GridItem
             rowSpan={12}
@@ -860,7 +947,11 @@ export default function Home() {
             mr={{ base: 0, lg: "11%" }}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img className={classes.cgImage} src="/images/cg3.svg" alt="main" />
+              <img
+                className={classes.cgImage}
+                src="/images/cg3.svg"
+                alt="main"
+              />
             </div>
 
             <Text
@@ -868,7 +959,7 @@ export default function Home() {
               className={classes.benefitTitle}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight="bold"
               paddingLeft={{ base: "0", lg: "4rem" }}
@@ -882,7 +973,7 @@ export default function Home() {
               className={classes.benefitContent}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               paddingLeft={{ base: "0", lg: "4rem" }}
               textAlign={{ base: "center", lg: "left" }}
@@ -893,15 +984,15 @@ export default function Home() {
           </GridItem>
         </Grid>
         {/* ***************************************************************************************** */}
-        <Grid overflow="hidden"
+        <Grid
+          overflow="hidden"
           maxW="100vw"
           templateRows="repeat(1, 1fr)"
-          templateColumns='repeat(9, 1fr)'
+          templateColumns="repeat(9, 1fr)"
           marginLeft={50}
           marginRight={50}
           mt={{ base: 10, md: 0 }}
         >
-
           <GridItem rowSpan={1} colSpan={9}>
             <Heading
               mt={{ base: "6", md: "10%" }}
@@ -909,50 +1000,49 @@ export default function Home() {
               className={classes.benefitsHeading}
               sx={{
                 fontFamily: "Roboto",
-                fontFamily: 'sans-serif'
+                fontFamily: "sans-serif",
               }}
               fontWeight="semi-bold"
               marginX={{ base: "8%", md: "25%" }}
-              mb={{ base: 0, md: '1rem' }}
-            // padding="2em"
+              mb={{ base: 0, md: "1rem" }}
+              // padding="2em"
             >
               Our students got offered from top companies
             </Heading>
-
           </GridItem>
         </Grid>
         {/* smallCompanies will be hidden if screen size is large */}
         <div className={classes.smallCompanies}>
           <div className="container">
             <div className="row">
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/microsoft.svg" alt="main" />
               </div>
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/airbnb.svg" alt="main" />
               </div>
             </div>
             <div className="row">
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/google.svg" alt="main" />
               </div>
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/stripe.svg" alt="main" />
               </div>
             </div>
             <div className="row">
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/apple.svg" alt="main" />
               </div>
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/amazon.svg" alt="main" />
               </div>
             </div>
             <div className="row">
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/meta.svg" alt="main" />
               </div>
-              <div className="col-6 d-flex justify-content-center" >
+              <div className="col-6 d-flex justify-content-center">
                 <Image className="p-4" src="/images/uber.svg" alt="main" />
               </div>
             </div>
@@ -960,7 +1050,11 @@ export default function Home() {
         </div>
         {/* largeCompanies will be hidden if screen size is small */}
         <div className={classes.largeCompanies}>
-          <img className={classes.microsoft} src="/images/microsoft.svg" alt="main" />
+          <img
+            className={classes.microsoft}
+            src="/images/microsoft.svg"
+            alt="main"
+          />
           <img className={classes.airbnb} src="/images/airbnb.svg" alt="main" />
           <img className={classes.google} src="/images/google.svg" alt="main" />
           <img className={classes.stripe} src="/images/stripe.svg" alt="main" />
@@ -977,13 +1071,14 @@ export default function Home() {
           className={classes.testimonialsHeading}
           sx={{
             fontFamily: "Roboto",
-            fontFamily: 'sans-serif'
+            fontFamily: "sans-serif",
           }}
           fontWeight={400}
           marginX={{ base: "2%", md: "25%" }}
           mb={{ base: "2rem", md: "0" }}
         >
-          Your future is sorted out with Flywise like our <b>10,000+</b> other students
+          Your future is sorted out with Flywise like our <b>10,000+</b> other
+          students
         </Heading>
         <Corousel />
 
